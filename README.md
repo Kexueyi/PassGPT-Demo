@@ -29,13 +29,5 @@ We need course available information in a well-structed data form：
 5. Key Concepts
 6. Formula
 7. Code Example
-#### Process
 
-##### GPT-based labeling
-Using well-designed Prompt + GPT-4 Multimodel for different file format analysis
-
-##### NLP-based Evaluation
-Using other traditional NLP techniques to also labeling these data structure. If there is a `difference` between this and GPT, we will involve `human intervention`.
-
-### Training
 
