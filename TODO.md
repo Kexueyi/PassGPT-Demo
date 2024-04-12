@@ -9,7 +9,7 @@ Example Comparison: different json and different outcome
 ## Demo
 ### Forming Database for better information rerieval
 `Residual` connection: *ke xueyi*
-- database setup: *ke xueyi*
+- database setup:
 - retrieval 
 - mutlimodal api call
 
