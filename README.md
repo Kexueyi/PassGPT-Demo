@@ -3,6 +3,13 @@ A course-specific chat model powered by GPT. Make you learn efficiently and Pass
 
 ![Working Flow of PassGPT](figure/intro.png)
 
+## Environment
+The packages are listed in requirements.txt. Run the following command for setting up the environment:
+```bash
+conda create --name pgpt --file requirements.txt
+conda activate pgpt
+```
+
 ## Motivation
 1. To mitigate the gap between general version of GPT and course-specific GPT
 2. To provide a more efficient way to generate course-specific content
@@ -13,13 +20,8 @@ A course-specific chat model powered by GPT. Make you learn efficiently and Pass
 2. Course information retrieval. e.g. course schedule, course materials, and course announcements
 3. Study & review assistance. e.g. summarize, simulate quizzes
 
-## Challenges
-1. Data collection: slides to training text(OCR), codes, announcements(python fetch),quizs
-2. How to label the data?  
-3. How to fine-tune GPT to our downstream tasks?
-
+## Working Flow
 ### Data Preprocssing
-
 #### Goal
 We need course available information in a well-structed data form：
 1. Material Type: slides, codes, announcements, quizzes
@@ -30,4 +32,9 @@ We need course available information in a well-structed data form：
 6. Formula
 7. Code Example
 
-
+#### Database
+1. Course Material Database
+2. Course Information Database
+3. Course Quiz Database
+4. Course Announcement Database
+5. Code Material Database
