@@ -14,12 +14,12 @@ Example Comparison: different json and different outcome
 - mutlimodal api call
 
 ### Quiz Generation
-Generate similar quiz problem from courses using exsiting json files *jia yunfeng, lai bohan*  
+Generate similar quiz problem from courses using exsiting json files: *jia yunfeng, lai bohan*  
 
 
 ## Future work
 - review report generation
-- synchronize note/modification on the material *zhao neng*
-- generate syllabus, *zhao neng*
-- utlize gt_syllabus, *lai bohan*
+- synchronize note/modification on the material: *zhao neng*
+- generate syllabus: *zhao neng*
+- utlize gt_syllabus: *lai bohan*
 - Example Comparison: different json and different outcome
