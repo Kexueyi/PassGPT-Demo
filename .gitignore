@@ -1,2 +1,5 @@
-data/raw
+data/code/*
+!data/code/.gitignore
+data/slides/*
+!data/slides/.gitignore
 pre/.DS_Store
