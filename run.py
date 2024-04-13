@@ -1,9 +1,10 @@
 from openai import OpenAI
 import json
+import os
+from colorama import Fore, Style
 
 # Initialize the OpenAI client, replacing "sk-..." with your key
-client = OpenAI(api_key="") #!! delete this before commiting
-
+client = OpenAI(api_key=os.getenv("OPENAI_API"))
 
 def load_course_info(file_path):
     """
@@ -50,12 +51,22 @@ def query_gpt_with_course_info(query, course_info_summary):
     except Exception as e:
         return f"Error querying GPT with course info: {e}"
 
-file_path = "./data/info.json"
+file_path = "./data/outline/info.json"
 course_info = load_course_info(file_path)
 course_info_summary = format_course_info_for_gpt(course_info)
 
+print(Style.BRIGHT + Fore.BLUE + """
+________                         _________________ ________
+___  __ \______ ___________________  ____/___  __ \___  __/
+__  /_/ /_  __ `/__  ___/__  ___/_  / __  __  /_/ /__  /   
+_  ____/ / /_/ / _(__  ) _(__  ) / /_/ /  _  ____/ _  /    
+/_/      \__,_/  /____/  /____/  \____/   /_/      /_/     
+                                                           
+
+""" + Style.RESET_ALL)
+
 while True:
-    query = input("Please enter your question (or 'exit' to quit): ")
+    query = input("Please enter your question: ")
     if query.lower() == 'exit':
         break
     response = query_gpt_with_course_info(query, course_info_summary)
