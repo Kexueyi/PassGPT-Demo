@@ -5,10 +5,10 @@ A course-specific chat model powered by GPT. Make you learn efficiently and Pass
 
 ## Setup
 ### Data
-data
-├── code
-├── outline, where we put our `.json` file
-└── slides
+- data
+  - code
+  - outline, where we put our `.json` file
+  - slides
 
 ### Environment
 The packages are listed in requirements.txt. Run the following command for setting up the environment:
