@@ -1,265 +1,429 @@
 {
-    "EE6405_W3_Term Weighting Scheme and Topic Modelling_For Students": {
-      "Material Type": "slides",
-      "Teaching Week": "week 3",
-      "Title": "Term Weighting Scheme and Topic Modelling",
-      "Concepts": [
-        {
-          "name": "Term Weighting Schemes",
-          "Page": [2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14],
-          "Subconcepts": [
-            {
-              "name": "TF-IDF",
-              "Page": [3, 4, 5, 6, 7],
-              "Formula": [
-                {"description": "TF Calculation Methods", "Page": 5},
-                {"description": "IDF Calculation", "Page": 6},
-                {"description": "TF-IDF Calculation", "Page": 7}
-              ]
-            },
-            {
-              "name": "BM25",
-              "Page": [11, 12, 13, 14],
-              "Formula": [
-                {"description": "BM25 Calculation", "Page": 12}
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Topic Modeling",
-          "Page": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42],
-          "Subconcepts": [
-            {
-              "name": "LDA",
-              "Page": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
-              "Code": [
-                {"description": "LDA Model Implementation with Gensim", "Page": [18, 19, 20, 21, 22, 23]}
-              ]
-            },
-            {
-              "name": "LSA",
-              "Page": [25, 26, 27, 28, 29, 30],
-              "Code": [
-                {"description": "LSA Model Building and Keyword Extraction", "Page": [28, 29]}
-              ]
-            },
-            {
-              "name": "pLSA",
-              "Page": [31, 32]
-            },
-            {
-              "name": "NMF",
-              "Page": [34, 35, 36, 37, 38, 39, 40, 41],
-              "Code": [
-                {"description": "NMF Model Implementation with Scikit-Learn", "Page": [38, 39, 40]}
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Dimensionality Reduction",
-          "Page": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57],
-          "Subconcepts": [
-            {
-              "name": "PCA",
-              "Page": [43, 44, 45, 46, 47, 48, 49, 50, 51],
-              "Code": [
-                {"description": "PCA Application with Scikit-Learn", "Page": [47, 48, 49, 50]}
-              ]
-            },
-            {
-              "name": "SVD",
-              "Page": [52, 53, 54, 55, 56, 57],
-              "Code": [
-                {"description": "SVD Implementation with Scikit-Learn", "Page": [54, 55, 56]}
-              ]
-            }
-          ]
-        }
-      ]
-    },  
-    "EE6405_W5_EMaWE": {
-        "Material Type": "slides",
-        "Teaching Week": "week 5",
-        "Title": "Evaluation Metrics and Word Embeddings",
-        "Concepts": [
-            {
-                "name": "Evaluation Metrics",
-                "Subconcepts": [
-                    {
-                        "name": "Confusion Matrix",
-                        "Page": [
-                            5,
-                            6
-                        ],
-                        "Formula": [
-                            {
-                                "description": "Accuracy = (TP + TN) / (TP + FP + FN + TN)",
-                                "Page": 7
-                            },
-                            {
-                                "description": "Precision, Recall, F1 Score calculations",
-                                "Page": 8
-                            }
-                        ]
-                    },
-                    {
-                        "name": "F1 Score",
-                        "Page": [
-                            13
-                        ],
-                        "Formula": [
-                            {
-                                "description": "F1 = 2 * (precision * recall) / (precision + recall)",
-                                "Page": 13
-                            }
-                        ]
-                    },
-                    {
-                        "name": "AUC-ROC",
-                        "Page": [
-                            15
-                        ],
-                        "Formula": [
-                            {
-                                "description": "Not directly provided but related to TPR and FPR",
-                                "Page": 15
-                            }
-                        ]
-                    },
-                    {
-                        "name": "BLEU, ROUGE, METEOR",
-                        "Page": [
-                            18,
-                            26,
-                            31
-                        ],
-                        "Formula": [
-                            {
-                                "description": "BLEU score calculation including precision and brevity penalty",
-                                "Page": 24
-                            },
-                            {
-                                "description": "ROUGE formula for n-grams, LCS, skip-bigram",
-                                "Page": 28
-                            },
-                            {
-                                "description": "METEOR calculation including chunk penalty",
-                                "Page": 32
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "Word Embeddings",
-                "Subconcepts": [
-                    {
-                        "name": "Word2Vec",
-                        "Page": [
-                            35,
-                            36,
-                            37,
-                            38,
-                            39,
-                            40,
-                            41,
-                            42,
-                            43,
-                            44,
-                            45,
-                            46,
-                            47,
-                            48,
-                            49,
-                            50
-                        ],
-                        "Concepts": [
-                            {
-                                "name": "Semantic relationships",
-                                "Page": [
-                                    36,
-                                    38
-                                ]
-                            },
-                            {
-                                "name": "CBOW and Skip-gram models",
-                                "Page": [
-                                    36,
-                                    37,
-                                    38,
-                                    39
-                                ]
-                            },
-                            {
-                                "name": "Training process",
-                                "Page": [
-                                    42,
-                                    43,
-                                    44,
-                                    45
-                                ]
-                            }
-                        ],
-                        "Formula": [
-                            {
-                                "description": "SoftMax function for probability calculations",
-                                "Page": [
-                                    48,
-                                    49
-                                ]
-                            }
-                        ],
-                        "Code": [
-                            {
-                                "description": "Examples of CBOW and Skip-gram model training (Not explicitly detailed)",
-                                "Page": [
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "GloVe",
-                        "Page": [
-                            51,
-                            52,
-                            53,
-                            54
-                        ],
-                        "Concepts": [
-                            {
-                                "name": "Global co-occurrence statistics",
-                                "Page": [
-                                    51
-                                ]
-                            },
-                            {
-                                "name": "Co-occurrence matrix construction",
-                                "Page": [
-                                    52
-                                ]
-                            }
-                        ],
-                        "Formula": [
-                            {
-                                "description": "Objective function for GloVe training",
-                                "Page": 52
-                            }
-                        ],
-                        "Code": [
-                            {
-                                "description": "GloVe model example (Not explicitly detailed)",
-                                "Page": [
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
+  "EE6405_W3_Term Weighting Scheme and Topic Modelling_For Students": {
+    "Material Type": "slides",
+    "Teaching Week": "week 3",
+    "Title": "Term Weighting Scheme and Topic Modelling",
+    "Concepts": [
+      {
+        "name": "Term Weighting Schemes",
+        "Page": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "Subconcepts": [
+          {
+            "name": "TF-IDF",
+            "Page": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "Formula": [
+              {
+                "description": "TF Calculation Methods",
+                "Page": 5
+              },
+              {
+                "description": "IDF Calculation",
+                "Page": 6
+              },
+              {
+                "description": "TF-IDF Calculation",
+                "Page": 7
+              }
+            ]
+          },
+          {
+            "name": "BM25",
+            "Page": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "Formula": [
+              {
+                "description": "BM25 Calculation",
+                "Page": 12
+              }
+            ]
+          }
         ]
-    },
-    "EE6405_W7_Transformers": {
+      },
+      {
+        "name": "Topic Modeling",
+        "Page": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "Subconcepts": [
+          {
+            "name": "LDA",
+            "Page": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "Code": [
+              {
+                "description": "LDA Model Implementation with Gensim",
+                "Page": [
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ]
+              }
+            ]
+          },
+          {
+            "name": "LSA",
+            "Page": [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ],
+            "Code": [
+              {
+                "description": "LSA Model Building and Keyword Extraction",
+                "Page": [
+                  28,
+                  29
+                ]
+              }
+            ]
+          },
+          {
+            "name": "pLSA",
+            "Page": [
+              31,
+              32
+            ]
+          },
+          {
+            "name": "NMF",
+            "Page": [
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ],
+            "Code": [
+              {
+                "description": "NMF Model Implementation with Scikit-Learn",
+                "Page": [
+                  38,
+                  39,
+                  40
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dimensionality Reduction",
+        "Page": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "Subconcepts": [
+          {
+            "name": "PCA",
+            "Page": [
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51
+            ],
+            "Code": [
+              {
+                "description": "PCA Application with Scikit-Learn",
+                "Page": [
+                  47,
+                  48,
+                  49,
+                  50
+                ]
+              }
+            ]
+          },
+          {
+            "name": "SVD",
+            "Page": [
+              52,
+              53,
+              54,
+              55,
+              56,
+              57
+            ],
+            "Code": [
+              {
+                "description": "SVD Implementation with Scikit-Learn",
+                "Page": [
+                  54,
+                  55,
+                  56
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W5_EMaWE": {
+    "Material Type": "slides",
+    "Teaching Week": "week 5",
+    "Title": "Evaluation Metrics and Word Embeddings",
+    "Concepts": [
+      {
+        "name": "Evaluation Metrics",
+        "Subconcepts": [
+          {
+            "name": "Confusion Matrix",
+            "Page": [
+              5,
+              6
+            ],
+            "Formula": [
+              {
+                "description": "Accuracy = (TP + TN) / (TP + FP + FN + TN)",
+                "Page": 7
+              },
+              {
+                "description": "Precision, Recall, F1 Score calculations",
+                "Page": 8
+              }
+            ]
+          },
+          {
+            "name": "F1 Score",
+            "Page": [
+              13
+            ],
+            "Formula": [
+              {
+                "description": "F1 = 2 * (precision * recall) / (precision + recall)",
+                "Page": 13
+              }
+            ]
+          },
+          {
+            "name": "AUC-ROC",
+            "Page": [
+              15
+            ],
+            "Formula": [
+              {
+                "description": "Not directly provided but related to TPR and FPR",
+                "Page": 15
+              }
+            ]
+          },
+          {
+            "name": "BLEU, ROUGE, METEOR",
+            "Page": [
+              18,
+              26,
+              31
+            ],
+            "Formula": [
+              {
+                "description": "BLEU score calculation including precision and brevity penalty",
+                "Page": 24
+              },
+              {
+                "description": "ROUGE formula for n-grams, LCS, skip-bigram",
+                "Page": 28
+              },
+              {
+                "description": "METEOR calculation including chunk penalty",
+                "Page": 32
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Word Embeddings",
+        "Subconcepts": [
+          {
+            "name": "Word2Vec",
+            "Page": [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ],
+            "Concepts": [
+              {
+                "name": "Semantic relationships",
+                "Page": [
+                  36,
+                  38
+                ]
+              },
+              {
+                "name": "CBOW and Skip-gram models",
+                "Page": [
+                  36,
+                  37,
+                  38,
+                  39
+                ]
+              },
+              {
+                "name": "Training process",
+                "Page": [
+                  42,
+                  43,
+                  44,
+                  45
+                ]
+              }
+            ],
+            "Formula": [
+              {
+                "description": "SoftMax function for probability calculations",
+                "Page": [
+                  48,
+                  49
+                ]
+              }
+            ],
+            "Code": [
+              {
+                "description": "Examples of CBOW and Skip-gram model training (Not explicitly detailed)",
+                "Page": []
+              }
+            ]
+          },
+          {
+            "name": "GloVe",
+            "Page": [
+              51,
+              52,
+              53,
+              54
+            ],
+            "Concepts": [
+              {
+                "name": "Global co-occurrence statistics",
+                "Page": [
+                  51
+                ]
+              },
+              {
+                "name": "Co-occurrence matrix construction",
+                "Page": [
+                  52
+                ]
+              }
+            ],
+            "Formula": [
+              {
+                "description": "Objective function for GloVe training",
+                "Page": 52
+              }
+            ],
+            "Code": [
+              {
+                "description": "GloVe model example (Not explicitly detailed)",
+                "Page": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W7_Transformers": {
     "Material Type": "slides",
     "Teaching Week": "week 7",
     "Title": "Transformers",
@@ -560,191 +724,285 @@
     "Concepts": [
       {
         "name": "Overview",
-        "Page": [3],
+        "Page": [
+          3
+        ],
         "Subconcepts": [
           {
             "name": "Industries",
-            "Page": [3]
+            "Page": [
+              3
+            ]
           }
         ]
       },
       {
         "name": "Healthcare",
-        "Page": [4, 5],
+        "Page": [
+          4,
+          5
+        ],
         "Subconcepts": [
           {
             "name": "Clinical Documentation",
-            "Page": [4]
+            "Page": [
+              4
+            ]
           },
           {
             "name": "Diagnostic Assistance",
-            "Page": [4]
+            "Page": [
+              4
+            ]
           },
           {
             "name": "Drug Discovery and Development",
-            "Page": [4]
+            "Page": [
+              4
+            ]
           }
         ]
       },
       {
         "name": "Finance and Banking",
-        "Page": [6, 7],
+        "Page": [
+          6,
+          7
+        ],
         "Subconcepts": [
           {
             "name": "Financial Report Automation",
-            "Page": [6]
+            "Page": [
+              6
+            ]
           },
           {
             "name": "Fraud Detection",
-            "Page": [6]
+            "Page": [
+              6
+            ]
           },
           {
             "name": "Customer Service Chatbots",
-            "Page": [6]
+            "Page": [
+              6
+            ]
           }
         ]
       },
       {
         "name": "Retail and E-Commerce",
-        "Page": [8, 9],
+        "Page": [
+          8,
+          9
+        ],
         "Subconcepts": [
           {
             "name": "Sentiment Analysis for Product Reviews",
-            "Page": [8]
+            "Page": [
+              8
+            ]
           },
           {
             "name": "Personalized Recommendations",
-            "Page": [8]
+            "Page": [
+              8
+            ]
           },
           {
             "name": "Customer Service Chatbots",
-            "Page": [8]
+            "Page": [
+              8
+            ]
           }
         ]
       },
       {
         "name": "Legal Industry",
-        "Page": [10, 11],
+        "Page": [
+          10,
+          11
+        ],
         "Subconcepts": [
           {
             "name": "Document Review and Analysis",
-            "Page": [10]
+            "Page": [
+              10
+            ]
           },
           {
             "name": "Predictive Analysis",
-            "Page": [10]
+            "Page": [
+              10
+            ]
           },
           {
             "name": "Compliance Monitoring",
-            "Page": [10]
+            "Page": [
+              10
+            ]
           }
         ]
       },
       {
         "name": "Automotive Industry",
-        "Page": [12, 13],
+        "Page": [
+          12,
+          13
+        ],
         "Subconcepts": [
           {
             "name": "Voice-Activated Assistants",
-            "Page": [12]
+            "Page": [
+              12
+            ]
           },
           {
             "name": "Customer Feedback Analysis",
-            "Page": [12]
+            "Page": [
+              12
+            ]
           },
           {
             "name": "Automated Vehicle Information Support",
-            "Page": [12]
+            "Page": [
+              12
+            ]
           }
         ]
       },
       {
         "name": "Publishing Industry",
-        "Page": [14, 15],
+        "Page": [
+          14,
+          15
+        ],
         "Subconcepts": [
           {
             "name": "Content Curation and Management",
-            "Page": [14]
+            "Page": [
+              14
+            ]
           },
           {
             "name": "Reader Engagement Analysis",
-            "Page": [14]
+            "Page": [
+              14
+            ]
           },
           {
             "name": "Automated Content Generation",
-            "Page": [14]
+            "Page": [
+              14
+            ]
           }
         ]
       },
       {
         "name": "Education",
-        "Page": [16, 17],
+        "Page": [
+          16,
+          17
+        ],
         "Subconcepts": [
           {
             "name": "Plagiarism Detection",
-            "Page": [16]
+            "Page": [
+              16
+            ]
           },
           {
             "name": "Content Personalization",
-            "Page": [16]
+            "Page": [
+              16
+            ]
           },
           {
             "name": "Language Learning Tools",
-            "Page": [16]
+            "Page": [
+              16
+            ]
           }
         ]
       },
       {
         "name": "Travel and Hospitality",
-        "Page": [18, 19],
+        "Page": [
+          18,
+          19
+        ],
         "Subconcepts": [
           {
             "name": "Automated Booking Assistants",
-            "Page": [18]
+            "Page": [
+              18
+            ]
           },
           {
             "name": "Customer Feedback Analysis",
-            "Page": [18]
+            "Page": [
+              18
+            ]
           },
           {
             "name": "Language Translation Services",
-            "Page": [18]
+            "Page": [
+              18
+            ]
           }
         ]
       },
       {
         "name": "Media and Entertainment",
-        "Page": [20, 21],
+        "Page": [
+          20,
+          21
+        ],
         "Subconcepts": [
           {
             "name": "Content Recommendation Systems",
-            "Page": [20]
+            "Page": [
+              20
+            ]
           },
           {
             "name": "Automated Subtitling and Dubbing",
-            "Page": [20]
+            "Page": [
+              20
+            ]
           },
           {
             "name": "Sentiment Analysis of Social Media",
-            "Page": [20]
+            "Page": [
+              20
+            ]
           }
         ]
       },
       {
         "name": "Government & Public Sector",
-        "Page": [22, 23],
+        "Page": [
+          22,
+          23
+        ],
         "Subconcepts": [
           {
             "name": "Public Sentiment Analysis",
-            "Page": [22]
+            "Page": [
+              22
+            ]
           },
           {
             "name": "Automated Public Services",
-            "Page": [22]
+            "Page": [
+              22
+            ]
           },
           {
             "name": "Document and Record Management",
-            "Page": [22]
+            "Page": [
+              22
+            ]
           }
         ]
       }
