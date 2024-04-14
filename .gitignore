@@ -3,3 +3,4 @@ data/code/*
 data/slides/*
 !data/slides/.gitignore
 pre/.DS_Store
+.vscode/*
