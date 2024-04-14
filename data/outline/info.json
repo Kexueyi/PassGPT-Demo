@@ -1,5 +1,170 @@
+
 {
-    "EE6405_W3_Term Weighting Scheme and Topic Modelling_For Students": {
+
+  "EE6405_W1_Introduction_to_NLP": {
+      "Material Type": "slides",
+      "Teaching Week": "week 1",
+      "Title": "Introduction to Natural Language Processing",
+      "Concepts": [
+        {
+          "name": "Overview of NLP",
+          "Page": [3],
+          "Subconcepts": [
+            {
+              "name": "Definition of NLP",
+              "Page": [3]
+            },
+            {
+              "name": "Applications of NLP",
+              "Page": [3]
+            }
+          ]
+        },
+        {
+          "name": "Historical Background",
+          "Page": [9],
+          "Subconcepts": [
+            {
+              "name": "Early developments",
+              "Page": [9]
+            },
+            {
+              "name": "RNNs and early neural models",
+              "Page": [9]
+            }
+          ]
+        },
+        {
+          "name": "Approaches to NLP",
+          "Page": [10],
+          "Subconcepts": [
+            {
+              "name": "Symbolic",
+              "Page": [10]
+            },
+            {
+              "name": "Stochastic",
+              "Page": [10]
+            },
+            {
+              "name": "Neural Models",
+              "Page": [10]
+            }
+          ]
+        },
+        {
+          "name": "Preprocessing Techniques",
+          "Page": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+          "Subconcepts": [
+            {
+              "name": "RegEx",
+              "Page": [12, 13, 14, 15, 16, 17],
+              "Techniques": [
+                {
+                  "description": "Basic functions and metacharacters",
+                  "Page": [14, 15, 16, 17]
+                }
+              ]
+            },
+            {
+              "name": "Tokenization",
+              "Page": [19, 20]
+            },
+            {
+              "name": "Stemming",
+              "Page": [21, 22, 23]
+            },
+            {
+              "name": "Lemmatization",
+              "Page": [24, 25, 26, 27]
+            },
+            {
+              "name": "Bag-Of-Words",
+              "Page": [30, 31, 32, 33, 34]
+            },
+            {
+              "name": "N-grams",
+              "Page": [35, 36, 37]
+            }
+          ]
+        }
+      ],
+      "Summary": {
+        "page": [39, 40],
+        "keyPoints": [
+          "Preprocessing techniques such as RegEx, Tokenization, Stemming, Lemmatization, Bag-Of-Words, and N-grams.",
+          "Basic language models and their applications in NLP."
+        ]
+      }
+    },
+
+
+  "EE6405_W2_Linguistic Analysis and Information Extraction": {
+    "Material Type": "slides",
+    "Teaching Week": "week 2",
+    "Title": "Linguistic Analysis and Information Extraction",
+    "Concepts": [
+      {
+        "name": "Introduction to Information Extraction",
+        "Page": [3],
+        "Subconcepts": [
+          {
+            "name": "Definition and Importance",
+            "Page": [3]
+          },
+          {
+            "name": "Applications",
+            "Page": [3]
+          }
+        ]
+      },
+      {
+        "name": "Named Entity Recognition (NER)",
+        "Page": [5, 6, 7, 8],
+        "Subconcepts": [
+          {
+            "name": "Fundamentals of NER",
+            "Page": [5, 6]
+          },
+          {
+            "name": "Implementing NER with spaCy",
+            "Page": [8, 9]
+          }
+        ]
+      },
+      {
+        "name": "Part-Of-Speech Tagging",
+        "Page": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+        "Subconcepts": [
+          {
+            "name": "Overview of POS Tagging",
+            "Page": [13, 14]
+          },
+          {
+            "name": "Hidden Markov Models (HMMs)",
+            "Page": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+          }
+        ]
+      },
+      {
+        "name": "Dependency Parsing",
+        "Page": [31, 32, 33],
+        "Subconcepts": [
+          {
+            "name": "Introduction to Dependency Parsing",
+            "Page": [31]
+          },
+          {
+            "name": "Worked Example in spaCy",
+            "Page": [32, 33]
+          }
+        ]
+      }
+    ]
+  },
+
+
+  "EE6405_W3_Term Weighting Scheme and Topic Modelling_For Students": {
       "Material Type": "slides",
       "Teaching Week": "week 3",
       "Title": "Term Weighting Scheme and Topic Modelling",
@@ -78,8 +243,105 @@
           ]
         }
       ]
-    },  
-    "EE6405_W5_EMaWE": {
+  } ,
+
+  "EE6405_W4_Traditional ML and NLP Applications": {
+    "Material Type": "slides",
+    "Teaching Week": "week 4",
+    "Title": "Traditional Machine Learning Methods and NLP Applications",
+    "Concepts": [
+      {
+        "name": "Text Classification",
+        "Page": [2, 3, 4, 5, 6],
+        "Subconcepts": [
+          {
+            "name": "Methods",
+            "Page": [5],
+            "Details": [
+              {
+                "name": "Rule-based Classifiers",
+                "Page": 5
+              },
+              {
+                "name": "Naïve-Bayes",
+                "Page": 6
+              },
+              {
+                "name": "Support Vector Machines (SVM)",
+                "Page": 12,
+                "Details": [
+                  {
+                    "name": "TF-IDF Vectorisation",
+                    "Page": 13
+                  },
+                  {
+                    "name": "Kernel Trick",
+                    "Page": 15
+                  }
+                ]
+              },
+              {
+                "name": "Extreme Learning Machines (ELM)",
+                "Page": 19,
+                "Details": [
+                  {
+                    "name": "Single Hidden Layer Networks",
+                    "Page": 19
+                  }
+                ]
+              },
+              {
+                "name": "Gaussian Processes",
+                "Page": 24,
+                "Details": [
+                  {
+                    "name": "Kernel Functions",
+                    "Page": 26
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Applications",
+            "Page": [2, 3, 4, 48],
+            "Details": [
+              {
+                "name": "Sentiment Analysis",
+                "Page": 3
+              },
+              {
+                "name": "Intent Classification",
+                "Page": 48
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clustering",
+        "Page": [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
+        "Subconcepts": [
+          {
+            "name": "K-Means",
+            "Page": [31, 32, 33, 34, 35, 36, 37]
+          },
+          {
+            "name": "Hierarchical Clustering",
+            "Page": [38, 39, 40, 41, 42, 43, 44, 45]
+          },
+          {
+            "name": "Fuzzy Clustering",
+            "Page": [46, 47]
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+  "EE6405_W5_EMaWE": {
         "Material Type": "slides",
         "Teaching Week": "week 5",
         "Title": "Evaluation Metrics and Word Embeddings",
@@ -258,8 +520,137 @@
                 ]
             }
         ]
-    },
-    "EE6405_W7_Transformers": {
+  },
+
+
+  "EE6405_W6_Neural Language Models": {
+    "Material Type": "slides",
+    "Teaching Week": "week 6",
+    "Title": "Neural Language Models",
+    "Concepts": [
+      {
+        "name": "Sequential Data",
+        "Page": [3, 4, 5],
+        "Subconcepts": [
+          {
+            "name": "Characteristics of Sequential Data",
+            "Page": [3]
+          },
+          {
+            "name": "Challenges with Traditional Models",
+            "Page": [4],
+            "Details": [
+              {
+                "name": "Lack of Memory",
+                "Page": 4
+              },
+              {
+                "name": "Order Insensitivity",
+                "Page": 4
+              },
+              {
+                "name": "Variable-Length Limitation",
+                "Page": 4
+              }
+            ]
+          },
+          {
+            "name": "Modern Techniques for Sequential Data",
+            "Page": [5],
+            "Details": [
+              {
+                "name": "Recurrent Neural Networks (RNNs)",
+                "Page": 5
+              },
+              {
+                "name": "Long Short-Term Memory (LSTM) Networks",
+                "Page": 5
+              },
+              {
+                "name": "Gated Recurrent Units (GRUs)",
+                "Page": 5
+              },
+              {
+                "name": "Bi-directional Networks",
+                "Page": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RNNs",
+        "Page": [6, 7, 8],
+        "Subconcepts": [
+          {
+            "name": "Vanilla RNNs",
+            "Page": [6, 7]
+          },
+          {
+            "name": "Activation Functions",
+            "Page": [9],
+            "Details": [
+              {
+                "name": "Sigmoid",
+                "Page": 9
+              },
+              {
+                "name": "Tanh",
+                "Page": 10
+              }
+            ]
+          },
+          {
+            "name": "RNN Classifiers",
+            "Page": [11]
+          }
+        ]
+      },
+      {
+        "name": "LSTMs",
+        "Page": [15, 16, 17, 18, 19, 20, 21],
+        "Subconcepts": [
+          {
+            "name": "Cell States",
+            "Page": [17]
+          },
+          {
+            "name": "Forget Gates",
+            "Page": [18]
+          },
+          {
+            "name": "Input Gates",
+            "Page": [19]
+          },
+          {
+            "name": "Output Gates",
+            "Page": [21]
+          }
+        ]
+      },
+      {
+        "name": "GRUs",
+        "Page": [22, 23, 24],
+        "Subconcepts": [
+          {
+            "name": "Reset Gates",
+            "Page": [23]
+          },
+          {
+            "name": "Update Gates",
+            "Page": [24]
+          }
+        ]
+      },
+      {
+        "name": "Bi-Directional RNNs",
+        "Page": [25]
+      }
+    ]
+  },
+
+
+  "EE6405_W7_Transformers": {
     "Material Type": "slides",
     "Teaching Week": "week 7",
     "Title": "Transformers",
@@ -388,6 +779,95 @@
       }
     ]
   },
+
+
+  "EE6405_W8_HyperParameter Tuning": {
+    "Material Type": "slides",
+    "Teaching Week": "week 8",
+    "Title": "HyperParameter Tuning",
+    "Concepts": [
+      {
+        "name": "K-Fold Cross Validation",
+        "Subconcepts": [
+          {
+            "name": "Importance of proper k value",
+            "Page": 6
+          },
+          {
+            "name": "Stratified K-Fold example",
+            "Page": 7
+          }
+        ]
+      },
+      {
+        "name": "Optimisers",
+        "Page": [10, 11, 12, 13, 14, 15],
+        "Subconcepts": [
+          {
+            "name": "Gradient Descent",
+            "Formula": "xn = x - α * f'(x)",
+            "Page": 11
+          },
+          {
+            "name": "Stochastic Gradient Descent (SGD)",
+            "Formula": "w := w - η∇Q_i(w)",
+            "Page": 12
+          },
+          {
+            "name": "ADAM",
+            "Formula": "Described with bias correction steps for momentum and learning rates",
+            "Page": 14
+          }
+        ],
+        "Annotations Summary": {
+          "SGD Learning Rate": "Remains constant, akin to learning rate scheduler",
+          "Optimisers": "Specifies available optimisers in Keras: ADAM, RMSProp, SGD",
+        }
+      },
+      {
+        "name": "Loss Functions",
+        "Page": [17, 18, 19],
+        "Subconcepts": [
+          {
+            "name": "Binary Cross Entropy",
+            "Formula": "BCE = -1/N Σ(yi log(ŷi) + (1 - yi) log(1 - ŷi))",
+            "Page": 18
+          },
+          {
+            "name": "Categorical Cross Entropy",
+            "Formula": "CCE = -1/N ΣΣ(yij log(ŷij))",
+            "Page": 19
+          }
+        ]
+      },
+      {
+        "name": "Batch Size and Learning Rate",
+        "Page": [21, 22, 23, 24],
+        "Annotations Summary": {
+          "Batch Size": "Updates parameters every few batches (backward pass, gradient computation)",
+          "Training Duration": "Refers to how long to train, highlighted in the context of batch size and learning rate",
+          "Parameter Adjustment": "Determined by the learning rate, deciding the magnitude of parameter changes",
+          }
+      },
+      {
+        "name": "Epochs and Early Stopping",
+        "Page": [25, 26]
+      },
+      {
+        "name": "Gradient Clipping",
+        "Page": [27, 28, 29]
+      },
+      {
+        "name": "Regularisation Techniques",
+        "Page": [30, 31, 32],
+        "Annotations Summary": {
+          "Regularisation": "Adds penalty terms to the loss function to prevent the loss from decreasing too rapidly"
+        }
+      }
+    ]
+  },
+
+
   "EE6405_W9_Transformer Based LLMs": {
     "Material Type": "slides",
     "Teaching Week": "week 9",
@@ -553,6 +1033,8 @@
       ]
     }
   },
+
+
   "EE6405_W10_NLP_Applications_Across_Industries": {
     "Material Type": "slides",
     "Teaching Week": "week 10",
@@ -750,6 +1232,8 @@
       }
     ]
   },
+
+
   "EE6405_W11_Deep_dive_into_NLP": {
     "Material Type": "slides",
     "Teaching Week": "week 11",
