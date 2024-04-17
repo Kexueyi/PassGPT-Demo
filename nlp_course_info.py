@@ -102,7 +102,7 @@ def dp_summarize(json_data):
     return " ".join(summaries)
 
 
-file_path = "F:/NTU Assignment/EE6405/dp_results.json"
+file_path = "data\json\dp_results.json"
 course_info = load_course_info(file_path)
 course_info_summary = dp_summarize(course_info)
 
