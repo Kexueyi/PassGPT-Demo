@@ -34,7 +34,7 @@ def query_gpt_with_course_info(query, course_info_summary):
     messages = [
         {"role": "system", "content": f"{course_info_summary} Your task is to provide a comprehensive response based on the information provided."},
         {"role": "user", "content": query}
-    ]#IRA TRA codequiz
+    ]
     
     try:
         chat_completion = client.chat.completions.create(
@@ -51,7 +51,7 @@ def query_gpt_with_course_info(query, course_info_summary):
     except Exception as e:
         return f"Error querying GPT with course info: {e}"
 
-file_path = "./data/outline/info.json"
+file_path = "./data/json/gpt.json"
 course_info = load_course_info(file_path)
 course_info_summary = format_course_info_for_gpt(course_info)
 
