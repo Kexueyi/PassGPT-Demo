@@ -1,0 +1,1698 @@
+{
+  "EE6405_W1_Introduction_to_NLP": {
+    "Material Type": "slides",
+    "Teaching Week": "week 1",
+    "Title": "Introduction to Natural Language Processing",
+    "Concepts": [
+      {
+        "name": "Overview of NLP",
+        "Page": [
+          3
+        ],
+        "Subconcepts": [
+          {
+            "name": "Definition of NLP",
+            "Page": [
+              3
+            ]
+          },
+          {
+            "name": "Applications of NLP",
+            "Page": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Historical Background",
+        "Page": [
+          9
+        ],
+        "Subconcepts": [
+          {
+            "name": "Early developments",
+            "Page": [
+              9
+            ]
+          },
+          {
+            "name": "RNNs and early neural models",
+            "Page": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Approaches to NLP",
+        "Page": [
+          10
+        ],
+        "Subconcepts": [
+          {
+            "name": "Symbolic",
+            "Page": [
+              10
+            ]
+          },
+          {
+            "name": "Stochastic",
+            "Page": [
+              10
+            ]
+          },
+          {
+            "name": "Neural Models",
+            "Page": [
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Preprocessing Techniques",
+        "Page": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "Subconcepts": [
+          {
+            "name": "RegEx",
+            "Page": [
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "Techniques": [
+              {
+                "description": "Basic functions and metacharacters",
+                "Page": [
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tokenization",
+            "Page": [
+              19,
+              20
+            ]
+          },
+          {
+            "name": "Stemming",
+            "Page": [
+              21,
+              22,
+              23
+            ]
+          },
+          {
+            "name": "Lemmatization",
+            "Page": [
+              24,
+              25,
+              26,
+              27
+            ]
+          },
+          {
+            "name": "Bag-Of-Words",
+            "Page": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          },
+          {
+            "name": "N-grams",
+            "Page": [
+              35,
+              36,
+              37
+            ]
+          }
+        ]
+      }
+    ],
+    "Summary": {
+      "page": [
+        39,
+        40
+      ],
+      "keyPoints": [
+        "Preprocessing techniques such as RegEx, Tokenization, Stemming, Lemmatization, Bag-Of-Words, and N-grams.",
+        "Basic language models and their applications in NLP."
+      ]
+    }
+  },
+  "EE6405_W2_Linguistic Analysis and Information Extraction": {
+    "Material Type": "slides",
+    "Teaching Week": "week 2",
+    "Title": "Linguistic Analysis and Information Extraction",
+    "Concepts": [
+      {
+        "name": "Introduction to Information Extraction",
+        "Page": [
+          3
+        ],
+        "Subconcepts": [
+          {
+            "name": "Definition and Importance",
+            "Page": [
+              3
+            ]
+          },
+          {
+            "name": "Applications",
+            "Page": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Named Entity Recognition (NER)",
+        "Page": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "Subconcepts": [
+          {
+            "name": "Fundamentals of NER",
+            "Page": [
+              5,
+              6
+            ]
+          },
+          {
+            "name": "Implementing NER with spaCy",
+            "Page": [
+              8,
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Part-Of-Speech Tagging",
+        "Page": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "Subconcepts": [
+          {
+            "name": "Overview of POS Tagging",
+            "Page": [
+              13,
+              14
+            ]
+          },
+          {
+            "name": "Hidden Markov Models (HMMs)",
+            "Page": [
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dependency Parsing",
+        "Page": [
+          31,
+          32,
+          33
+        ],
+        "Subconcepts": [
+          {
+            "name": "Introduction to Dependency Parsing",
+            "Page": [
+              31
+            ]
+          },
+          {
+            "name": "Worked Example in spaCy",
+            "Page": [
+              32,
+              33
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W3_Term Weighting Scheme and Topic Modelling_For Students": {
+    "Material Type": "slides",
+    "Teaching Week": "week 3",
+    "Title": "Term Weighting Scheme and Topic Modelling",
+    "Concepts": [
+      {
+        "name": "Term Weighting Schemes",
+        "Page": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "Subconcepts": [
+          {
+            "name": "TF-IDF",
+            "Page": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "Formula": [
+              {
+                "description": "TF Calculation Methods",
+                "Page": 5
+              },
+              {
+                "description": "IDF Calculation",
+                "Page": 6
+              },
+              {
+                "description": "TF-IDF Calculation",
+                "Page": 7
+              }
+            ]
+          },
+          {
+            "name": "BM25",
+            "Page": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "Formula": [
+              {
+                "description": "BM25 Calculation",
+                "Page": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Topic Modeling",
+        "Page": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "Subconcepts": [
+          {
+            "name": "LDA",
+            "Page": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "Code": [
+              {
+                "description": "LDA Model Implementation with Gensim",
+                "Page": [
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ]
+              }
+            ]
+          },
+          {
+            "name": "LSA",
+            "Page": [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ],
+            "Code": [
+              {
+                "description": "LSA Model Building and Keyword Extraction",
+                "Page": [
+                  28,
+                  29
+                ]
+              }
+            ]
+          },
+          {
+            "name": "pLSA",
+            "Page": [
+              31,
+              32
+            ]
+          },
+          {
+            "name": "NMF",
+            "Page": [
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ],
+            "Code": [
+              {
+                "description": "NMF Model Implementation with Scikit-Learn",
+                "Page": [
+                  38,
+                  39,
+                  40
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dimensionality Reduction",
+        "Page": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "Subconcepts": [
+          {
+            "name": "PCA",
+            "Page": [
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51
+            ],
+            "Code": [
+              {
+                "description": "PCA Application with Scikit-Learn",
+                "Page": [
+                  47,
+                  48,
+                  49,
+                  50
+                ]
+              }
+            ]
+          },
+          {
+            "name": "SVD",
+            "Page": [
+              52,
+              53,
+              54,
+              55,
+              56,
+              57
+            ],
+            "Code": [
+              {
+                "description": "SVD Implementation with Scikit-Learn",
+                "Page": [
+                  54,
+                  55,
+                  56
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W4_Traditional ML and NLP Applications": {
+    "Material Type": "slides",
+    "Teaching Week": "week 4",
+    "Title": "Traditional Machine Learning Methods and NLP Applications",
+    "Concepts": [
+      {
+        "name": "Text Classification",
+        "Page": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "Subconcepts": [
+          {
+            "name": "Methods",
+            "Page": [
+              5
+            ],
+            "Details": [
+              {
+                "name": "Rule-based Classifiers",
+                "Page": 5
+              },
+              {
+                "name": "Naïve-Bayes",
+                "Page": 6
+              },
+              {
+                "name": "Support Vector Machines (SVM)",
+                "Page": 12,
+                "Details": [
+                  {
+                    "name": "TF-IDF Vectorisation",
+                    "Page": 13
+                  },
+                  {
+                    "name": "Kernel Trick",
+                    "Page": 15
+                  }
+                ]
+              },
+              {
+                "name": "Extreme Learning Machines (ELM)",
+                "Page": 19,
+                "Details": [
+                  {
+                    "name": "Single Hidden Layer Networks",
+                    "Page": 19
+                  }
+                ]
+              },
+              {
+                "name": "Gaussian Processes",
+                "Page": 24,
+                "Details": [
+                  {
+                    "name": "Kernel Functions",
+                    "Page": 26
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Applications",
+            "Page": [
+              2,
+              3,
+              4,
+              48
+            ],
+            "Details": [
+              {
+                "name": "Sentiment Analysis",
+                "Page": 3
+              },
+              {
+                "name": "Intent Classification",
+                "Page": 48
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clustering",
+        "Page": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "Subconcepts": [
+          {
+            "name": "K-Means",
+            "Page": [
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37
+            ]
+          },
+          {
+            "name": "Hierarchical Clustering",
+            "Page": [
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45
+            ]
+          },
+          {
+            "name": "Fuzzy Clustering",
+            "Page": [
+              46,
+              47
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W5_EMaWE": {
+    "Material Type": "slides",
+    "Teaching Week": "week 5",
+    "Title": "Evaluation Metrics and Word Embeddings",
+    "Concepts": [
+      {
+        "name": "Evaluation Metrics",
+        "Page": [4, 5, 6, 7, 8, 9],
+        "Subconcepts": [
+          {
+            "name": "Confusion Matrix",
+            "Page": [6, 7]
+          },
+          {
+            "name": "Precision and Recall",
+            "Page": [8]
+          },
+          {
+            "name": "Micro and Macro Metrics",
+            "Page": [9, 10]
+          }
+        ]
+      },
+      {
+        "name": "Word Embeddings",
+        "Page": [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54],
+        "Subconcepts": [
+          {
+            "name": "Word2Vec",
+            "Page": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+          },
+          {
+            "name": "GloVe",
+            "Page": [50, 51, 52, 53, 54]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W6_Neural Language Models": {
+    "Material Type": "slides",
+    "Teaching Week": "week 6",
+    "Title": "Neural Language Models",
+    "Concepts": [
+      {
+        "name": "Sequential Data",
+        "Page": [
+          3,
+          4,
+          5
+        ],
+        "Subconcepts": [
+          {
+            "name": "Characteristics of Sequential Data",
+            "Page": [
+              3
+            ]
+          },
+          {
+            "name": "Challenges with Traditional Models",
+            "Page": [
+              4
+            ],
+            "Details": [
+              {
+                "name": "Lack of Memory",
+                "Page": 4
+              },
+              {
+                "name": "Order Insensitivity",
+                "Page": 4
+              },
+              {
+                "name": "Variable-Length Limitation",
+                "Page": 4
+              }
+            ]
+          },
+          {
+            "name": "Modern Techniques for Sequential Data",
+            "Page": [
+              5
+            ],
+            "Details": [
+              {
+                "name": "Recurrent Neural Networks (RNNs)",
+                "Page": 5
+              },
+              {
+                "name": "Long Short-Term Memory (LSTM) Networks",
+                "Page": 5
+              },
+              {
+                "name": "Gated Recurrent Units (GRUs)",
+                "Page": 5
+              },
+              {
+                "name": "Bi-directional Networks",
+                "Page": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RNNs",
+        "Page": [
+          6,
+          7,
+          8
+        ],
+        "Subconcepts": [
+          {
+            "name": "Vanilla RNNs",
+            "Page": [
+              6,
+              7
+            ]
+          },
+          {
+            "name": "Activation Functions",
+            "Page": [
+              9
+            ],
+            "Details": [
+              {
+                "name": "Sigmoid",
+                "Page": 9
+              },
+              {
+                "name": "Tanh",
+                "Page": 10
+              }
+            ]
+          },
+          {
+            "name": "RNN Classifiers",
+            "Page": [
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "LSTMs",
+        "Page": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "Subconcepts": [
+          {
+            "name": "Cell States",
+            "Page": [
+              17
+            ]
+          },
+          {
+            "name": "Forget Gates",
+            "Page": [
+              18
+            ]
+          },
+          {
+            "name": "Input Gates",
+            "Page": [
+              19
+            ]
+          },
+          {
+            "name": "Output Gates",
+            "Page": [
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GRUs",
+        "Page": [
+          22,
+          23,
+          24
+        ],
+        "Subconcepts": [
+          {
+            "name": "Reset Gates",
+            "Page": [
+              23
+            ]
+          },
+          {
+            "name": "Update Gates",
+            "Page": [
+              24
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bi-Directional RNNs",
+        "Page": [
+          25
+        ]
+      }
+    ]
+  },
+  "EE6405_W7_Transformers": {
+    "Material Type": "slides",
+    "Teaching Week": "week 7",
+    "Title": "Transformers",
+    "Concepts": [
+      {
+        "name": "Seq2Seq Models",
+        "Page": [
+          3,
+          4
+        ],
+        "Subconcepts": [
+          {
+            "name": "Encoder-Decoder Architecture",
+            "Page": [
+              3,
+              4
+            ]
+          },
+          {
+            "name": "Attention Mechanism Necessity",
+            "Page": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Attention Mechanism",
+        "Page": [
+          5,
+          6,
+          7,
+          9
+        ],
+        "Subconcepts": [
+          {
+            "name": "General Attention Mechanism",
+            "Page": [
+              6
+            ],
+            "Formula": [
+              {
+                "description": "General Attention Mechanism Calculations",
+                "Page": 6
+              }
+            ]
+          },
+          {
+            "name": "Attention Scores Calculation",
+            "Page": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Transformer Models",
+        "Page": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "Subconcepts": [
+          {
+            "name": "Core Components",
+            "Page": [
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "Formula": [
+              {
+                "description": "Positional Encodings",
+                "Page": 14
+              }
+            ],
+            "Code": [
+              {
+                "description": "Self-Attention Calculations",
+                "Page": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              },
+              {
+                "description": "Multi-Head Attention Overview",
+                "Page": 22
+              },
+              {
+                "description": "Decoder Layer Operations",
+                "Page": [
+                  23,
+                  24
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W8_HyperParameter Tuning": {
+    "Material Type": "slides",
+    "Teaching Week": "week 8",
+    "Title": "HyperParameter Tuning",
+    "Concepts": [
+      {
+        "name": "K-Fold Cross Validation",
+        "Subconcepts": [
+          {
+            "name": "Importance of proper k value",
+            "Page": 6
+          },
+          {
+            "name": "Stratified K-Fold example",
+            "Page": 7
+          }
+        ]
+      },
+      {
+        "name": "Optimisers",
+        "Page": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "Subconcepts": [
+          {
+            "name": "Gradient Descent",
+            "Formula": "xn = x - α * f'(x)",
+            "Page": 11
+          },
+          {
+            "name": "Stochastic Gradient Descent (SGD)",
+            "Formula": "w := w - η∇Q_i(w)",
+            "Page": 12
+          },
+          {
+            "name": "ADAM",
+            "Formula": "Described with bias correction steps for momentum and learning rates",
+            "Page": 14
+          }
+        ],
+        "Annotations Summary": {
+          "SGD Learning Rate": "Remains constant, akin to learning rate scheduler",
+          "Optimisers": "Specifies available optimisers in Keras: ADAM, RMSProp, SGD"
+        }
+      },
+      {
+        "name": "Loss Functions",
+        "Page": [
+          17,
+          18,
+          19
+        ],
+        "Subconcepts": [
+          {
+            "name": "Binary Cross Entropy",
+            "Formula": "BCE = -1/N Σ(yi log(ŷi) + (1 - yi) log(1 - ŷi))",
+            "Page": 18
+          },
+          {
+            "name": "Categorical Cross Entropy",
+            "Formula": "CCE = -1/N ΣΣ(yij log(ŷij))",
+            "Page": 19
+          }
+        ]
+      },
+      {
+        "name": "Batch Size and Learning Rate",
+        "Page": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "Annotations Summary": {
+          "Batch Size": "Updates parameters every few batches (backward pass, gradient computation)",
+          "Training Duration": "Refers to how long to train, highlighted in the context of batch size and learning rate",
+          "Parameter Adjustment": "Determined by the learning rate, deciding the magnitude of parameter changes"
+        }
+      },
+      {
+        "name": "Epochs and Early Stopping",
+        "Page": [
+          25,
+          26
+        ]
+      },
+      {
+        "name": "Gradient Clipping",
+        "Page": [
+          27,
+          28,
+          29
+        ]
+      },
+      {
+        "name": "Regularisation Techniques",
+        "Page": [
+          30,
+          31,
+          32
+        ],
+        "Annotations Summary": {
+          "Regularisation": "Adds penalty terms to the loss function to prevent the loss from decreasing too rapidly"
+        }
+      }
+    ]
+  },
+  "EE6405_W9_Transformer Based LLMs": {
+    "Material Type": "slides",
+    "Teaching Week": "week 9",
+    "Title": "Transformer Based Large Language Models",
+    "Concepts": [
+      {
+        "name": "Transformer Recap",
+        "Subconcepts": [
+          {
+            "name": "Encoder-Decoder Architecture",
+            "Page": [
+              3
+            ]
+          },
+          {
+            "name": "Transformer-XL",
+            "Page": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pre Training Objectives",
+        "Subconcepts": [
+          {
+            "name": "Pre-training and Fine-tuning",
+            "Page": [
+              5,
+              6
+            ]
+          },
+          {
+            "name": "Unified Downstream Tasks",
+            "Page": [
+              7
+            ]
+          },
+          {
+            "name": "Objective Types: AR and AE",
+            "Page": [
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Autoregressive Models",
+        "Formula": "Maximize the log-likelihood under the forward autoregressive factorisation",
+        "Page": [
+          9
+        ]
+      },
+      {
+        "name": "Autoencoding Models",
+        "Formula": "Predict original masked tokens by maximizing the log-likelihood",
+        "Page": [
+          10,
+          11
+        ]
+      },
+      {
+        "name": "Positional Encodings",
+        "Page": [
+          12
+        ]
+      },
+      {
+        "name": "Tokenizers",
+        "Subconcepts": [
+          {
+            "name": "Sub-word Tokenization",
+            "Page": [
+              13,
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pre-training Process",
+        "Page": [
+          15
+        ]
+      },
+      {
+        "name": "Fine-tuning Process",
+        "Page": [
+          16,
+          17
+        ]
+      },
+      {
+        "name": "BERT Variants",
+        "Subconcepts": [
+          {
+            "name": "RoBERTa",
+            "Page": [
+              18
+            ]
+          },
+          {
+            "name": "DistilBERT",
+            "Page": [
+              19
+            ]
+          },
+          {
+            "name": "DistilRoBERTa",
+            "Page": [
+              20
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GPT Series",
+        "Subconcepts": [
+          {
+            "name": "GPT-1 to GPT-3",
+            "Page": [
+              21,
+              22
+            ]
+          },
+          {
+            "name": "GPT-4",
+            "Page": [
+              23
+            ]
+          },
+          {
+            "name": "In-context Learning and Fine-tuning",
+            "Page": [
+              24,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "name": "T5 and BART Models",
+        "Page": [
+          26,
+          27
+        ]
+      },
+      {
+        "name": "XLNet",
+        "Page": [
+          28,
+          29
+        ]
+      }
+    ],
+    "Summary": {
+      "page": 30,
+      "keyPoints": [
+        "Encoder or decoder-based architectures and their pre-training objectives.",
+        "Autoencoder models excel in bidirectional context understanding.",
+        "Autoregressive models have less discrepancy between pre-training and fine-tuning.",
+        "AR models are promising for future advancements, with XLNet combining bidirectional learning."
+      ]
+    }
+  },
+  "EE6405_W10_NLP_Applications_Across_Industries": {
+    "Material Type": "slides",
+    "Teaching Week": "week 10",
+    "Title": "A Survey of NLP Applications Across Diverse Industries",
+    "Concepts": [
+      {
+        "name": "Overview",
+        "Page": [
+          3
+        ],
+        "Subconcepts": [
+          {
+            "name": "Industries",
+            "Page": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Healthcare",
+        "Page": [
+          4,
+          5
+        ],
+        "Subconcepts": [
+          {
+            "name": "Clinical Documentation",
+            "Page": [
+              4
+            ]
+          },
+          {
+            "name": "Diagnostic Assistance",
+            "Page": [
+              4
+            ]
+          },
+          {
+            "name": "Drug Discovery and Development",
+            "Page": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Finance and Banking",
+        "Page": [
+          6,
+          7
+        ],
+        "Subconcepts": [
+          {
+            "name": "Financial Report Automation",
+            "Page": [
+              6
+            ]
+          },
+          {
+            "name": "Fraud Detection",
+            "Page": [
+              6
+            ]
+          },
+          {
+            "name": "Customer Service Chatbots",
+            "Page": [
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Retail and E-Commerce",
+        "Page": [
+          8,
+          9
+        ],
+        "Subconcepts": [
+          {
+            "name": "Sentiment Analysis for Product Reviews",
+            "Page": [
+              8
+            ]
+          },
+          {
+            "name": "Personalized Recommendations",
+            "Page": [
+              8
+            ]
+          },
+          {
+            "name": "Customer Service Chatbots",
+            "Page": [
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Legal Industry",
+        "Page": [
+          10,
+          11
+        ],
+        "Subconcepts": [
+          {
+            "name": "Document Review and Analysis",
+            "Page": [
+              10
+            ]
+          },
+          {
+            "name": "Predictive Analysis",
+            "Page": [
+              10
+            ]
+          },
+          {
+            "name": "Compliance Monitoring",
+            "Page": [
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Automotive Industry",
+        "Page": [
+          12,
+          13
+        ],
+        "Subconcepts": [
+          {
+            "name": "Voice-Activated Assistants",
+            "Page": [
+              12
+            ]
+          },
+          {
+            "name": "Customer Feedback Analysis",
+            "Page": [
+              12
+            ]
+          },
+          {
+            "name": "Automated Vehicle Information Support",
+            "Page": [
+              12
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Publishing Industry",
+        "Page": [
+          14,
+          15
+        ],
+        "Subconcepts": [
+          {
+            "name": "Content Curation and Management",
+            "Page": [
+              14
+            ]
+          },
+          {
+            "name": "Reader Engagement Analysis",
+            "Page": [
+              14
+            ]
+          },
+          {
+            "name": "Automated Content Generation",
+            "Page": [
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "Page": [
+          16,
+          17
+        ],
+        "Subconcepts": [
+          {
+            "name": "Plagiarism Detection",
+            "Page": [
+              16
+            ]
+          },
+          {
+            "name": "Content Personalization",
+            "Page": [
+              16
+            ]
+          },
+          {
+            "name": "Language Learning Tools",
+            "Page": [
+              16
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Travel and Hospitality",
+        "Page": [
+          18,
+          19
+        ],
+        "Subconcepts": [
+          {
+            "name": "Automated Booking Assistants",
+            "Page": [
+              18
+            ]
+          },
+          {
+            "name": "Customer Feedback Analysis",
+            "Page": [
+              18
+            ]
+          },
+          {
+            "name": "Language Translation Services",
+            "Page": [
+              18
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Media and Entertainment",
+        "Page": [
+          20,
+          21
+        ],
+        "Subconcepts": [
+          {
+            "name": "Content Recommendation Systems",
+            "Page": [
+              20
+            ]
+          },
+          {
+            "name": "Automated Subtitling and Dubbing",
+            "Page": [
+              20
+            ]
+          },
+          {
+            "name": "Sentiment Analysis of Social Media",
+            "Page": [
+              20
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Government & Public Sector",
+        "Page": [
+          22,
+          23
+        ],
+        "Subconcepts": [
+          {
+            "name": "Public Sentiment Analysis",
+            "Page": [
+              22
+            ]
+          },
+          {
+            "name": "Automated Public Services",
+            "Page": [
+              22
+            ]
+          },
+          {
+            "name": "Document and Record Management",
+            "Page": [
+              22
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "EE6405_W11_Deep_dive_into_NLP": {
+    "Material Type": "slides",
+    "Teaching Week": "week 11",
+    "Title": "Deep-dive into NLP",
+    "Annotations Summary": {
+      "Big Picture": "Capability vs. Alignment",
+      "Reinforcement Learning": "Fine tuning under supervised learning to mimic human behaviors with human labelers"
+    },
+    "Concepts": [
+      {
+        "name": "Fraud Detection in E-commerce",
+        "Subconcepts": [
+          {
+            "name": "Fulfillment Fraud Detection",
+            "Page": [
+              4,
+              5,
+              6
+            ],
+            "Techniques": [
+              {
+                "description": "Sentence Embeddings with Sentence Transformers and XGBoost for classification",
+                "Page": 6
+              },
+              {
+                "description": "Downstream Process for handling high-risk sellers through human review",
+                "Page": 7
+              }
+            ]
+          },
+          {
+            "name": "Off-platform Fraud Detection",
+            "Techniques": [
+              "Textual analysis for message exchanges between seller and buyer"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Human Trafficking Detection",
+        "Page": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "Subconcepts": [
+          {
+            "name": "Using Banking Data for Detection",
+            "Techniques": [
+              {
+                "description": "Embedding Transformer Models for client and transaction segmentation",
+                "Page": 9
+              },
+              {
+                "description": "Graph algorithms and isolation forest for clustering and risk scoring",
+                "Page": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ChatGPT-based Applications",
+        "Subconcepts": [
+          {
+            "name": "Content Moderation",
+            "Page": [
+              13,
+              14
+            ],
+            "Techniques": [
+              {
+                "description": "Prompt engineering with ChatGPT for identifying prohibited products",
+                "Page": 14
+              }
+            ]
+          },
+          {
+            "name": "Product Recommendation Chatbot",
+            "Page": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25
+            ],
+            "Techniques": [
+              {
+                "description": "Leveraging ChatGPT's API for dynamic product recommendations",
+                "Page": 21
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Summary": {
+      "Key Topics": [
+        "NLP-based Fraud and Human Trafficking Detection",
+        "Innovative Uses of ChatGPT for Content Moderation and Product Recommendations"
+      ]
+    }
+  }
+}
