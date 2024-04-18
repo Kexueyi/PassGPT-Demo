@@ -1,1 +1,4 @@
 openai==0.28.1
+fastapi
+uvicorn
+pymysql

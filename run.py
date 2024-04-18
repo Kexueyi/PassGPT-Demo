@@ -3,7 +3,6 @@ import json
 import os
 from colorama import Fore, Style
 
-# Initialize the OpenAI client, replacing "sk-..." with your key
 client = OpenAI(api_key=os.getenv("OPENAI_API"))
 
 def load_course_info(file_path):
@@ -38,7 +37,7 @@ def query_gpt_with_course_info(query, course_info_summary):
     
     try:
         chat_completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",  # Adjust the model as needed
+            model="gpt-4-turbo",  # Adjust the model as needed
             messages=messages,
         )
         # Assuming we need to get the last message from the chat completion properly

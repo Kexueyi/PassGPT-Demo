@@ -1,26 +1,26 @@
-function sendMessage() {
-    var userInput = document.getElementById("user-input").value;
-    if (userInput.trim() === "") {
-        return;
-    }
+// function sendMessage() {
+//     var userInput = document.getElementById("user-input").value;
+//     if (userInput.trim() === "") {
+//         return;
+//     }
 
-    var chatBox = document.getElementById("chat-box");
-    var userMessage = '<div class="user-message">' + userInput + '</div>';
-    chatBox.innerHTML += userMessage;
+//     var chatBox = document.getElementById("chat-box");
+//     var userMessage = '<div class="user-message">' + userInput + '</div>';
+//     chatBox.innerHTML += userMessage;
 
-    // 这里模拟 ChatGPT 的响应，实际上应该是通过 AJAX 请求发送用户输入并接收响应
-    var botResponse = '<div class="bot-message">This is a response from PassGPT.</div>';
-    chatBox.innerHTML += botResponse;
+//     // 这里模拟 ChatGPT 的响应，实际上应该是通过 AJAX 请求发送用户输入并接收响应
+//     var botResponse = '<div class="bot-message">This is a response from PassGPT.</div>';
+//     chatBox.innerHTML += botResponse;
 
-    // 滚动到底部
-    chatBox.scrollTop = chatBox.scrollHeight;
+//     // 滚动到底部
+//     chatBox.scrollTop = chatBox.scrollHeight;
 
-    // 清空输入框
-    document.getElementById("user-input").value = "";
+//     // 清空输入框
+//     document.getElementById("user-input").value = "";
 
-    // 更新 Markdown 输出
-    updateMarkdownOutput();
-}
+//     // 更新 Markdown 输出
+//     updateMarkdownOutput();
+// }
 
 
 
