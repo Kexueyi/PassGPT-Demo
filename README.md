@@ -39,7 +39,7 @@ conda activate pgpt
 ```
 
 ### Database
-We use SQLite for database. You can construct your own `MySQL` database by running the following command:
+You can construct your own `MySQL` database by running the following command:
 ```bash
 mysql -u root -p < database/pass_gpt.sql
 ```
