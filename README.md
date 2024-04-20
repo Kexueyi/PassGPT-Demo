@@ -3,7 +3,9 @@ A course-specific chat model powered by GPT. Make you learn efficiently and Pass
 
 ![Working Flow of PassGPT](figure/intro.png)
 
-This repo is mainly for course project from EE6405: Natural Language Processing. The goal of this project is to build a course-specific chat model powered by GPT. The model utlize the dataset build upon the course materials from EE6405.
+## Introduction
+
+The goal of this project is to build a course-specific chat model powered by GPT, by utlizing the dataset build upon the course materials from EE6405: Natural Language Processing.
 
 ## Main Functions
 1. Course information retrieval. e.g. course materials, concepts related informations
@@ -43,6 +45,7 @@ You can construct your own `MySQL` database by running the following command:
 ```bash
 mysql -u root -p < database/pass_gpt.sql
 ```
+Then modify the `models/pass_gpt.py` database information to your own database.
 
 ### OpenAI API
 You need to have an OpenAI API key to run the code. You can get one from [OpenAI](https://beta.openai.com/signup/). Once you have the key, you can set it as an environment variable:
