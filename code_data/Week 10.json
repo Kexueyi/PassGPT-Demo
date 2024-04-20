@@ -1,0 +1,559 @@
+[
+  {
+    "type": "Import",
+    "from": "torchtext.datasets",
+    "import": {
+      "name": "IMDB",
+      "alias": null
+    },
+    "start": {
+      "line": 21,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 35
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 22,
+      "column": 0
+    },
+    "end": {
+      "line": 22,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Function declaration",
+    "body": "defload_imdb_data(n_samples=10):     positive_reviews,negative_reviews=[],[] train_iter=IMDB(split='train') forlabel,textintrain_iter:         iflabel==2andlen(positive_reviews)<n_samples:             positive_reviews.append(text)  eliflabel==1andlen(negative_reviews)<n_samples:             negative_reviews.append(text)  iflen(positive_reviews)>=n_samplesandlen(negative_reviews)>=n_samples:             break   returnpositive_reviews,negative_reviews\n\n",
+    "start": {
+      "line": 25,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_reviews,negative_reviews=load_imdb_data()",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 53
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Loaded {len(positive_reviews)} positive reviews.\")",
+    "start": {
+      "line": 43,
+      "column": 0
+    },
+    "end": {
+      "line": 43,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Loaded {len(negative_reviews)} negative reviews.\")",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "from": "openai",
+    "import": {
+      "name": "OpenAI",
+      "alias": null
+    },
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 13
+    },
+    "name": "random",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "client=OpenAI(api_key=\"INSERT API KEY\")",
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 78
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpredict_sentiment(reviews):     sentiments=[] forreviewinreviews:         try:             chat_completion=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"You are a helpful assistant trained to classify sentiment as positive or negative. Provide response with one word either 'postive' or 'negative'\"},{\"role\":\"user\",\"content\":review}],) sentiment=chat_completion.choices[0].message.content.strip().lower() print(sentiment) ifsentimentnotin['positive','negative']:                 sentiment=random.choice(['positive','negative'])  sentiments.append(sentiment)  exceptExceptionase:             print(f\"Error processing review: {e}\") sentiments.append(random.choice(['positive','negative']))   returnsentiments\n\n",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 86,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_sentiments=predict_sentiment(positive_reviews)",
+    "start": {
+      "line": 86,
+      "column": 0
+    },
+    "end": {
+      "line": 86,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_sentiments=predict_sentiment(negative_reviews)",
+    "start": {
+      "line": 87,
+      "column": 0
+    },
+    "end": {
+      "line": 87,
+      "column": 57
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": [
+      {
+        "name": "precision_score",
+        "alias": null
+      },
+      {
+        "name": "recall_score",
+        "alias": null
+      },
+      {
+        "name": "f1_score",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 97,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 67
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "true_labels=[1]*len(positive_reviews)+[0]*len(negative_reviews)",
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 71
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "predicted_labels=[1ifsentiment=='positive'else0forsentimentinpositive_sentiments+negative_sentiments]",
+    "start": {
+      "line": 102,
+      "column": 0
+    },
+    "end": {
+      "line": 102,
+      "column": 115
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "precision=precision_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 105,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "recall=recall_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "f1=f1_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Precision: {precision}\")",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 109,
+      "column": 32
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Recall: {recall}\")",
+    "start": {
+      "line": 110,
+      "column": 0
+    },
+    "end": {
+      "line": 110,
+      "column": 26
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"F1 Score: {f1}\")",
+    "start": {
+      "line": 111,
+      "column": 0
+    },
+    "end": {
+      "line": 111,
+      "column": 24
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcompute_embeddings(reviews):     embeddings=[] forreviewinreviews:         try:             response=client.embeddings.create(input=review,model=\"text-embedding-ada-002\") embeddings.append(response.data[0].embedding)  exceptExceptionase:             print(f\"Error computing embedding for review: {e}\") embeddings.append([0]*2048)   returnembeddings\n\n",
+    "start": {
+      "line": 120,
+      "column": 0
+    },
+    "end": {
+      "line": 136,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_embeddings=compute_embeddings(positive_reviews)",
+    "start": {
+      "line": 136,
+      "column": 0
+    },
+    "end": {
+      "line": 136,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_embeddings=compute_embeddings(negative_reviews)",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 137,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics.pairwise",
+    "import": {
+      "name": "cosine_similarity",
+      "alias": null
+    },
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 54
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 149,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcompute_cosine_similarities(embeddings):     cos_sim_matrix=cosine_similarity(embeddings) returncos_sim_matrix\n\n",
+    "start": {
+      "line": 151,
+      "column": 0
+    },
+    "end": {
+      "line": 156,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deffind_typical_review_with_dataframe(reviews,embeddings):     \"\"\"\n    Computes pairwise cosine similarity, finds the mean similarity for each review,\n    stores results in a DataFrame, and identifies the 'typical' review.\n    \n    Parameters:\n    - reviews: List of review texts.\n    - embeddings: Corresponding embeddings for each review.\n    \n    Returns:\n    - DataFrame containing reviews and their average cosine similarity.\n    - The 'typical' review based on the highest average cosine similarity.\n    \"\"\" cos_sim_matrix=compute_cosine_similarities(embeddings) mean_cos_sim=np.mean(cos_sim_matrix-np.eye(cos_sim_matrix.shape[0]),axis=1) df=pd.DataFrame({'Review':reviews,'AvgCosSim':mean_cos_sim}) df_sorted=df.sort_values(by='AvgCosSim',ascending=False) typical_review=df_sorted.iloc[0]['Review'] returndf_sorted,typical_review\n\n",
+    "start": {
+      "line": 156,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_df,typical_positive_review=find_typical_review_with_dataframe(positive_reviews,positive_embeddings)",
+    "start": {
+      "line": 189,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 112
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_df,typical_negative_review=find_typical_review_with_dataframe(negative_reviews,negative_embeddings)",
+    "start": {
+      "line": 192,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 112
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Typical Positive Review:\",typical_positive_review)",
+    "start": {
+      "line": 198,
+      "column": 0
+    },
+    "end": {
+      "line": 198,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Typical Negative Review:\",typical_negative_review)",
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "top_5_positive_reviews=positive_df.head(5)['Review'].tolist()",
+    "start": {
+      "line": 212,
+      "column": 0
+    },
+    "end": {
+      "line": 212,
+      "column": 63
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defextract_positive_sentences(reviews):     extracted_sentences=[] forreviewinreviews:         try:             response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Extract 3 sentences from the following review that best indicate a positive sentiment:'\"},{\"role\":\"user\",\"content\":review}],) sentences=response.choices[0].message.content.strip() extracted_sentences.extend(sentences.split('\\n')[:3])  exceptExceptionase:             print(f\"Error extracting sentences: {e}\")   returnextracted_sentences\n\n",
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 235,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_sentences=extract_positive_sentences(top_5_positive_reviews)",
+    "start": {
+      "line": 235,
+      "column": 0
+    },
+    "end": {
+      "line": 235,
+      "column": 71
+    }
+  },
+  null,
+  {
+    "type": "Function declaration",
+    "body": "defsummarize_commonalities(sentences):     aggregated_sentences=\" \".join(sentences) try:         response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Summarize what the following sentences from movie reviews have in common, indicating good qualities of a movie:\"},{\"role\":\"user\",\"content\":aggregated_sentences}],) returnresponse.choices[0].message.content.strip()  exceptExceptionase:         print(f\"Error summarizing commonalities: {e}\") return\"\"\n\n\n",
+    "start": {
+      "line": 247,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "commonalities_summary=summarize_commonalities(positive_sentences)",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 67
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Commonalities Summary:\",commonalities_summary)",
+    "start": {
+      "line": 268,
+      "column": 0
+    },
+    "end": {
+      "line": 268,
+      "column": 54
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsuggest_movie_plot(summary):     try:         response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Based on the following commonalities in good movie reviews, suggest a movie plot that is likely to result in a good review.\"},{\"role\":\"user\",\"content\":summary}],) returnresponse.choices[0].message.content.strip()  exceptExceptionase:         print(f\"Error suggesting movie plot: {e}\") return\"\"\n\n\n",
+    "start": {
+      "line": 274,
+      "column": 0
+    },
+    "end": {
+      "line": 288,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "movie_plot_suggestion=suggest_movie_plot(commonalities_summary)",
+    "start": {
+      "line": 288,
+      "column": 0
+    },
+    "end": {
+      "line": 288,
+      "column": 65
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Movie Plot Suggestion:\",movie_plot_suggestion)",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 54
+    }
+  }
+]

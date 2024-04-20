@@ -1,0 +1,329 @@
+[
+  {
+    "type": "Import",
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 12
+    },
+    "name": "spacy",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "spacy",
+    "import": {
+      "name": "displacy",
+      "alias": null
+    },
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 26
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "NER=spacy.load(\"en_core_web_sm\")",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 32
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "raw_text='''\nFrom 1925 to 1945, Tolkien was the Rawlinson and Bosworth Professor of Anglo-Saxon and a Fellow of Pembroke College, both at the University of Oxford. \nHe then moved within the same university to become the Merton Professor of English Language and Literature and Fellow of Merton College, and held these positions from 1945 until his retirement in 1959. \nTolkien was a close friend of C. S. Lewis, a co-member of the informal literary discussion group The Inklings. \nHe was appointed a Commander of the Order of the British Empire by Queen Elizabeth II on 28 March 1972.\n'''",
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 587
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "text1=NER(raw_text)",
+    "start": {
+      "line": 25,
+      "column": 0
+    },
+    "end": {
+      "line": 25,
+      "column": 19
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forwordintext1.ents:     print(word.text,word.label_)\n\n",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 34,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "displacy.render",
+    "arguments": "(text1,style='ent',jupyter=True)",
+    "start": {
+      "line": 34,
+      "column": 0
+    },
+    "end": {
+      "line": 34,
+      "column": 48
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 42,
+      "column": 0
+    },
+    "end": {
+      "line": 42,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Assignment",
+    "body": "text=[\"You know the greatest lesson of history?\",\"It's that history is whatever the victors say it is.\",\"That's the lesson. Whoever wins, that's who decides the history.\"]",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 73
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df=pd.DataFrame(text,columns=['Sentence'])",
+    "start": {
+      "line": 48,
+      "column": 0
+    },
+    "end": {
+      "line": 48,
+      "column": 43
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df)",
+    "start": {
+      "line": 50,
+      "column": 0
+    },
+    "end": {
+      "line": 50,
+      "column": 9
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 12
+    },
+    "name": "spacy",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "nlp=spacy.load('en_core_web_sm')",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 59,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "token=[]",
+    "start": {
+      "line": 62,
+      "column": 0
+    },
+    "end": {
+      "line": 62,
+      "column": 8
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "pos=[]",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 63,
+      "column": 6
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forsentinnlp.pipe(df['Sentence']):     ifsent.has_annotation('DEP'):         token.append([word.textforwordinsent]) pos.append([word.pos_forwordinsent])\n\n\n",
+    "start": {
+      "line": 65,
+      "column": 0
+    },
+    "end": {
+      "line": 76,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df)",
+    "start": {
+      "line": 76,
+      "column": 0
+    },
+    "end": {
+      "line": 76,
+      "column": 9
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(token)",
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 82,
+      "column": 12
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(pos)",
+    "start": {
+      "line": 88,
+      "column": 0
+    },
+    "end": {
+      "line": 88,
+      "column": 10
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "nlp=spacy.load('en_core_web_sm')",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "sentence='I saw a kitten eating chicken in the kitchen.'",
+    "start": {
+      "line": 98,
+      "column": 0
+    },
+    "end": {
+      "line": 98,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc=nlp(sentence)",
+    "start": {
+      "line": 101,
+      "column": 0
+    },
+    "end": {
+      "line": 101,
+      "column": 17
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('{:<15}|{:<8}|{:<15}|{:<20}'.format('Token','Relation','Head','Children'))",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 80
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('-'*70)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 13
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "fortokenindoc:     print(\"{:<15} | {:<18} | {:<15} | {:<20}\".format(str(token.text),str(token.dep_),str(token.head.text),str([childforchildintoken.children])))\n\n",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "displacy.render",
+    "arguments": "(doc,style='dep',jupyter=True,options={'distance':120})",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 72
+    }
+  }
+]

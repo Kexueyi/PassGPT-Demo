@@ -1,0 +1,780 @@
+[
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb_df=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\IMDB\\IMDB Dataset.csv\")",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_positive=imdb_df[imdb_df['sentiment']=='positive'][:5000]",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_negative=imdb_df[imdb_df['sentiment']=='negative'][:5000]",
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb=pd.concat([df_positive,df_negative])",
+    "start": {
+      "line": 30,
+      "column": 0
+    },
+    "end": {
+      "line": 30,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('(<.*?>)',' ',x))",
+    "start": {
+      "line": 38,
+      "column": 0
+    },
+    "end": {
+      "line": 38,
+      "column": 74
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[,\\.!?:()\"]','',x))",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.strip())",
+    "start": {
+      "line": 42,
+      "column": 0
+    },
+    "end": {
+      "line": 42,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[^a-zA-Z\"]',' ',x))",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.lower())",
+    "start": {
+      "line": 46,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 55,
+      "column": 0
+    },
+    "end": {
+      "line": 55,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 74,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftagged_lemma(string):     pos_tagged=nltk.pos_tag(nltk.word_tokenize(string)) wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged)) lemmatized_sentence=[] forword,taginwordnet_tagged:         iftagisNone:             lemmatized_sentence.append(word)  else:             lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))   lemmatized_sentence=\" \".join(lemmatized_sentence) returnlemmatized_sentence\n\n",
+    "start": {
+      "line": 74,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(tagged_lemma)",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 49
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb.sentiment=imdb.sentiment.apply(lambdax:1ifx=='positive'else0)",
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 74
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "train_test_split",
+      "alias": null
+    },
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_set,test_set=train_test_split(imdb,test_size=0.25,random_state=42)",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 79
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "start": {
+      "line": 124,
+      "column": 0
+    },
+    "end": {
+      "line": 124,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 125,
+      "column": 0
+    },
+    "end": {
+      "line": 125,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Assignment",
+    "body": "reviews=training_set['review'].tolist()",
+    "start": {
+      "line": 134,
+      "column": 0
+    },
+    "end": {
+      "line": 134,
+      "column": 41
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "VOCAB_SIZE=1000",
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 140,
+      "column": 17
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "encoder=tf.keras.layers.experimental.preprocessing.TextVectorization(max_tokens=VOCAB_SIZE,output_mode='int',pad_to_max_tokens=True)",
+    "start": {
+      "line": 141,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "encoder.adapt",
+    "arguments": "(reviews)",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 22
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vocab=np.array(encoder.get_vocabulary())",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 42
+    }
+  },
+  null,
+  null,
+  {
+    "type": "Assignment",
+    "body": "encoded_example=encoder(training_set.review.iloc[3]).numpy()",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 62
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "lstm=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.LSTM(64),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 176,
+      "column": 0
+    },
+    "end": {
+      "line": 185,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lstm2=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.LSTM(64),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 187,
+      "column": 0
+    },
+    "end": {
+      "line": 197,
+      "column": 2
+    }
+  },
+  {
+    "type": "Import",
+    "from": "keras",
+    "import": {
+      "name": "callbacks",
+      "alias": null
+    },
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 27
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "earlystopping=callbacks.EarlyStopping(monitor=\"accuracy\",mode=\"max\",patience=5,restore_best_weights=True)",
+    "start": {
+      "line": 205,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 68
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "lstm.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(clipvalue=0.5),metrics=['accuracy'])",
+    "start": {
+      "line": 214,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "lstm2.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4,clipvalue=0.5),metrics=['accuracy'])",
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 220,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyLSTM=lstm.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),learning_rate=0.001,batch_size=32,validation_steps=30",
+    "start": {
+      "line": 226,
+      "column": 0
+    },
+    "end": {
+      "line": 230,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "callbacks=[earlystopping]",
+    "start": {
+      "line": 231,
+      "column": 20
+    },
+    "end": {
+      "line": 231,
+      "column": 45
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyLSTM2=lstm2.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),batch_size=64,validation_steps=30)",
+    "start": {
+      "line": 237,
+      "column": 0
+    },
+    "end": {
+      "line": 240,
+      "column": 40
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "StratifiedKFold",
+      "alias": null
+    },
+    "start": {
+      "line": 246,
+      "column": 0
+    },
+    "end": {
+      "line": 246,
+      "column": 51
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": {
+      "name": "accuracy_score",
+      "alias": null
+    },
+    "start": {
+      "line": 247,
+      "column": 0
+    },
+    "end": {
+      "line": 247,
+      "column": 42
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_folds=5",
+    "start": {
+      "line": 254,
+      "column": 0
+    },
+    "end": {
+      "line": 254,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "seed=42",
+    "start": {
+      "line": 255,
+      "column": 0
+    },
+    "end": {
+      "line": 255,
+      "column": 9
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "kf=StratifiedKFold(n_splits=num_folds,shuffle=True,random_state=seed)",
+    "start": {
+      "line": 258,
+      "column": 0
+    },
+    "end": {
+      "line": 258,
+      "column": 73
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "cv_scores=[]",
+    "start": {
+      "line": 261,
+      "column": 0
+    },
+    "end": {
+      "line": 261,
+      "column": 14
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "X=training_set['review'].values",
+    "start": {
+      "line": 267,
+      "column": 0
+    },
+    "end": {
+      "line": 267,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y=training_set['sentiment'].values",
+    "start": {
+      "line": 268,
+      "column": 0
+    },
+    "end": {
+      "line": 268,
+      "column": 34
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "fortrain_index,test_indexinkf.split(X,y):     X_train,X_val=X[train_index],X[test_index] y_train,y_val=y[train_index],y[test_index] lstm.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy']) lstm.fit(X_train,y_train,epochs=10,validation_data=(X_val,y_val),batch_size=32,verbose=0) y_pred=(lstm.predict(X_val)>0.5).astype(\"int32\") acc=accuracy_score(y_val,y_pred) cv_scores.append(acc)\n\n",
+    "start": {
+      "line": 269,
+      "column": 0
+    },
+    "end": {
+      "line": 290,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 290,
+      "column": 0
+    },
+    "end": {
+      "line": 290,
+      "column": 17
+    },
+    "name": "statistics",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "statistics.mean",
+    "arguments": "(cv_scores)",
+    "start": {
+      "line": 291,
+      "column": 0
+    },
+    "end": {
+      "line": 291,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 297,
+      "column": 0
+    },
+    "end": {
+      "line": 297,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defplot_graphs(history,metric):   plt.plot(history.history[metric]) plt.plot(history.history['val_'+metric],'') plt.xlabel(\"Epochs\") plt.ylabel(metric) plt.legend([metric,'val_'+metric])\n\n",
+    "start": {
+      "line": 300,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyLSTM,\"accuracy\")",
+    "start": {
+      "line": 311,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 36
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyLSTM2,\"accuracy\")",
+    "start": {
+      "line": 317,
+      "column": 0
+    },
+    "end": {
+      "line": 317,
+      "column": 37
+    }
+  }
+]

@@ -1,0 +1,1586 @@
+[
+  {
+    "type": "Import",
+    "start": {
+      "line": 7,
+      "column": 0
+    },
+    "end": {
+      "line": 7,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 8,
+      "column": 0
+    },
+    "end": {
+      "line": 8,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data1=\"I'm designing a document and don't want to get bogged down in what the text actually says\"",
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 99
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data2=\"I'm creating a template for various paragraph styles and need to see what they will look like.\"",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 104
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data3=\"I'm trying to learn more about some features of Microsoft Word and don't want to practice on a real document\"",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 118
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df1=pd.DataFrame({'First_Para':[data1],'Second_Para':[data2],'Third_Para':[data3]})",
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 87
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vectorizer=TfidfVectorizer()",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 30
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_vec=vectorizer.fit_transform(df1.iloc[0])",
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 47
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df2=pd.DataFrame(doc_vec.toarray().transpose(),index=vectorizer.get_feature_names_out())",
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 90
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df2.columns=df1.columns",
+    "start": {
+      "line": 20,
+      "column": 0
+    },
+    "end": {
+      "line": 20,
+      "column": 25
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df2)",
+    "start": {
+      "line": 21,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 10
+    }
+  },
+  {
+    "type": "Import",
+    "from": "rank_bm25",
+    "import": {
+      "name": "BM25Okapi",
+      "alias": null
+    },
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "corpus=[\"I will take the ring, though I do not know the way.\",\"I will help you bear this burden, Frodo Baggins, as long as it is yours to bear\",\"If by my life or death I can protect you, I will.\"]",
+    "start": {
+      "line": 31,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_corpus=[doc.split(\" \")fordocincorpus]",
+    "start": {
+      "line": 37,
+      "column": 0
+    },
+    "end": {
+      "line": 37,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "bm25=BM25Okapi(tokenized_corpus)",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "query=\"I will take\"",
+    "start": {
+      "line": 45,
+      "column": 0
+    },
+    "end": {
+      "line": 45,
+      "column": 19
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_query=query.split(\" \")",
+    "start": {
+      "line": 46,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_scores=bm25.get_scores(tokenized_query)",
+    "start": {
+      "line": 47,
+      "column": 0
+    },
+    "end": {
+      "line": 47,
+      "column": 45
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(doc_scores)",
+    "start": {
+      "line": 48,
+      "column": 0
+    },
+    "end": {
+      "line": 48,
+      "column": 17
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\archive\\Corona_NLP_train.csv\",encoding='latin-1')",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 59,
+      "column": 108
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 61,
+      "column": 0
+    },
+    "end": {
+      "line": 61,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=tweets.drop(columns=['\u00ef\u00bb\u00bfUserName','ScreenName','Location','TweetAt','Sentiment'],axis=1).sample(100)",
+    "start": {
+      "line": 68,
+      "column": 0
+    },
+    "end": {
+      "line": 68,
+      "column": 113
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 70,
+      "column": 0
+    },
+    "end": {
+      "line": 70,
+      "column": 13
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 77,
+      "column": 0
+    },
+    "end": {
+      "line": 77,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets['OriginalTweet_processed']=tweets['OriginalTweet'].map(lambdax:re.sub('[@#,\\.!?]','',x))",
+    "start": {
+      "line": 79,
+      "column": 0
+    },
+    "end": {
+      "line": 80,
+      "column": 65
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets['OriginalTweet_processed']=tweets['OriginalTweet_processed'].map(lambdax:x.lower())",
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 83,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets['OriginalTweet_processed'].head",
+    "arguments": "()",
+    "start": {
+      "line": 85,
+      "column": 0
+    },
+    "end": {
+      "line": 85,
+      "column": 40
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 91,
+      "column": 0
+    },
+    "end": {
+      "line": 91,
+      "column": 13
+    },
+    "name": "gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim.utils",
+    "import": {
+      "name": "simple_preprocess",
+      "alias": null
+    },
+    "start": {
+      "line": 92,
+      "column": 0
+    },
+    "end": {
+      "line": 92,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 93,
+      "column": 0
+    },
+    "end": {
+      "line": 93,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 95,
+      "column": 0
+    },
+    "end": {
+      "line": 95,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 97,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsent_to_words(sentences):     forsentenceinsentences:         yield(gensim.utils.simple_preprocess(str(sentence),deacc=True))\n\n\n",
+    "start": {
+      "line": 98,
+      "column": 0
+    },
+    "end": {
+      "line": 102,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defremove_stopwords(texts):     return[[wordforwordinsimple_preprocess(str(doc))ifwordnotinstop_words]fordocintexts]\n\n",
+    "start": {
+      "line": 102,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data=tweets.OriginalTweet_processed.values.tolist()",
+    "start": {
+      "line": 105,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=list(sent_to_words(data))",
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=remove_stopwords(data_words)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 41
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(data_words[:1][0][:30])",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 109,
+      "column": 29
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 115,
+      "column": 0
+    },
+    "end": {
+      "line": 115,
+      "column": 32
+    },
+    "name": "gensim.corpora",
+    "alias": "corpora"
+  },
+  {
+    "type": "Assignment",
+    "body": "id2word=corpora.Dictionary(data_words)",
+    "start": {
+      "line": 117,
+      "column": 0
+    },
+    "end": {
+      "line": 117,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "texts=data_words",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 18
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "corpus=[id2word.doc2bow(text)fortextintexts]",
+    "start": {
+      "line": 121,
+      "column": 0
+    },
+    "end": {
+      "line": 121,
+      "column": 50
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(corpus[:1][0][:30])",
+    "start": {
+      "line": 123,
+      "column": 0
+    },
+    "end": {
+      "line": 123,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "from": "pprint",
+    "import": {
+      "name": "pprint",
+      "alias": null
+    },
+    "start": {
+      "line": 129,
+      "column": 0
+    },
+    "end": {
+      "line": 129,
+      "column": 25
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_topics=7",
+    "start": {
+      "line": 131,
+      "column": 0
+    },
+    "end": {
+      "line": 131,
+      "column": 14
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lda_model=gensim.models.LdaMulticore(corpus=corpus,id2word=id2word,num_topics=num_topics)",
+    "start": {
+      "line": 133,
+      "column": 0
+    },
+    "end": {
+      "line": 135,
+      "column": 61
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "pprint",
+    "arguments": "(lda_model.print_topics())",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 137,
+      "column": 32
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_lda=lda_model[corpus]",
+    "start": {
+      "line": 138,
+      "column": 0
+    },
+    "end": {
+      "line": 138,
+      "column": 27
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 144,
+      "column": 0
+    },
+    "end": {
+      "line": 144,
+      "column": 22
+    },
+    "name": "pyLDAvis.gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 145,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 13
+    },
+    "name": "pickle",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 15
+    },
+    "name": "pyLDAvis",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "pyLDAvis.enable_notebook",
+    "arguments": "()",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 149,
+      "column": 26
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "LDAvis_data_filepath=os.path.join('./results/ldavis_prepared_'+str(num_topics))",
+    "start": {
+      "line": 150,
+      "column": 0
+    },
+    "end": {
+      "line": 150,
+      "column": 81
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "LDAvis_prepared=pyLDAvis.gensim.prepare(lda_model,corpus,id2word)",
+    "start": {
+      "line": 151,
+      "column": 0
+    },
+    "end": {
+      "line": 151,
+      "column": 69
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "start": {
+      "line": 161,
+      "column": 0
+    },
+    "end": {
+      "line": 161,
+      "column": 14
+    },
+    "name": "os.path",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim",
+    "import": {
+      "name": "corpora",
+      "alias": null
+    },
+    "start": {
+      "line": 162,
+      "column": 0
+    },
+    "end": {
+      "line": 162,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "gensim.models",
+    "import": {
+      "name": "LsiModel",
+      "alias": null
+    },
+    "start": {
+      "line": 163,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 34
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "RegexpTokenizer",
+      "alias": null
+    },
+    "start": {
+      "line": 164,
+      "column": 0
+    },
+    "end": {
+      "line": 164,
+      "column": 41
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 165,
+      "column": 0
+    },
+    "end": {
+      "line": 165,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem.porter",
+    "import": {
+      "name": "PorterStemmer",
+      "alias": null
+    },
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "from": "gensim.models.coherencemodel",
+    "import": {
+      "name": "CoherenceModel",
+      "alias": null
+    },
+    "start": {
+      "line": 167,
+      "column": 0
+    },
+    "end": {
+      "line": 167,
+      "column": 55
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 168,
+      "column": 0
+    },
+    "end": {
+      "line": 168,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 174,
+      "column": 0
+    },
+    "end": {
+      "line": 174,
+      "column": 13
+    },
+    "name": "gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim.utils",
+    "import": {
+      "name": "simple_preprocess",
+      "alias": null
+    },
+    "start": {
+      "line": 175,
+      "column": 0
+    },
+    "end": {
+      "line": 175,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 176,
+      "column": 0
+    },
+    "end": {
+      "line": 176,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 177,
+      "column": 0
+    },
+    "end": {
+      "line": 177,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 179,
+      "column": 0
+    },
+    "end": {
+      "line": 179,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 180,
+      "column": 0
+    },
+    "end": {
+      "line": 180,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsent_to_words(sentences):     forsentenceinsentences:         yield(gensim.utils.simple_preprocess(str(sentence),deacc=True))\n\n\n",
+    "start": {
+      "line": 181,
+      "column": 0
+    },
+    "end": {
+      "line": 185,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defremove_stopwords(texts):     return[[wordforwordinsimple_preprocess(str(doc))ifwordnotinstop_words]fordocintexts]\n\n",
+    "start": {
+      "line": 185,
+      "column": 0
+    },
+    "end": {
+      "line": 188,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defstem_words(texts):     return[[p_stemmer.stem(word)forwordinsimple_preprocess(str(doc))]fordocintexts]\n\n",
+    "start": {
+      "line": 188,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data=tweets.OriginalTweet_processed.values.tolist()",
+    "start": {
+      "line": 192,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=list(sent_to_words(data))",
+    "start": {
+      "line": 193,
+      "column": 0
+    },
+    "end": {
+      "line": 193,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=remove_stopwords(data_words)",
+    "start": {
+      "line": 195,
+      "column": 0
+    },
+    "end": {
+      "line": 195,
+      "column": 41
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(data_words[:1][0][:30])",
+    "start": {
+      "line": 196,
+      "column": 0
+    },
+    "end": {
+      "line": 196,
+      "column": 29
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_term_matrix=[id2word.doc2bow(twt)fortwtindata_words]",
+    "start": {
+      "line": 202,
+      "column": 0
+    },
+    "end": {
+      "line": 202,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lsa_model=LsiModel(doc_term_matrix,num_topics=num_topics,id2word=id2word)",
+    "start": {
+      "line": 208,
+      "column": 0
+    },
+    "end": {
+      "line": 208,
+      "column": 79
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(lsa_model.print_topics(num_topics=num_topics,num_words=10))",
+    "start": {
+      "line": 209,
+      "column": 0
+    },
+    "end": {
+      "line": 209,
+      "column": 66
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 217,
+      "column": 0
+    },
+    "end": {
+      "line": 217,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "NMF",
+      "alias": null
+    },
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 218,
+      "column": 37
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 219,
+      "column": 0
+    },
+    "end": {
+      "line": 219,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\archive\\Corona_NLP_train.csv\",encoding='latin-1')",
+    "start": {
+      "line": 221,
+      "column": 0
+    },
+    "end": {
+      "line": 221,
+      "column": 108
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 223,
+      "column": 0
+    },
+    "end": {
+      "line": 223,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=tweets.drop(columns=['\u00ef\u00bb\u00bfUserName','ScreenName','Location','TweetAt','Sentiment'],axis=1).sample(100)",
+    "start": {
+      "line": 230,
+      "column": 0
+    },
+    "end": {
+      "line": 230,
+      "column": 113
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 232,
+      "column": 0
+    },
+    "end": {
+      "line": 232,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(min_df=10,stop_words=stop_words)",
+    "start": {
+      "line": 239,
+      "column": 0
+    },
+    "end": {
+      "line": 239,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "X=vect.fit_transform(tweets.OriginalTweet)",
+    "start": {
+      "line": 242,
+      "column": 0
+    },
+    "end": {
+      "line": 242,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model=NMF(n_components=10,random_state=5)",
+    "start": {
+      "line": 250,
+      "column": 0
+    },
+    "end": {
+      "line": 250,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "model.fit",
+    "arguments": "(X)",
+    "start": {
+      "line": 253,
+      "column": 0
+    },
+    "end": {
+      "line": 253,
+      "column": 12
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "nmf_features=model.transform(X)",
+    "start": {
+      "line": 256,
+      "column": 0
+    },
+    "end": {
+      "line": 256,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "components_df=pd.DataFrame(model.components_,columns=vect.get_feature_names_out())",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 85
+    }
+  },
+  null,
+  {
+    "type": "For Loop Statement",
+    "body": "fortopicinrange(components_df.shape[0]):     tmp=components_df.iloc[topic] print(f'For topic {topic+1} the words with the highest value are:') print(tmp.nlargest(10)) print('\\n')\n\n",
+    "start": {
+      "line": 269,
+      "column": 0
+    },
+    "end": {
+      "line": 281,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 281,
+      "column": 0
+    },
+    "end": {
+      "line": 281,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 282,
+      "column": 0
+    },
+    "end": {
+      "line": 282,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 283,
+      "column": 0
+    },
+    "end": {
+      "line": 283,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 284,
+      "column": 0
+    },
+    "end": {
+      "line": 284,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 285,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 286,
+      "column": 0
+    },
+    "end": {
+      "line": 286,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(stop_words=stop_words)",
+    "start": {
+      "line": 292,
+      "column": 0
+    },
+    "end": {
+      "line": 292,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=vect.fit_transform(tweets.OriginalTweet)",
+    "start": {
+      "line": 293,
+      "column": 0
+    },
+    "end": {
+      "line": 293,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tf_idf_vect=pd.DataFrame(x.toarray().transpose(),index=vect.get_feature_names_out())",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 86
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "PCA",
+      "alias": null
+    },
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 37
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "pca=PCA(n_components=50)",
+    "start": {
+      "line": 307,
+      "column": 0
+    },
+    "end": {
+      "line": 307,
+      "column": 26
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "pca.fit_transform",
+    "arguments": "(tf_idf_vect)",
+    "start": {
+      "line": 308,
+      "column": 0
+    },
+    "end": {
+      "line": 308,
+      "column": 30
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(pca.components_)",
+    "start": {
+      "line": 314,
+      "column": 0
+    },
+    "end": {
+      "line": 314,
+      "column": 22
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 322,
+      "column": 0
+    },
+    "end": {
+      "line": 322,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(stop_words=stop_words,smooth_idf=True)",
+    "start": {
+      "line": 328,
+      "column": 0
+    },
+    "end": {
+      "line": 328,
+      "column": 61
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=vect.fit_transform(tweets.OriginalTweet).todense()",
+    "start": {
+      "line": 329,
+      "column": 0
+    },
+    "end": {
+      "line": 329,
+      "column": 54
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=np.asarray(x)",
+    "start": {
+      "line": 330,
+      "column": 0
+    },
+    "end": {
+      "line": 330,
+      "column": 17
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "TruncatedSVD",
+      "alias": null
+    },
+    "start": {
+      "line": 336,
+      "column": 0
+    },
+    "end": {
+      "line": 336,
+      "column": 46
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "svd_modeling=TruncatedSVD(n_components=4,algorithm='randomized',n_iter=100,random_state=122)",
+    "start": {
+      "line": 337,
+      "column": 0
+    },
+    "end": {
+      "line": 337,
+      "column": 97
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "svd_modeling.fit",
+    "arguments": "(x)",
+    "start": {
+      "line": 338,
+      "column": 0
+    },
+    "end": {
+      "line": 338,
+      "column": 19
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "components=svd_modeling.components_",
+    "start": {
+      "line": 339,
+      "column": 0
+    },
+    "end": {
+      "line": 339,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vocab=vect.get_feature_names_out()",
+    "start": {
+      "line": 340,
+      "column": 0
+    },
+    "end": {
+      "line": 340,
+      "column": 36
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "topic_word_list=[]",
+    "start": {
+      "line": 346,
+      "column": 0
+    },
+    "end": {
+      "line": 346,
+      "column": 20
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defget_topics(components):     fori,compinenumerate(components):         terms_comp=zip(vocab,comp) sorted_terms=sorted(terms_comp,key=lambdax:x[1],reverse=True)[:7] topic=\" \" fortinsorted_terms:             topic=topic+' '+t[0]  topic_word_list.append(topic) print(topic_word_list)  returntopic_word_list\n\n",
+    "start": {
+      "line": 347,
+      "column": 0
+    },
+    "end": {
+      "line": 357,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "get_topics",
+    "arguments": "(components)",
+    "start": {
+      "line": 357,
+      "column": 0
+    },
+    "end": {
+      "line": 357,
+      "column": 22
+    }
+  }
+]

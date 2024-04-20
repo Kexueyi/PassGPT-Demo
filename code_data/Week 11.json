@@ -1,0 +1,489 @@
+[
+  {
+    "type": "Import",
+    "from": "openai",
+    "import": {
+      "name": "OpenAI",
+      "alias": null
+    },
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "scipy.spatial.distance",
+    "import": {
+      "name": "cosine",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 41
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "api_key=\"\"",
+    "start": {
+      "line": 26,
+      "column": 0
+    },
+    "end": {
+      "line": 26,
+      "column": 11
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "client=OpenAI(api_key=api_key)",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 34
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defget_embedding(text,model=\"text-embedding-ada-002\"):    text=text.replace(\"\\n\",\" \") returnclient.embeddings.create(input=[text],model=model).data[0].embedding\n\n",
+    "start": {
+      "line": 32,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcosine_similarity(x,y):     return1-cosine(x,y)\n\n",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 49,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data=[{\"prod_id\":1,\"prod\":\"moisturizer\",\"brand\":\"Aveeno\",\"description\":\"for dry skin\"},{\"prod_id\":2,\"prod\":\"foundation\",\"brand\":\"Maybelline\",\"description\":\"medium coverage\"},{\"prod_id\":3,\"prod\":\"moisturizer\",\"brand\":\"CeraVe\",\"description\":\"for dry skin\"},{\"prod_id\":4,\"prod\":\"nail polish\",\"brand\":\"OPI\",\"description\":\"raspberry red\"},{\"prod_id\":5,\"prod\":\"concealer\",\"brand\":\"chanel\",\"description\":\"medium coverage\"},{\"prod_id\":6,\"prod\":\"moisturizer\",\"brand\":\"Ole Henkrisen\",\"description\":\"for oily skin\"},{\"prod_id\":7,\"prod\":\"moisturizer\",\"brand\":\"CeraVe\",\"description\":\"for normal to dry skin\"},{\"prod_id\":8,\"prod\":\"moisturizer\",\"brand\":\"First Aid Beauty\",\"description\":\"for dry skin\"},{\"prod_id\":9,\"prod\":\"makeup sponge\",\"brand\":\"Sephora\",\"description\":\"super-soft, exclusive, latex-free foam\"}]",
+    "start": {
+      "line": 49,
+      "column": 0
+    },
+    "end": {
+      "line": 101,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data_df=pd.DataFrame(product_data)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['combined']=product_data_df.apply(lambdarow:f\"{row['brand']}, {row['prod']}, {row['description']}\",axis=1)",
+    "start": {
+      "line": 118,
+      "column": 0
+    },
+    "end": {
+      "line": 118,
+      "column": 127
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['text_embedding']=product_data_df.combined.apply(lambdax:get_embedding(x))",
+    "start": {
+      "line": 126,
+      "column": 0
+    },
+    "end": {
+      "line": 126,
+      "column": 94
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_data=[{\"prod_id\":1,\"prod\":\"moisturizer\",\"brand\":\"Aveeno\",\"description\":\"for dry skin\"},{\"prod_id\":2,\"prod\":\"foundation\",\"brand\":\"Maybelline\",\"description\":\"medium coverage\"},{\"prod_id\":4,\"prod\":\"nail polish\",\"brand\":\"OPI\",\"description\":\"raspberry red\"},{\"prod_id\":5,\"prod\":\"concealer\",\"brand\":\"chanel\",\"description\":\"medium coverage\"},{\"prod_id\":9,\"prod\":\"makeup sponge\",\"brand\":\"Sephora\",\"description\":\"super-soft, exclusive, latex-free foam\"}]",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df=pd.DataFrame(customer_order_data)",
+    "start": {
+      "line": 170,
+      "column": 0
+    },
+    "end": {
+      "line": 170,
+      "column": 53
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['combined']=customer_order_df.apply(lambdarow:f\"{row['brand']}, {row['prod']}, {row['description']}\",axis=1)",
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 131
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['text_embedding']=customer_order_df.combined.apply(lambdax:get_embedding(x))",
+    "start": {
+      "line": 186,
+      "column": 0
+    },
+    "end": {
+      "line": 186,
+      "column": 98
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_input=\"Hi! Can you recommend a good moisturizer for me?\"",
+    "start": {
+      "line": 196,
+      "column": 0
+    },
+    "end": {
+      "line": 196,
+      "column": 67
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "response=client.embeddings.create(input=customer_input,model=\"text-embedding-ada-002\")",
+    "start": {
+      "line": 203,
+      "column": 0
+    },
+    "end": {
+      "line": 206,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "embeddings_customer_question=response.data[0].embedding",
+    "start": {
+      "line": 207,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['search_purchase_history']=customer_order_df.text_embedding.apply(lambdax:cosine_similarity(x,embeddings_customer_question))",
+    "start": {
+      "line": 216,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 147
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df=customer_order_df.sort_values('search_purchase_history',ascending=False)",
+    "start": {
+      "line": 217,
+      "column": 0
+    },
+    "end": {
+      "line": 217,
+      "column": 93
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "top_3_purchases_df=customer_order_df.head(3)",
+    "start": {
+      "line": 225,
+      "column": 0
+    },
+    "end": {
+      "line": 225,
+      "column": 46
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['search_products']=product_data_df.text_embedding.apply(lambdax:cosine_similarity(x,embeddings_customer_question))",
+    "start": {
+      "line": 233,
+      "column": 0
+    },
+    "end": {
+      "line": 233,
+      "column": 135
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data_df=product_data_df.sort_values('search_products',ascending=False)",
+    "start": {
+      "line": 234,
+      "column": 0
+    },
+    "end": {
+      "line": 234,
+      "column": 81
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "top_3_products_df=product_data_df.head(3)",
+    "start": {
+      "line": 242,
+      "column": 0
+    },
+    "end": {
+      "line": 242,
+      "column": 43
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "message_objects=[]",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 20
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"system\",\"content\":\"You're a chatbot helping customers with beauty-related questions and helping them with product recommendations\"})",
+    "start": {
+      "line": 263,
+      "column": 0
+    },
+    "end": {
+      "line": 263,
+      "column": 165
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":customer_input})",
+    "start": {
+      "line": 270,
+      "column": 0
+    },
+    "end": {
+      "line": 270,
+      "column": 66
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "prev_purchases=\". \".join([f\"{row['combined']}\"forindex,rowintop_3_purchases_df.iterrows()])",
+    "start": {
+      "line": 277,
+      "column": 0
+    },
+    "end": {
+      "line": 277,
+      "column": 98
+    }
+  },
+  null,
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":f\"Here're my latest product orders: {prev_purchases}\"})",
+    "start": {
+      "line": 285,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 105
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":f\"Please give me a detailed explanation of your recommendations\"})",
+    "start": {
+      "line": 286,
+      "column": 0
+    },
+    "end": {
+      "line": 286,
+      "column": 116
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":\"Please be friendly and talk to me like a person, don't just give me a list of recommendations\"})",
+    "start": {
+      "line": 287,
+      "column": 0
+    },
+    "end": {
+      "line": 287,
+      "column": 147
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "products_list=[]",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 18
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forindex,rowintop_3_products_df.iterrows():     brand_dict={'role':\"assistant\",\"content\":f\"{row['combined']}\"} products_list.append(brand_dict)\n\n",
+    "start": {
+      "line": 296,
+      "column": 0
+    },
+    "end": {
+      "line": 299,
+      "column": 1
+    }
+  },
+  null,
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"assistant\",\"content\":f\"I found these 3 products I would recommend\"})",
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 103
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.extend",
+    "arguments": "(products_list)",
+    "start": {
+      "line": 307,
+      "column": 0
+    },
+    "end": {
+      "line": 307,
+      "column": 37
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"assistant\",\"content\":\"Here's my summarized recommendation of products, and why it would suit you:\"})",
+    "start": {
+      "line": 308,
+      "column": 0
+    },
+    "end": {
+      "line": 308,
+      "column": 134
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "completion=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=message_objects)",
+    "start": {
+      "line": 318,
+      "column": 0
+    },
+    "end": {
+      "line": 321,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(completion.choices[0].message.content)",
+    "start": {
+      "line": 322,
+      "column": 0
+    },
+    "end": {
+      "line": 322,
+      "column": 44
+    }
+  }
+]
