@@ -1,0 +1,8633 @@
+[
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "string='Harper is a good girl.'",
+    "start": {
+      "line": 21,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "re.sub",
+    "arguments": "('..g.*d','the goodest',string)",
+    "start": {
+      "line": 25,
+      "column": 0
+    },
+    "end": {
+      "line": 25,
+      "column": 37
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string='''\nOne ring to rule them all,\nOne ring to find them, One ring to bring them all,\nand in the darkness, bind them.\n'''",
+    "start": {
+      "line": 33,
+      "column": 0
+    },
+    "end": {
+      "line": 33,
+      "column": 124
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string=re.sub('(<.*?>)',' ',string)",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 37
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string=re.sub('[,\\.!?:()\"]','',string)",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string=re.sub('[^a-zA-Z\"]',' ',string)",
+    "start": {
+      "line": 41,
+      "column": 0
+    },
+    "end": {
+      "line": 41,
+      "column": 38
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(string)",
+    "start": {
+      "line": 43,
+      "column": 0
+    },
+    "end": {
+      "line": 43,
+      "column": 13
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "words=word_tokenize(string)",
+    "start": {
+      "line": 55,
+      "column": 0
+    },
+    "end": {
+      "line": 55,
+      "column": 27
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(words)",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 12
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 64,
+      "column": 0
+    },
+    "end": {
+      "line": 64,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('punkt')",
+    "start": {
+      "line": 65,
+      "column": 0
+    },
+    "end": {
+      "line": 65,
+      "column": 22
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "PorterStemmer",
+      "alias": null
+    },
+    "start": {
+      "line": 66,
+      "column": 0
+    },
+    "end": {
+      "line": 66,
+      "column": 35
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 67,
+      "column": 0
+    },
+    "end": {
+      "line": 67,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "functools",
+    "import": {
+      "name": "reduce",
+      "alias": null
+    },
+    "start": {
+      "line": 68,
+      "column": 0
+    },
+    "end": {
+      "line": 68,
+      "column": 28
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "ps=PorterStemmer()",
+    "start": {
+      "line": 74,
+      "column": 0
+    },
+    "end": {
+      "line": 74,
+      "column": 18
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string='''\nFrom the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.\n\u201cAfter all this time?\u201d\n\u201cAlways,\u201d said Snape.\n'''",
+    "start": {
+      "line": 76,
+      "column": 0
+    },
+    "end": {
+      "line": 76,
+      "column": 321
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "words=word_tokenize(string)",
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 82,
+      "column": 27
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stemmed_string=reduce(lambdax,y:x+\" \"+ps.stem(y),words,\"\")",
+    "start": {
+      "line": 83,
+      "column": 0
+    },
+    "end": {
+      "line": 83,
+      "column": 66
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(stemmed_string)",
+    "start": {
+      "line": 84,
+      "column": 0
+    },
+    "end": {
+      "line": 84,
+      "column": 21
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 95,
+      "column": 0
+    },
+    "end": {
+      "line": 95,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 97,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 98,
+      "column": 0
+    },
+    "end": {
+      "line": 98,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 99,
+      "column": 0
+    },
+    "end": {
+      "line": 99,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 122,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "string='''\nFrom the tip of his wand burst the silver doe. \nShe landed on the office floor, bounded once across the office, and soared out of the window. \nDumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.\n\u201cAfter all this time?\u201d\n\u201cAlways,\u201d said Snape.\u201d\n'''",
+    "start": {
+      "line": 122,
+      "column": 0
+    },
+    "end": {
+      "line": 122,
+      "column": 326
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "pos_tagged=nltk.pos_tag(nltk.word_tokenize(string))",
+    "start": {
+      "line": 129,
+      "column": 0
+    },
+    "end": {
+      "line": 129,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged))",
+    "start": {
+      "line": 131,
+      "column": 0
+    },
+    "end": {
+      "line": 131,
+      "column": 74
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(wordnet_tagged)",
+    "start": {
+      "line": 132,
+      "column": 0
+    },
+    "end": {
+      "line": 132,
+      "column": 21
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatized_sentence=[]",
+    "start": {
+      "line": 138,
+      "column": 0
+    },
+    "end": {
+      "line": 138,
+      "column": 24
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forword,taginwordnet_tagged:     iftagisNone:         lemmatized_sentence.append(word)  else:         lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))\n\n\n",
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatized_sentence=\" \".join(lemmatized_sentence)",
+    "start": {
+      "line": 145,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 51
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(lemmatized_sentence)",
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 155,
+      "column": 0
+    },
+    "end": {
+      "line": 155,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 156,
+      "column": 0
+    },
+    "end": {
+      "line": 156,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 157,
+      "column": 0
+    },
+    "end": {
+      "line": 157,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 158,
+      "column": 0
+    },
+    "end": {
+      "line": 158,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=set(stopwords.words('english'))",
+    "start": {
+      "line": 159,
+      "column": 0
+    },
+    "end": {
+      "line": 159,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "text='''\nNever gonna run around and desert you.\n'''",
+    "start": {
+      "line": 161,
+      "column": 0
+    },
+    "end": {
+      "line": 161,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "dataset=nltk.word_tokenize(text)",
+    "start": {
+      "line": 165,
+      "column": 0
+    },
+    "end": {
+      "line": 165,
+      "column": 33
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "foriinrange(len(dataset)):     dataset[i]=dataset[i].lower() dataset[i]=re.sub(r'\\W',' ',dataset[i]) dataset[i]=re.sub(r'\\s+',' ',dataset[i])\n\n",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 170,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "filtered_sentence=[wforwindatasetifnotw.lower()instop_words]",
+    "start": {
+      "line": 170,
+      "column": 0
+    },
+    "end": {
+      "line": 170,
+      "column": 71
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(filtered_sentence)",
+    "start": {
+      "line": 171,
+      "column": 0
+    },
+    "end": {
+      "line": 171,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 12
+    },
+    "name": "spacy",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "spacy",
+    "import": {
+      "name": "displacy",
+      "alias": null
+    },
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 26
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "NER=spacy.load(\"en_core_web_sm\")",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 32
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "raw_text='''\nFrom 1925 to 1945, Tolkien was the Rawlinson and Bosworth Professor of Anglo-Saxon and a Fellow of Pembroke College, both at the University of Oxford. \nHe then moved within the same university to become the Merton Professor of English Language and Literature and Fellow of Merton College, and held these positions from 1945 until his retirement in 1959. \nTolkien was a close friend of C. S. Lewis, a co-member of the informal literary discussion group The Inklings. \nHe was appointed a Commander of the Order of the British Empire by Queen Elizabeth II on 28 March 1972.\n'''",
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 587
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "text1=NER(raw_text)",
+    "start": {
+      "line": 25,
+      "column": 0
+    },
+    "end": {
+      "line": 25,
+      "column": 19
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forwordintext1.ents:     print(word.text,word.label_)\n\n",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 34,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "displacy.render",
+    "arguments": "(text1,style='ent',jupyter=True)",
+    "start": {
+      "line": 34,
+      "column": 0
+    },
+    "end": {
+      "line": 34,
+      "column": 48
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 42,
+      "column": 0
+    },
+    "end": {
+      "line": 42,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Assignment",
+    "body": "text=[\"You know the greatest lesson of history?\",\"It's that history is whatever the victors say it is.\",\"That's the lesson. Whoever wins, that's who decides the history.\"]",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 73
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df=pd.DataFrame(text,columns=['Sentence'])",
+    "start": {
+      "line": 48,
+      "column": 0
+    },
+    "end": {
+      "line": 48,
+      "column": 43
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df)",
+    "start": {
+      "line": 50,
+      "column": 0
+    },
+    "end": {
+      "line": 50,
+      "column": 9
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 12
+    },
+    "name": "spacy",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "nlp=spacy.load('en_core_web_sm')",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 59,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "token=[]",
+    "start": {
+      "line": 62,
+      "column": 0
+    },
+    "end": {
+      "line": 62,
+      "column": 8
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "pos=[]",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 63,
+      "column": 6
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forsentinnlp.pipe(df['Sentence']):     ifsent.has_annotation('DEP'):         token.append([word.textforwordinsent]) pos.append([word.pos_forwordinsent])\n\n\n",
+    "start": {
+      "line": 65,
+      "column": 0
+    },
+    "end": {
+      "line": 76,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df)",
+    "start": {
+      "line": 76,
+      "column": 0
+    },
+    "end": {
+      "line": 76,
+      "column": 9
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(token)",
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 82,
+      "column": 12
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(pos)",
+    "start": {
+      "line": 88,
+      "column": 0
+    },
+    "end": {
+      "line": 88,
+      "column": 10
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "nlp=spacy.load('en_core_web_sm')",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "sentence='I saw a kitten eating chicken in the kitchen.'",
+    "start": {
+      "line": 98,
+      "column": 0
+    },
+    "end": {
+      "line": 98,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc=nlp(sentence)",
+    "start": {
+      "line": 101,
+      "column": 0
+    },
+    "end": {
+      "line": 101,
+      "column": 17
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('{:<15}|{:<8}|{:<15}|{:<20}'.format('Token','Relation','Head','Children'))",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 80
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('-'*70)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 13
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "fortokenindoc:     print(\"{:<15} | {:<18} | {:<15} | {:<20}\".format(str(token.text),str(token.dep_),str(token.head.text),str([childforchildintoken.children])))\n\n",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "displacy.render",
+    "arguments": "(doc,style='dep',jupyter=True,options={'distance':120})",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 72
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 7,
+      "column": 0
+    },
+    "end": {
+      "line": 7,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 8,
+      "column": 0
+    },
+    "end": {
+      "line": 8,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data1=\"I'm designing a document and don't want to get bogged down in what the text actually says\"",
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 99
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data2=\"I'm creating a template for various paragraph styles and need to see what they will look like.\"",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 104
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data3=\"I'm trying to learn more about some features of Microsoft Word and don't want to practice on a real document\"",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 118
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df1=pd.DataFrame({'First_Para':[data1],'Second_Para':[data2],'Third_Para':[data3]})",
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 87
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vectorizer=TfidfVectorizer()",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 30
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_vec=vectorizer.fit_transform(df1.iloc[0])",
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 47
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df2=pd.DataFrame(doc_vec.toarray().transpose(),index=vectorizer.get_feature_names_out())",
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 90
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df2.columns=df1.columns",
+    "start": {
+      "line": 20,
+      "column": 0
+    },
+    "end": {
+      "line": 20,
+      "column": 25
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(df2)",
+    "start": {
+      "line": 21,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 10
+    }
+  },
+  {
+    "type": "Import",
+    "from": "rank_bm25",
+    "import": {
+      "name": "BM25Okapi",
+      "alias": null
+    },
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "corpus=[\"I will take the ring, though I do not know the way.\",\"I will help you bear this burden, Frodo Baggins, as long as it is yours to bear\",\"If by my life or death I can protect you, I will.\"]",
+    "start": {
+      "line": 31,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_corpus=[doc.split(\" \")fordocincorpus]",
+    "start": {
+      "line": 37,
+      "column": 0
+    },
+    "end": {
+      "line": 37,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "bm25=BM25Okapi(tokenized_corpus)",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "query=\"I will take\"",
+    "start": {
+      "line": 45,
+      "column": 0
+    },
+    "end": {
+      "line": 45,
+      "column": 19
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_query=query.split(\" \")",
+    "start": {
+      "line": 46,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_scores=bm25.get_scores(tokenized_query)",
+    "start": {
+      "line": 47,
+      "column": 0
+    },
+    "end": {
+      "line": 47,
+      "column": 45
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(doc_scores)",
+    "start": {
+      "line": 48,
+      "column": 0
+    },
+    "end": {
+      "line": 48,
+      "column": 17
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\archive\\Corona_NLP_train.csv\",encoding='latin-1')",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 59,
+      "column": 108
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 61,
+      "column": 0
+    },
+    "end": {
+      "line": 61,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=tweets.drop(columns=['\u00ef\u00bb\u00bfUserName','ScreenName','Location','TweetAt','Sentiment'],axis=1).sample(100)",
+    "start": {
+      "line": 68,
+      "column": 0
+    },
+    "end": {
+      "line": 68,
+      "column": 113
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 70,
+      "column": 0
+    },
+    "end": {
+      "line": 70,
+      "column": 13
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 77,
+      "column": 0
+    },
+    "end": {
+      "line": 77,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets['OriginalTweet_processed']=tweets['OriginalTweet'].map(lambdax:re.sub('[@#,\\.!?]','',x))",
+    "start": {
+      "line": 79,
+      "column": 0
+    },
+    "end": {
+      "line": 80,
+      "column": 65
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets['OriginalTweet_processed']=tweets['OriginalTweet_processed'].map(lambdax:x.lower())",
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 83,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets['OriginalTweet_processed'].head",
+    "arguments": "()",
+    "start": {
+      "line": 85,
+      "column": 0
+    },
+    "end": {
+      "line": 85,
+      "column": 40
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 91,
+      "column": 0
+    },
+    "end": {
+      "line": 91,
+      "column": 13
+    },
+    "name": "gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim.utils",
+    "import": {
+      "name": "simple_preprocess",
+      "alias": null
+    },
+    "start": {
+      "line": 92,
+      "column": 0
+    },
+    "end": {
+      "line": 92,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 93,
+      "column": 0
+    },
+    "end": {
+      "line": 93,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 95,
+      "column": 0
+    },
+    "end": {
+      "line": 95,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 97,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsent_to_words(sentences):     forsentenceinsentences:         yield(gensim.utils.simple_preprocess(str(sentence),deacc=True))\n\n\n",
+    "start": {
+      "line": 98,
+      "column": 0
+    },
+    "end": {
+      "line": 102,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defremove_stopwords(texts):     return[[wordforwordinsimple_preprocess(str(doc))ifwordnotinstop_words]fordocintexts]\n\n",
+    "start": {
+      "line": 102,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data=tweets.OriginalTweet_processed.values.tolist()",
+    "start": {
+      "line": 105,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=list(sent_to_words(data))",
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=remove_stopwords(data_words)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 41
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(data_words[:1][0][:30])",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 109,
+      "column": 29
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 115,
+      "column": 0
+    },
+    "end": {
+      "line": 115,
+      "column": 32
+    },
+    "name": "gensim.corpora",
+    "alias": "corpora"
+  },
+  {
+    "type": "Assignment",
+    "body": "id2word=corpora.Dictionary(data_words)",
+    "start": {
+      "line": 117,
+      "column": 0
+    },
+    "end": {
+      "line": 117,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "texts=data_words",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 18
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "corpus=[id2word.doc2bow(text)fortextintexts]",
+    "start": {
+      "line": 121,
+      "column": 0
+    },
+    "end": {
+      "line": 121,
+      "column": 50
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(corpus[:1][0][:30])",
+    "start": {
+      "line": 123,
+      "column": 0
+    },
+    "end": {
+      "line": 123,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "from": "pprint",
+    "import": {
+      "name": "pprint",
+      "alias": null
+    },
+    "start": {
+      "line": 129,
+      "column": 0
+    },
+    "end": {
+      "line": 129,
+      "column": 25
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_topics=7",
+    "start": {
+      "line": 131,
+      "column": 0
+    },
+    "end": {
+      "line": 131,
+      "column": 14
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lda_model=gensim.models.LdaMulticore(corpus=corpus,id2word=id2word,num_topics=num_topics)",
+    "start": {
+      "line": 133,
+      "column": 0
+    },
+    "end": {
+      "line": 135,
+      "column": 61
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "pprint",
+    "arguments": "(lda_model.print_topics())",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 137,
+      "column": 32
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_lda=lda_model[corpus]",
+    "start": {
+      "line": 138,
+      "column": 0
+    },
+    "end": {
+      "line": 138,
+      "column": 27
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 144,
+      "column": 0
+    },
+    "end": {
+      "line": 144,
+      "column": 22
+    },
+    "name": "pyLDAvis.gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 145,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 13
+    },
+    "name": "pickle",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 15
+    },
+    "name": "pyLDAvis",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "pyLDAvis.enable_notebook",
+    "arguments": "()",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 149,
+      "column": 26
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "LDAvis_data_filepath=os.path.join('./results/ldavis_prepared_'+str(num_topics))",
+    "start": {
+      "line": 150,
+      "column": 0
+    },
+    "end": {
+      "line": 150,
+      "column": 81
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "LDAvis_prepared=pyLDAvis.gensim.prepare(lda_model,corpus,id2word)",
+    "start": {
+      "line": 151,
+      "column": 0
+    },
+    "end": {
+      "line": 151,
+      "column": 69
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "start": {
+      "line": 161,
+      "column": 0
+    },
+    "end": {
+      "line": 161,
+      "column": 14
+    },
+    "name": "os.path",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim",
+    "import": {
+      "name": "corpora",
+      "alias": null
+    },
+    "start": {
+      "line": 162,
+      "column": 0
+    },
+    "end": {
+      "line": 162,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "gensim.models",
+    "import": {
+      "name": "LsiModel",
+      "alias": null
+    },
+    "start": {
+      "line": 163,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 34
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "RegexpTokenizer",
+      "alias": null
+    },
+    "start": {
+      "line": 164,
+      "column": 0
+    },
+    "end": {
+      "line": 164,
+      "column": 41
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 165,
+      "column": 0
+    },
+    "end": {
+      "line": 165,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem.porter",
+    "import": {
+      "name": "PorterStemmer",
+      "alias": null
+    },
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "from": "gensim.models.coherencemodel",
+    "import": {
+      "name": "CoherenceModel",
+      "alias": null
+    },
+    "start": {
+      "line": 167,
+      "column": 0
+    },
+    "end": {
+      "line": 167,
+      "column": 55
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 168,
+      "column": 0
+    },
+    "end": {
+      "line": 168,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 174,
+      "column": 0
+    },
+    "end": {
+      "line": 174,
+      "column": 13
+    },
+    "name": "gensim",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "gensim.utils",
+    "import": {
+      "name": "simple_preprocess",
+      "alias": null
+    },
+    "start": {
+      "line": 175,
+      "column": 0
+    },
+    "end": {
+      "line": 175,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 176,
+      "column": 0
+    },
+    "end": {
+      "line": 176,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 177,
+      "column": 0
+    },
+    "end": {
+      "line": 177,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 179,
+      "column": 0
+    },
+    "end": {
+      "line": 179,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 180,
+      "column": 0
+    },
+    "end": {
+      "line": 180,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsent_to_words(sentences):     forsentenceinsentences:         yield(gensim.utils.simple_preprocess(str(sentence),deacc=True))\n\n\n",
+    "start": {
+      "line": 181,
+      "column": 0
+    },
+    "end": {
+      "line": 185,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defremove_stopwords(texts):     return[[wordforwordinsimple_preprocess(str(doc))ifwordnotinstop_words]fordocintexts]\n\n",
+    "start": {
+      "line": 185,
+      "column": 0
+    },
+    "end": {
+      "line": 188,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defstem_words(texts):     return[[p_stemmer.stem(word)forwordinsimple_preprocess(str(doc))]fordocintexts]\n\n",
+    "start": {
+      "line": 188,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data=tweets.OriginalTweet_processed.values.tolist()",
+    "start": {
+      "line": 192,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 53
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=list(sent_to_words(data))",
+    "start": {
+      "line": 193,
+      "column": 0
+    },
+    "end": {
+      "line": 193,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "data_words=remove_stopwords(data_words)",
+    "start": {
+      "line": 195,
+      "column": 0
+    },
+    "end": {
+      "line": 195,
+      "column": 41
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(data_words[:1][0][:30])",
+    "start": {
+      "line": 196,
+      "column": 0
+    },
+    "end": {
+      "line": 196,
+      "column": 29
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "doc_term_matrix=[id2word.doc2bow(twt)fortwtindata_words]",
+    "start": {
+      "line": 202,
+      "column": 0
+    },
+    "end": {
+      "line": 202,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lsa_model=LsiModel(doc_term_matrix,num_topics=num_topics,id2word=id2word)",
+    "start": {
+      "line": 208,
+      "column": 0
+    },
+    "end": {
+      "line": 208,
+      "column": 79
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(lsa_model.print_topics(num_topics=num_topics,num_words=10))",
+    "start": {
+      "line": 209,
+      "column": 0
+    },
+    "end": {
+      "line": 209,
+      "column": 66
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 217,
+      "column": 0
+    },
+    "end": {
+      "line": 217,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "NMF",
+      "alias": null
+    },
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 218,
+      "column": 37
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 219,
+      "column": 0
+    },
+    "end": {
+      "line": 219,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\archive\\Corona_NLP_train.csv\",encoding='latin-1')",
+    "start": {
+      "line": 221,
+      "column": 0
+    },
+    "end": {
+      "line": 221,
+      "column": 108
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 223,
+      "column": 0
+    },
+    "end": {
+      "line": 223,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tweets=tweets.drop(columns=['\u00ef\u00bb\u00bfUserName','ScreenName','Location','TweetAt','Sentiment'],axis=1).sample(100)",
+    "start": {
+      "line": 230,
+      "column": 0
+    },
+    "end": {
+      "line": 230,
+      "column": 113
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "tweets.head",
+    "arguments": "()",
+    "start": {
+      "line": 232,
+      "column": 0
+    },
+    "end": {
+      "line": 232,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(min_df=10,stop_words=stop_words)",
+    "start": {
+      "line": 239,
+      "column": 0
+    },
+    "end": {
+      "line": 239,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "X=vect.fit_transform(tweets.OriginalTweet)",
+    "start": {
+      "line": 242,
+      "column": 0
+    },
+    "end": {
+      "line": 242,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model=NMF(n_components=10,random_state=5)",
+    "start": {
+      "line": 250,
+      "column": 0
+    },
+    "end": {
+      "line": 250,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "model.fit",
+    "arguments": "(X)",
+    "start": {
+      "line": 253,
+      "column": 0
+    },
+    "end": {
+      "line": 253,
+      "column": 12
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "nmf_features=model.transform(X)",
+    "start": {
+      "line": 256,
+      "column": 0
+    },
+    "end": {
+      "line": 256,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "components_df=pd.DataFrame(model.components_,columns=vect.get_feature_names_out())",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 85
+    }
+  },
+  null,
+  {
+    "type": "For Loop Statement",
+    "body": "fortopicinrange(components_df.shape[0]):     tmp=components_df.iloc[topic] print(f'For topic {topic+1} the words with the highest value are:') print(tmp.nlargest(10)) print('\\n')\n\n",
+    "start": {
+      "line": 269,
+      "column": 0
+    },
+    "end": {
+      "line": 281,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 281,
+      "column": 0
+    },
+    "end": {
+      "line": 281,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 282,
+      "column": 0
+    },
+    "end": {
+      "line": 282,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('stopwords')",
+    "start": {
+      "line": 283,
+      "column": 0
+    },
+    "end": {
+      "line": 283,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 284,
+      "column": 0
+    },
+    "end": {
+      "line": 284,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=stopwords.words('english')",
+    "start": {
+      "line": 285,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "stop_words.extend",
+    "arguments": "(['https','tco'])",
+    "start": {
+      "line": 286,
+      "column": 0
+    },
+    "end": {
+      "line": 286,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(stop_words=stop_words)",
+    "start": {
+      "line": 292,
+      "column": 0
+    },
+    "end": {
+      "line": 292,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=vect.fit_transform(tweets.OriginalTweet)",
+    "start": {
+      "line": 293,
+      "column": 0
+    },
+    "end": {
+      "line": 293,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tf_idf_vect=pd.DataFrame(x.toarray().transpose(),index=vect.get_feature_names_out())",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 86
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "PCA",
+      "alias": null
+    },
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 37
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "pca=PCA(n_components=50)",
+    "start": {
+      "line": 307,
+      "column": 0
+    },
+    "end": {
+      "line": 307,
+      "column": 26
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "pca.fit_transform",
+    "arguments": "(tf_idf_vect)",
+    "start": {
+      "line": 308,
+      "column": 0
+    },
+    "end": {
+      "line": 308,
+      "column": 30
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(pca.components_)",
+    "start": {
+      "line": 314,
+      "column": 0
+    },
+    "end": {
+      "line": 314,
+      "column": 22
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 322,
+      "column": 0
+    },
+    "end": {
+      "line": 322,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Assignment",
+    "body": "vect=TfidfVectorizer(stop_words=stop_words,smooth_idf=True)",
+    "start": {
+      "line": 328,
+      "column": 0
+    },
+    "end": {
+      "line": 328,
+      "column": 61
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=vect.fit_transform(tweets.OriginalTweet).todense()",
+    "start": {
+      "line": 329,
+      "column": 0
+    },
+    "end": {
+      "line": 329,
+      "column": 54
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "x=np.asarray(x)",
+    "start": {
+      "line": 330,
+      "column": 0
+    },
+    "end": {
+      "line": 330,
+      "column": 17
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "TruncatedSVD",
+      "alias": null
+    },
+    "start": {
+      "line": 336,
+      "column": 0
+    },
+    "end": {
+      "line": 336,
+      "column": 46
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "svd_modeling=TruncatedSVD(n_components=4,algorithm='randomized',n_iter=100,random_state=122)",
+    "start": {
+      "line": 337,
+      "column": 0
+    },
+    "end": {
+      "line": 337,
+      "column": 97
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "svd_modeling.fit",
+    "arguments": "(x)",
+    "start": {
+      "line": 338,
+      "column": 0
+    },
+    "end": {
+      "line": 338,
+      "column": 19
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "components=svd_modeling.components_",
+    "start": {
+      "line": 339,
+      "column": 0
+    },
+    "end": {
+      "line": 339,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vocab=vect.get_feature_names_out()",
+    "start": {
+      "line": 340,
+      "column": 0
+    },
+    "end": {
+      "line": 340,
+      "column": 36
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "topic_word_list=[]",
+    "start": {
+      "line": 346,
+      "column": 0
+    },
+    "end": {
+      "line": 346,
+      "column": 20
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defget_topics(components):     fori,compinenumerate(components):         terms_comp=zip(vocab,comp) sorted_terms=sorted(terms_comp,key=lambdax:x[1],reverse=True)[:7] topic=\" \" fortinsorted_terms:             topic=topic+' '+t[0]  topic_word_list.append(topic) print(topic_word_list)  returntopic_word_list\n\n",
+    "start": {
+      "line": 347,
+      "column": 0
+    },
+    "end": {
+      "line": 357,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "get_topics",
+    "arguments": "(components)",
+    "start": {
+      "line": 357,
+      "column": 0
+    },
+    "end": {
+      "line": 357,
+      "column": 22
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": [
+      {
+        "name": "TfidfVectorizer",
+        "alias": null
+      },
+      {
+        "name": "CountVectorizer",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 75
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "keras.preprocessing.text",
+    "import": {
+      "name": "text_to_word_sequence",
+      "alias": null
+    },
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 59
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "cross_validate",
+      "alias": null
+    },
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 50
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.svm",
+    "import": {
+      "name": "SVC",
+      "alias": null
+    },
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 27
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": {
+      "name": "accuracy_score",
+      "alias": null
+    },
+    "start": {
+      "line": 19,
+      "column": 0
+    },
+    "end": {
+      "line": 19,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 20,
+      "column": 0
+    },
+    "end": {
+      "line": 20,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb_df=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\IMDB\\IMDB Dataset.csv\")",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_positive=imdb_df[imdb_df['sentiment']=='positive'][:5000]",
+    "start": {
+      "line": 34,
+      "column": 0
+    },
+    "end": {
+      "line": 34,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_negative=imdb_df[imdb_df['sentiment']=='negative'][:5000]",
+    "start": {
+      "line": 35,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb=pd.concat([df_positive,df_negative])",
+    "start": {
+      "line": 36,
+      "column": 0
+    },
+    "end": {
+      "line": 36,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(imdb['review'][3])",
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 24
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('(<.*?>)',' ',x))",
+    "start": {
+      "line": 61,
+      "column": 0
+    },
+    "end": {
+      "line": 61,
+      "column": 74
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[,\\.!?:()\"]','',x))",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 63,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.strip())",
+    "start": {
+      "line": 65,
+      "column": 0
+    },
+    "end": {
+      "line": 65,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[^a-zA-Z\"]',' ',x))",
+    "start": {
+      "line": 67,
+      "column": 0
+    },
+    "end": {
+      "line": 67,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.lower())",
+    "start": {
+      "line": 69,
+      "column": 0
+    },
+    "end": {
+      "line": 69,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 77,
+      "column": 0
+    },
+    "end": {
+      "line": 77,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 78,
+      "column": 0
+    },
+    "end": {
+      "line": 78,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 79,
+      "column": 0
+    },
+    "end": {
+      "line": 79,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 80,
+      "column": 0
+    },
+    "end": {
+      "line": 80,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 81,
+      "column": 0
+    },
+    "end": {
+      "line": 81,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 82,
+      "column": 0
+    },
+    "end": {
+      "line": 82,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 88,
+      "column": 0
+    },
+    "end": {
+      "line": 104,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftagged_lemma(string):     pos_tagged=nltk.pos_tag(nltk.word_tokenize(string)) wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged)) lemmatized_sentence=[] forword,taginwordnet_tagged:         iftagisNone:             lemmatized_sentence.append(word)  else:             lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))   lemmatized_sentence=\" \".join(lemmatized_sentence) returnlemmatized_sentence\n\n",
+    "start": {
+      "line": 104,
+      "column": 0
+    },
+    "end": {
+      "line": 124,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(tagged_lemma)",
+    "start": {
+      "line": 124,
+      "column": 0
+    },
+    "end": {
+      "line": 124,
+      "column": 49
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(imdb['review'][3])",
+    "start": {
+      "line": 130,
+      "column": 0
+    },
+    "end": {
+      "line": 130,
+      "column": 24
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "words=imdb['review'].apply(lambdax:text_to_word_sequence(x))",
+    "start": {
+      "line": 138,
+      "column": 0
+    },
+    "end": {
+      "line": 138,
+      "column": 64
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=set(stopwords.words('english'))",
+    "start": {
+      "line": 139,
+      "column": 0
+    },
+    "end": {
+      "line": 139,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "filtered_words=words.apply(lambdax:[wforwinxifnotwinstop_words])",
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 140,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=filtered_words.apply(lambdax:\" \".join(x))",
+    "start": {
+      "line": 141,
+      "column": 0
+    },
+    "end": {
+      "line": 141,
+      "column": 60
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb.sentiment=imdb.sentiment.apply(lambdax:1ifx=='positive'else0)",
+    "start": {
+      "line": 153,
+      "column": 0
+    },
+    "end": {
+      "line": 153,
+      "column": 74
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "train_test_split",
+      "alias": null
+    },
+    "start": {
+      "line": 159,
+      "column": 0
+    },
+    "end": {
+      "line": 159,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_review,test_review,train_sent,test_sent=train_test_split(imdb['review'],imdb['sentiment'],test_size=0.25,random_state=42)",
+    "start": {
+      "line": 160,
+      "column": 0
+    },
+    "end": {
+      "line": 160,
+      "column": 135
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(train_review.head)",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 24
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tv=TfidfVectorizer(stop_words='english')",
+    "start": {
+      "line": 173,
+      "column": 0
+    },
+    "end": {
+      "line": 173,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_review_tfidf=np.asarray(tv.fit_transform(train_review).todense())",
+    "start": {
+      "line": 175,
+      "column": 0
+    },
+    "end": {
+      "line": 175,
+      "column": 71
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "test_review_tfidf=np.asarray(tv.transform(test_review).todense())",
+    "start": {
+      "line": 177,
+      "column": 0
+    },
+    "end": {
+      "line": 177,
+      "column": 65
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('Tfidf_train:',train_review_tfidf.shape)",
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 46
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('Tfidf_test:',test_review_tfidf.shape)",
+    "start": {
+      "line": 179,
+      "column": 0
+    },
+    "end": {
+      "line": 179,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(train_review_tfidf[3].shape)",
+    "start": {
+      "line": 185,
+      "column": 0
+    },
+    "end": {
+      "line": 185,
+      "column": 34
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": [
+      {
+        "name": "accuracy_score",
+        "alias": null
+      },
+      {
+        "name": "f1_score",
+        "alias": null
+      },
+      {
+        "name": "confusion_matrix",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 193,
+      "column": 0
+    },
+    "end": {
+      "line": 193,
+      "column": 70
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 194,
+      "column": 0
+    },
+    "end": {
+      "line": 194,
+      "column": 21
+    },
+    "name": "seaborn",
+    "alias": "sns"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defgetConfMatrix(pred_data,actual):     conf_mat=confusion_matrix(actual,pred_data,labels=[0,1]) micro=f1_score(actual,pred_data,average='micro') macro=f1_score(actual,pred_data,average='macro') sns.heatmap(conf_mat,annot=True,fmt=\".0f\",annot_kws={\"size\":18}) print('F1 Micro: '+str(micro)) print('F1 Macro: '+str(macro))\n\n",
+    "start": {
+      "line": 196,
+      "column": 0
+    },
+    "end": {
+      "line": 210,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn",
+    "import": {
+      "name": "svm",
+      "alias": null
+    },
+    "start": {
+      "line": 210,
+      "column": 0
+    },
+    "end": {
+      "line": 210,
+      "column": 23
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "clf=svm.SVC(kernel='rbf')",
+    "start": {
+      "line": 213,
+      "column": 0
+    },
+    "end": {
+      "line": 213,
+      "column": 27
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "clf.fit",
+    "arguments": "(train_review_tfidf,train_sent)",
+    "start": {
+      "line": 216,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y_pred=clf.predict(test_review_tfidf)",
+    "start": {
+      "line": 219,
+      "column": 0
+    },
+    "end": {
+      "line": 219,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "getConfMatrix",
+    "arguments": "(y_pred,test_sent)",
+    "start": {
+      "line": 225,
+      "column": 0
+    },
+    "end": {
+      "line": 225,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "skelm",
+    "import": {
+      "name": "ELMClassifier",
+      "alias": null
+    },
+    "start": {
+      "line": 233,
+      "column": 0
+    },
+    "end": {
+      "line": 233,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "clf=ELMClassifier()",
+    "start": {
+      "line": 234,
+      "column": 0
+    },
+    "end": {
+      "line": 234,
+      "column": 21
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "clf.fit",
+    "arguments": "(train_review_tfidf,train_sent)",
+    "start": {
+      "line": 236,
+      "column": 0
+    },
+    "end": {
+      "line": 236,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y_pred=clf.predict(test_review_tfidf)",
+    "start": {
+      "line": 239,
+      "column": 0
+    },
+    "end": {
+      "line": 239,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "getConfMatrix",
+    "arguments": "(y_pred,test_sent)",
+    "start": {
+      "line": 245,
+      "column": 0
+    },
+    "end": {
+      "line": 245,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.gaussian_process",
+    "import": {
+      "name": "GaussianProcessClassifier",
+      "alias": null
+    },
+    "start": {
+      "line": 253,
+      "column": 0
+    },
+    "end": {
+      "line": 253,
+      "column": 62
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.gaussian_process.kernels",
+    "import": {
+      "name": "RBF",
+      "alias": null
+    },
+    "start": {
+      "line": 254,
+      "column": 0
+    },
+    "end": {
+      "line": 254,
+      "column": 48
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "kernel=1.0*RBF(1.0)",
+    "start": {
+      "line": 255,
+      "column": 0
+    },
+    "end": {
+      "line": 255,
+      "column": 23
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "clf=GaussianProcessClassifier(kernel=kernel,random_state=0)",
+    "start": {
+      "line": 256,
+      "column": 0
+    },
+    "end": {
+      "line": 256,
+      "column": 62
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "clf.fit",
+    "arguments": "(train_review_tfidf,train_sent)",
+    "start": {
+      "line": 258,
+      "column": 0
+    },
+    "end": {
+      "line": 258,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y_pred=clf.predict(test_review_tfidf)",
+    "start": {
+      "line": 261,
+      "column": 0
+    },
+    "end": {
+      "line": 261,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "getConfMatrix",
+    "arguments": "(y_pred,test_sent)",
+    "start": {
+      "line": 267,
+      "column": 0
+    },
+    "end": {
+      "line": 267,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.cluster",
+    "import": {
+      "name": "KMeans",
+      "alias": null
+    },
+    "start": {
+      "line": 275,
+      "column": 0
+    },
+    "end": {
+      "line": 275,
+      "column": 34
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forseedinrange(5):     kmeans=KMeans(n_clusters=2,max_iter=100,n_init=1,random_state=seed,).fit(train_review_tfidf) cluster_ids,cluster_sizes=np.unique(kmeans.labels_,return_counts=True) print(f\"Number of elements assigned to each cluster: {cluster_sizes}\")\n\n",
+    "start": {
+      "line": 276,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "()",
+    "start": {
+      "line": 285,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 7
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "original_space_centroids=kmeans.cluster_centers_",
+    "start": {
+      "line": 291,
+      "column": 0
+    },
+    "end": {
+      "line": 291,
+      "column": 50
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "order_centroids=original_space_centroids.argsort()[:,::-1]",
+    "start": {
+      "line": 292,
+      "column": 0
+    },
+    "end": {
+      "line": 292,
+      "column": 61
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "terms=tv.get_feature_names_out()",
+    "start": {
+      "line": 293,
+      "column": 0
+    },
+    "end": {
+      "line": 293,
+      "column": 34
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "foriinrange(2):     print(f\"Cluster {i}: \",end=\"\") forindinorder_centroids[i,:10]:         print(f\"{terms[ind]} \",end=\"\")  print()\n\n",
+    "start": {
+      "line": 295,
+      "column": 0
+    },
+    "end": {
+      "line": 305,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.decomposition",
+    "import": {
+      "name": "TruncatedSVD",
+      "alias": null
+    },
+    "start": {
+      "line": 305,
+      "column": 0
+    },
+    "end": {
+      "line": 305,
+      "column": 46
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.pipeline",
+    "import": {
+      "name": "make_pipeline",
+      "alias": null
+    },
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.preprocessing",
+    "import": {
+      "name": "Normalizer",
+      "alias": null
+    },
+    "start": {
+      "line": 307,
+      "column": 0
+    },
+    "end": {
+      "line": 307,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lsa=make_pipeline(TruncatedSVD(n_components=100),Normalizer(copy=False))",
+    "start": {
+      "line": 309,
+      "column": 0
+    },
+    "end": {
+      "line": 309,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_review_lsa=lsa.fit_transform(train_review_tfidf)",
+    "start": {
+      "line": 310,
+      "column": 0
+    },
+    "end": {
+      "line": 310,
+      "column": 56
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "explained_variance=lsa[0].explained_variance_ratio_.sum()",
+    "start": {
+      "line": 311,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 59
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Explained variance of the SVD step: {explained_variance * 100:.1f}%\")",
+    "start": {
+      "line": 312,
+      "column": 0
+    },
+    "end": {
+      "line": 312,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "kmeans=KMeans(n_clusters=2,max_iter=100,n_init=5,random_state=seed,).fit(train_review_lsa)",
+    "start": {
+      "line": 318,
+      "column": 0
+    },
+    "end": {
+      "line": 323,
+      "column": 23
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "original_space_centroids=lsa[0].inverse_transform(kmeans.cluster_centers_)",
+    "start": {
+      "line": 329,
+      "column": 0
+    },
+    "end": {
+      "line": 329,
+      "column": 76
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "order_centroids=original_space_centroids.argsort()[:,::-1]",
+    "start": {
+      "line": 330,
+      "column": 0
+    },
+    "end": {
+      "line": 330,
+      "column": 61
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "terms=tv.get_feature_names_out()",
+    "start": {
+      "line": 331,
+      "column": 0
+    },
+    "end": {
+      "line": 331,
+      "column": 34
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "foriinrange(2):     print(f\"Cluster {i}: \",end=\"\") forindinorder_centroids[i,:10]:         print(f\"{terms[ind]} \",end=\"\")  print()\n\n",
+    "start": {
+      "line": 333,
+      "column": 0
+    },
+    "end": {
+      "line": 344,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": [
+      {
+        "name": "TfidfVectorizer",
+        "alias": null
+      },
+      {
+        "name": "CountVectorizer",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 75
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "keras.preprocessing.text",
+    "import": {
+      "name": "text_to_word_sequence",
+      "alias": null
+    },
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.feature_extraction.text",
+    "import": {
+      "name": "TfidfVectorizer",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 59
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "cross_validate",
+      "alias": null
+    },
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 50
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.svm",
+    "import": {
+      "name": "SVC",
+      "alias": null
+    },
+    "start": {
+      "line": 18,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 27
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": {
+      "name": "accuracy_score",
+      "alias": null
+    },
+    "start": {
+      "line": 19,
+      "column": 0
+    },
+    "end": {
+      "line": 19,
+      "column": 42
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 20,
+      "column": 0
+    },
+    "end": {
+      "line": 20,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb_df=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\IMDB\\IMDB Dataset.csv\")",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_positive=imdb_df[imdb_df['sentiment']=='positive'][:5000]",
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_negative=imdb_df[imdb_df['sentiment']=='negative'][:5000]",
+    "start": {
+      "line": 30,
+      "column": 0
+    },
+    "end": {
+      "line": 30,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb=pd.concat([df_positive,df_negative])",
+    "start": {
+      "line": 31,
+      "column": 0
+    },
+    "end": {
+      "line": 31,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('(<.*?>)',' ',x))",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 74
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[,\\.!?:()\"]','',x))",
+    "start": {
+      "line": 41,
+      "column": 0
+    },
+    "end": {
+      "line": 41,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.strip())",
+    "start": {
+      "line": 43,
+      "column": 0
+    },
+    "end": {
+      "line": 43,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[^a-zA-Z\"]',' ',x))",
+    "start": {
+      "line": 45,
+      "column": 0
+    },
+    "end": {
+      "line": 45,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.lower())",
+    "start": {
+      "line": 47,
+      "column": 0
+    },
+    "end": {
+      "line": 47,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 55,
+      "column": 0
+    },
+    "end": {
+      "line": 55,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 58,
+      "column": 0
+    },
+    "end": {
+      "line": 58,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 64,
+      "column": 0
+    },
+    "end": {
+      "line": 75,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftagged_lemma(string):     pos_tagged=nltk.pos_tag(nltk.word_tokenize(string)) wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged)) lemmatized_sentence=[] forword,taginwordnet_tagged:         iftagisNone:             lemmatized_sentence.append(word)  else:             lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))   lemmatized_sentence=\" \".join(lemmatized_sentence) returnlemmatized_sentence\n\n",
+    "start": {
+      "line": 75,
+      "column": 0
+    },
+    "end": {
+      "line": 95,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(tagged_lemma)",
+    "start": {
+      "line": 95,
+      "column": 0
+    },
+    "end": {
+      "line": 95,
+      "column": 49
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(imdb['review'][3])",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 96,
+      "column": 24
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "words=imdb['review'].apply(lambdax:text_to_word_sequence(x))",
+    "start": {
+      "line": 102,
+      "column": 0
+    },
+    "end": {
+      "line": 102,
+      "column": 64
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "stop_words=set(stopwords.words('english'))",
+    "start": {
+      "line": 103,
+      "column": 0
+    },
+    "end": {
+      "line": 103,
+      "column": 44
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "filtered_words=words.apply(lambdax:[wforwinxifnotwinstop_words])",
+    "start": {
+      "line": 104,
+      "column": 0
+    },
+    "end": {
+      "line": 104,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=filtered_words.apply(lambdax:\" \".join(x))",
+    "start": {
+      "line": 105,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 60
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb.sentiment=imdb.sentiment.apply(lambdax:1ifx=='positive'else0)",
+    "start": {
+      "line": 112,
+      "column": 0
+    },
+    "end": {
+      "line": 112,
+      "column": 74
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "train_test_split",
+      "alias": null
+    },
+    "start": {
+      "line": 118,
+      "column": 0
+    },
+    "end": {
+      "line": 118,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_review,test_review,train_sent,test_sent=train_test_split(imdb['review'],imdb['sentiment'],test_size=0.25,random_state=42)",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 135
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tv=TfidfVectorizer(stop_words='english')",
+    "start": {
+      "line": 126,
+      "column": 0
+    },
+    "end": {
+      "line": 126,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_review_tfidf=np.asarray(tv.fit_transform(train_review).todense())",
+    "start": {
+      "line": 128,
+      "column": 0
+    },
+    "end": {
+      "line": 128,
+      "column": 71
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "test_review_tfidf=np.asarray(tv.transform(test_review).todense())",
+    "start": {
+      "line": 130,
+      "column": 0
+    },
+    "end": {
+      "line": 130,
+      "column": 65
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('Tfidf_train:',train_review_tfidf.shape)",
+    "start": {
+      "line": 131,
+      "column": 0
+    },
+    "end": {
+      "line": 131,
+      "column": 46
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('Tfidf_test:',test_review_tfidf.shape)",
+    "start": {
+      "line": 132,
+      "column": 0
+    },
+    "end": {
+      "line": 132,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(train_review_tfidf[3].shape)",
+    "start": {
+      "line": 138,
+      "column": 0
+    },
+    "end": {
+      "line": 138,
+      "column": 34
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": [
+      {
+        "name": "accuracy_score",
+        "alias": null
+      },
+      {
+        "name": "precision_score",
+        "alias": null
+      },
+      {
+        "name": "recall_score",
+        "alias": null
+      },
+      {
+        "name": "confusion_matrix",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 91
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 21
+    },
+    "name": "seaborn",
+    "alias": "sns"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defgetConfMatrix(pred_data,actual):     conf_mat=confusion_matrix(actual,pred_data,labels=[0,1]) accuracy=accuracy_score(actual,pred_data) precision=precision_score(actual,pred_data,average='micro') recall=recall_score(actual,pred_data,average='micro') sns.heatmap(conf_mat,annot=True,fmt=\".0f\",annot_kws={\"size\":18}) print('Accuracy: '+str(accuracy)) print('Precision: '+str(precision)) print('Recall: '+str(recall))\n\n",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn",
+    "import": {
+      "name": "svm",
+      "alias": null
+    },
+    "start": {
+      "line": 163,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 23
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "clf=svm.SVC(kernel='rbf')",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 27
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "clf.fit",
+    "arguments": "(train_review_tfidf,train_sent)",
+    "start": {
+      "line": 169,
+      "column": 0
+    },
+    "end": {
+      "line": 169,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y_pred=clf.predict(test_review_tfidf)",
+    "start": {
+      "line": 172,
+      "column": 0
+    },
+    "end": {
+      "line": 172,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "getConfMatrix",
+    "arguments": "(y_pred,test_sent)",
+    "start": {
+      "line": 180,
+      "column": 0
+    },
+    "end": {
+      "line": 180,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": {
+      "name": "f1_score",
+      "alias": null
+    },
+    "start": {
+      "line": 186,
+      "column": 0
+    },
+    "end": {
+      "line": 186,
+      "column": 36
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "micro=f1_score(test_sent,y_pred,average='micro')",
+    "start": {
+      "line": 187,
+      "column": 0
+    },
+    "end": {
+      "line": 187,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "macro=f1_score(test_sent,y_pred,average='macro')",
+    "start": {
+      "line": 188,
+      "column": 0
+    },
+    "end": {
+      "line": 188,
+      "column": 51
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('F1 Micro: '+str(micro))",
+    "start": {
+      "line": 189,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('F1 Macro: '+str(macro))",
+    "start": {
+      "line": 190,
+      "column": 0
+    },
+    "end": {
+      "line": 190,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.linear_model",
+    "import": {
+      "name": "LogisticRegression",
+      "alias": null
+    },
+    "start": {
+      "line": 200,
+      "column": 0
+    },
+    "end": {
+      "line": 200,
+      "column": 51
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn",
+    "import": {
+      "name": "metrics",
+      "alias": null
+    },
+    "start": {
+      "line": 201,
+      "column": 0
+    },
+    "end": {
+      "line": 201,
+      "column": 27
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 202,
+      "column": 0
+    },
+    "end": {
+      "line": 202,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Assignment",
+    "body": "log_regression=LogisticRegression()",
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 37
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "log_regression.fit",
+    "arguments": "(train_review_tfidf,train_sent)",
+    "start": {
+      "line": 207,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 50
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y_pred_proba=log_regression.predict_proba(test_review_tfidf)[::,1]",
+    "start": {
+      "line": 214,
+      "column": 0
+    },
+    "end": {
+      "line": 214,
+      "column": 68
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "fpr,tpr,_=metrics.roc_curve(test_sent,y_pred_proba)",
+    "start": {
+      "line": 215,
+      "column": 0
+    },
+    "end": {
+      "line": 215,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "auc=metrics.roc_auc_score(test_sent,y_pred_proba)",
+    "start": {
+      "line": 216,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 52
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plt.plot",
+    "arguments": "(fpr,tpr,label=\"AUC=\"+str(auc))",
+    "start": {
+      "line": 219,
+      "column": 0
+    },
+    "end": {
+      "line": 219,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plt.ylabel",
+    "arguments": "('True Positive Rate')",
+    "start": {
+      "line": 220,
+      "column": 0
+    },
+    "end": {
+      "line": 220,
+      "column": 32
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plt.xlabel",
+    "arguments": "('False Positive Rate')",
+    "start": {
+      "line": 221,
+      "column": 0
+    },
+    "end": {
+      "line": 221,
+      "column": 33
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plt.legend",
+    "arguments": "(loc=4)",
+    "start": {
+      "line": 222,
+      "column": 0
+    },
+    "end": {
+      "line": 222,
+      "column": 17
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plt.show",
+    "arguments": "()",
+    "start": {
+      "line": 223,
+      "column": 0
+    },
+    "end": {
+      "line": 223,
+      "column": 10
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 231,
+      "column": 0
+    },
+    "end": {
+      "line": 231,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 232,
+      "column": 0
+    },
+    "end": {
+      "line": 232,
+      "column": 30
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.translate.bleu_score",
+    "import": {
+      "name": "SmoothingFunction",
+      "alias": null
+    },
+    "start": {
+      "line": 233,
+      "column": 0
+    },
+    "end": {
+      "line": 233,
+      "column": 55
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "ref='The guard arrived late because it was raining.'",
+    "start": {
+      "line": 234,
+      "column": 0
+    },
+    "end": {
+      "line": 234,
+      "column": 54
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "cand='The guard arrived late because of the rain.'",
+    "start": {
+      "line": 235,
+      "column": 0
+    },
+    "end": {
+      "line": 235,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "smoothie=SmoothingFunction().method1",
+    "start": {
+      "line": 236,
+      "column": 0
+    },
+    "end": {
+      "line": 236,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "reference=word_tokenize(ref)",
+    "start": {
+      "line": 237,
+      "column": 0
+    },
+    "end": {
+      "line": 237,
+      "column": 30
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "candidate=word_tokenize(cand)",
+    "start": {
+      "line": 238,
+      "column": 0
+    },
+    "end": {
+      "line": 238,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "weights=(0.25,0.25,0.25,0.25)",
+    "start": {
+      "line": 239,
+      "column": 0
+    },
+    "end": {
+      "line": 239,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "BLEUscore=nltk.translate.bleu_score.sentence_bleu([reference],candidate,weights,smoothing_function=smoothie)",
+    "start": {
+      "line": 240,
+      "column": 0
+    },
+    "end": {
+      "line": 240,
+      "column": 113
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(BLEUscore)",
+    "start": {
+      "line": 241,
+      "column": 0
+    },
+    "end": {
+      "line": 241,
+      "column": 16
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 249,
+      "column": 0
+    },
+    "end": {
+      "line": 249,
+      "column": 15
+    },
+    "name": "evaluate",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "rouge=evaluate.load('rouge')",
+    "start": {
+      "line": 250,
+      "column": 0
+    },
+    "end": {
+      "line": 250,
+      "column": 30
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "predictions=[\"Transformers Transformers are fast plus efficient\",\"Good Morning\",\"I am waiting for new Transformers\"]",
+    "start": {
+      "line": 251,
+      "column": 0
+    },
+    "end": {
+      "line": 252,
+      "column": 67
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "references=[[\"HuggingFace Transformers are fast efficient plus awesome\",\"Transformers are awesome because they are fast to execute\"],[\"Good Morning Transformers\",\"Morning Transformers\"],[\"People are eagerly waiting for new Transformer models\",\"People are very excited about new Transformers\"]]",
+    "start": {
+      "line": 253,
+      "column": 0
+    },
+    "end": {
+      "line": 260,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "results=rouge.compute(predictions=predictions,references=references)",
+    "start": {
+      "line": 261,
+      "column": 0
+    },
+    "end": {
+      "line": 261,
+      "column": 71
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(results)",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 14
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.translate",
+    "import": {
+      "name": "meteor",
+      "alias": null
+    },
+    "start": {
+      "line": 270,
+      "column": 0
+    },
+    "end": {
+      "line": 270,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 271,
+      "column": 0
+    },
+    "end": {
+      "line": 271,
+      "column": 30
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "score=round(meteor([word_tokenize('The cat sat on the mat')],word_tokenize('The cat was sat on the mat')),4)",
+    "start": {
+      "line": 272,
+      "column": 0
+    },
+    "end": {
+      "line": 273,
+      "column": 67
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "('The METEOR score is: '+str(score))",
+    "start": {
+      "line": 274,
+      "column": 0
+    },
+    "end": {
+      "line": 274,
+      "column": 41
+    }
+  },
+  {
+    "type": "Import",
+    "from": "gensim.models",
+    "import": {
+      "name": "Word2Vec",
+      "alias": null
+    },
+    "start": {
+      "line": 280,
+      "column": 0
+    },
+    "end": {
+      "line": 280,
+      "column": 34
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 281,
+      "column": 0
+    },
+    "end": {
+      "line": 281,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "sentences=[\"Word2Vec is a technique for word embedding.\",\"Embedding words in vector space is powerful for NLP.\",\"Gensim provides an easy way to work with Word2Vec.\",]",
+    "start": {
+      "line": 284,
+      "column": 0
+    },
+    "end": {
+      "line": 288,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_sentences=[word_tokenize(sentence.lower())forsentenceinsentences]",
+    "start": {
+      "line": 291,
+      "column": 0
+    },
+    "end": {
+      "line": 291,
+      "column": 81
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model=Word2Vec(tokenized_sentences,vector_size=100,window=5,min_count=1,sg=0)",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 83
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "model.save",
+    "arguments": "(\"word2vec.model\")",
+    "start": {
+      "line": 298,
+      "column": 0
+    },
+    "end": {
+      "line": 298,
+      "column": 28
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "word=\"word\"",
+    "start": {
+      "line": 304,
+      "column": 0
+    },
+    "end": {
+      "line": 304,
+      "column": 13
+    }
+  },
+  {
+    "type": "If Statement",
+    "body": "ifwordinmodel.wv:     embedding=model.wv[word] print(f\"Embedding for '{word}': {embedding}\")\n\nelse:     print(f\"'{word}' is not in the vocabulary.\")\n\n",
+    "start": {
+      "line": 305,
+      "column": 0
+    },
+    "end": {
+      "line": 312,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "similarity=model.wv.similarity(\"word\",\"embedding\")",
+    "start": {
+      "line": 312,
+      "column": 0
+    },
+    "end": {
+      "line": 312,
+      "column": 53
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Similarity between 'word' and 'embedding': {similarity}\")",
+    "start": {
+      "line": 313,
+      "column": 0
+    },
+    "end": {
+      "line": 313,
+      "column": 65
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 321,
+      "column": 0
+    },
+    "end": {
+      "line": 321,
+      "column": 31
+    },
+    "name": "gensim.downloader",
+    "alias": "api"
+  },
+  {
+    "type": "Assignment",
+    "body": "glove_model=api.load(\"glove-wiki-gigaword-100\")",
+    "start": {
+      "line": 324,
+      "column": 0
+    },
+    "end": {
+      "line": 324,
+      "column": 49
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "word=\"nero\"",
+    "start": {
+      "line": 327,
+      "column": 0
+    },
+    "end": {
+      "line": 327,
+      "column": 13
+    }
+  },
+  {
+    "type": "Try Statement",
+    "body": "try:     embedding=glove_model[word] print(f\"Embedding for '{word}':\") print(embedding)\n\nexceptKeyError:     print(f\"'{word}' is not in the vocabulary.\")\n\n",
+    "start": {
+      "line": 328,
+      "column": 0
+    },
+    "end": {
+      "line": 336,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "similar_words=glove_model.most_similar(word)",
+    "start": {
+      "line": 336,
+      "column": 0
+    },
+    "end": {
+      "line": 336,
+      "column": 46
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"\\nWords most similar to '{word}':\")",
+    "start": {
+      "line": 337,
+      "column": 0
+    },
+    "end": {
+      "line": 337,
+      "column": 43
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forsimilar_word,scoreinsimilar_words:     print(similar_word,score)\n\n",
+    "start": {
+      "line": 338,
+      "column": 0
+    },
+    "end": {
+      "line": 346,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb_df=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\IMDB\\IMDB Dataset.csv\")",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_positive=imdb_df[imdb_df['sentiment']=='positive'][:5000]",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_negative=imdb_df[imdb_df['sentiment']=='negative'][:5000]",
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb=pd.concat([df_positive,df_negative])",
+    "start": {
+      "line": 30,
+      "column": 0
+    },
+    "end": {
+      "line": 30,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('(<.*?>)',' ',x))",
+    "start": {
+      "line": 38,
+      "column": 0
+    },
+    "end": {
+      "line": 38,
+      "column": 74
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[,\\.!?:()\"]','',x))",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.strip())",
+    "start": {
+      "line": 42,
+      "column": 0
+    },
+    "end": {
+      "line": 42,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[^a-zA-Z\"]',' ',x))",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.lower())",
+    "start": {
+      "line": 46,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 55,
+      "column": 0
+    },
+    "end": {
+      "line": 55,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 74,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftagged_lemma(string):     pos_tagged=nltk.pos_tag(nltk.word_tokenize(string)) wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged)) lemmatized_sentence=[] forword,taginwordnet_tagged:         iftagisNone:             lemmatized_sentence.append(word)  else:             lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))   lemmatized_sentence=\" \".join(lemmatized_sentence) returnlemmatized_sentence\n\n",
+    "start": {
+      "line": 74,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(tagged_lemma)",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 49
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb.sentiment=imdb.sentiment.apply(lambdax:1ifx=='positive'else0)",
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 74
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "train_test_split",
+      "alias": null
+    },
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_set,test_set=train_test_split(imdb,test_size=0.25,random_state=42)",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 79
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "start": {
+      "line": 124,
+      "column": 0
+    },
+    "end": {
+      "line": 124,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 125,
+      "column": 0
+    },
+    "end": {
+      "line": 125,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Assignment",
+    "body": "reviews=training_set['review'].tolist()",
+    "start": {
+      "line": 134,
+      "column": 0
+    },
+    "end": {
+      "line": 134,
+      "column": 41
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "VOCAB_SIZE=1000",
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 140,
+      "column": 17
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "encoder=tf.keras.layers.experimental.preprocessing.TextVectorization(max_tokens=VOCAB_SIZE,output_mode='int',pad_to_max_tokens=True)",
+    "start": {
+      "line": 141,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "encoder.adapt",
+    "arguments": "(reviews)",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 22
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vocab=np.array(encoder.get_vocabulary())",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 42
+    }
+  },
+  null,
+  null,
+  {
+    "type": "Assignment",
+    "body": "encoded_example=encoder(training_set.review.iloc[3]).numpy()",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 62
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "simpleRNN=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.SimpleRNN(64),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 186,
+      "column": 0
+    },
+    "end": {
+      "line": 196,
+      "column": 2
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "simpleRNN.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(1e-4),metrics=['accuracy'])",
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 206,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyRNN=simpleRNN.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),validation_steps=30)",
+    "start": {
+      "line": 212,
+      "column": 0
+    },
+    "end": {
+      "line": 214,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lstm=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.LSTM(64),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 223,
+      "column": 0
+    },
+    "end": {
+      "line": 233,
+      "column": 2
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "lstm.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(1e-4),metrics=['accuracy'])",
+    "start": {
+      "line": 239,
+      "column": 0
+    },
+    "end": {
+      "line": 241,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyLSTM=lstm.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),validation_steps=30)",
+    "start": {
+      "line": 247,
+      "column": 0
+    },
+    "end": {
+      "line": 249,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "biDir=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64)),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 258,
+      "column": 0
+    },
+    "end": {
+      "line": 268,
+      "column": 2
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "biDir.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(1e-4),metrics=['accuracy'])",
+    "start": {
+      "line": 274,
+      "column": 0
+    },
+    "end": {
+      "line": 276,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historybiDir=biDir.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),validation_steps=30)",
+    "start": {
+      "line": 282,
+      "column": 0
+    },
+    "end": {
+      "line": 284,
+      "column": 40
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "gru=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.GRU(64),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 293,
+      "column": 0
+    },
+    "end": {
+      "line": 303,
+      "column": 2
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "gru.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(1e-4),metrics=['accuracy'])",
+    "start": {
+      "line": 309,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyGRU=gru.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),validation_steps=30)",
+    "start": {
+      "line": 317,
+      "column": 0
+    },
+    "end": {
+      "line": 319,
+      "column": 40
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 327,
+      "column": 0
+    },
+    "end": {
+      "line": 327,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defplot_graphs(history,metric):   plt.plot(history.history[metric]) plt.plot(history.history['val_'+metric],'') plt.xlabel(\"Epochs\") plt.ylabel(metric) plt.legend([metric,'val_'+metric])\n\n",
+    "start": {
+      "line": 330,
+      "column": 0
+    },
+    "end": {
+      "line": 341,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyRNN,\"accuracy\")",
+    "start": {
+      "line": 341,
+      "column": 0
+    },
+    "end": {
+      "line": 341,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyLSTM,\"accuracy\")",
+    "start": {
+      "line": 347,
+      "column": 0
+    },
+    "end": {
+      "line": 347,
+      "column": 36
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historybiDir,\"accuracy\")",
+    "start": {
+      "line": 353,
+      "column": 0
+    },
+    "end": {
+      "line": 353,
+      "column": 37
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyGRU,\"accuracy\")",
+    "start": {
+      "line": 359,
+      "column": 0
+    },
+    "end": {
+      "line": 359,
+      "column": 35
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 7,
+      "column": 0
+    },
+    "end": {
+      "line": 7,
+      "column": 12
+    },
+    "name": "torch",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 8,
+      "column": 0
+    },
+    "end": {
+      "line": 8,
+      "column": 21
+    },
+    "name": "torch.nn",
+    "alias": "nn"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 9,
+      "column": 27
+    },
+    "name": "torch.optim",
+    "alias": "optim"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 10,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 31
+    },
+    "name": "torch.utils.data",
+    "alias": "data"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 11
+    },
+    "name": "math",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 11
+    },
+    "name": "copy",
+    "alias": null
+  },
+  {
+    "type": "Class declaration",
+    "body": "classMultiHeadAttention(nn.Module):     \"\"\"\n    The init constructor checks whether the provided d_model is divisible by the number of heads (num_heads). \n    It sets up the necessary parameters and creates linear transformations for\n    query(W_q), key(W_k) and output(W_o) projections\n    \"\"\" def__init__(self,d_model,num_heads):         super(MultiHeadAttention,self).__init__() assertd_model%num_heads==0,\"d_model must be divisible by num_heads\" self.d_model=d_model self.num_heads=num_heads self.d_k=d_model//num_heads self.W_q=nn.Linear(d_model,d_model) self.W_k=nn.Linear(d_model,d_model) self.W_v=nn.Linear(d_model,d_model) self.W_o=nn.Linear(d_model,d_model)  \"\"\"\n     The scaled_dot_product_attention function computes the scaled dot-product attention given the \n     query (Q), key (K), and value (V) matrices. It uses the scaled dot product formula, applies a mask if \n     provided, and computes the attention probabilities using the softmax function.\n    \"\"\" defscaled_dot_product_attention(self,Q,K,V,mask=None):         attn_scores=torch.matmul(Q,K.transpose(-2,-1))/math.sqrt(self.d_k) ifmaskisnotNone:             attn_scores=attn_scores.masked_fill(mask==0,-1e9)  attn_probs=torch.softmax(attn_scores,dim=-1) output=torch.matmul(attn_probs,V) returnoutput  \"\"\"\n    The split_heads and combine_heads functions handle the splitting and combining of the attention heads.\n    They reshape the input tensor to allow parallel processing of different attention heads.\n    \"\"\" defsplit_heads(self,x):         batch_size,seq_length,d_model=x.size() returnx.view(batch_size,seq_length,self.num_heads,self.d_k).transpose(1,2)  defcombine_heads(self,x):         batch_size,_,seq_length,d_k=x.size() returnx.transpose(1,2).contiguous().view(batch_size,seq_length,self.d_model)  \"\"\"\n     The forward function takes input query (Q), key (K), and value (V) tensors, \n     applies linear transformations, splits them into multiple heads, performs scaled dot-product attention,\n     combines the attention heads, and applies a final linear transformation.\n    \"\"\" defforward(self,Q,K,V,mask=None):         Q=self.split_heads(self.W_q(Q)) K=self.split_heads(self.W_k(K)) V=self.split_heads(self.W_v(V)) attn_output=self.scaled_dot_product_attention(Q,K,V,mask) output=self.W_o(self.combine_heads(attn_output)) returnoutput\n\n\n",
+    "start": {
+      "line": 22,
+      "column": 0
+    },
+    "end": {
+      "line": 87,
+      "column": 1
+    }
+  },
+  {
+    "type": "Class declaration",
+    "body": "classPositionWiseFeedForward(nn.Module):     \"\"\"\n    PositionWiseFeedForward module. It takes d_model as the input dimension and d_ff \n    as the hidden layer dimension. \n    Two linear layers (fc1 and fc2) are defined with ReLU activation in between.\n    \"\"\" def__init__(self,d_model,d_ff):         super(PositionWiseFeedForward,self).__init__() self.fc1=nn.Linear(d_model,d_ff) self.fc2=nn.Linear(d_ff,d_model) self.relu=nn.ReLU()  \"\"\"\n    The forward function takes an input tensor x, applies the first linear transformation (fc1), \n    applies the ReLU activation, and then applies the second linear transformation (fc2). \n    The output is the result of the second linear transformation.\n    \"\"\" defforward(self,x):         returnself.fc2(self.relu(self.fc1(x)))\n\n\n",
+    "start": {
+      "line": 87,
+      "column": 0
+    },
+    "end": {
+      "line": 115,
+      "column": 1
+    }
+  },
+  {
+    "type": "Class declaration",
+    "body": "classPositionalEncoding(nn.Module):     \"\"\"\n    The constructor (__init__) initializes the PositionalEncoding module. \n    It takes d_model as the dimension of the model and max_seq_length as the maximum sequence length. \n    It computes the positional encoding matrix (pe) using sine and cosine functions.\n    \"\"\" def__init__(self,d_model,max_seq_length):         super(PositionalEncoding,self).__init__() pe=torch.zeros(max_seq_length,d_model) position=torch.arange(0,max_seq_length,dtype=torch.float).unsqueeze(1) div_term=torch.exp(torch.arange(0,d_model,2).float()*-(math.log(10000.0)/d_model)) pe[:,0::2]=torch.sin(position*div_term) pe[:,1::2]=torch.cos(position*div_term) self.register_buffer('pe',pe.unsqueeze(0))  \"\"\"\n    The forward function takes an input tensor x and adds the positional encoding to it. \n    The positional encoding is truncated to match the length of the input sequence (x.size(1)).\n    \"\"\" defforward(self,x):         returnx+self.pe[:,:x.size(1)]\n\n\n",
+    "start": {
+      "line": 115,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 1
+    }
+  },
+  {
+    "type": "Class declaration",
+    "body": "classEncoderLayer(nn.Module):     \"\"\"\n    The constructor (__init__) initializes the EncoderLayer module. \n    It takes hyperparameters such as d_model (model dimension), num_heads (number of attention heads), \n    d_ff (dimension of the feedforward network), and dropout (dropout rate). \n    It creates instances of MultiHeadAttention, PositionWiseFeedForward, and nn.LayerNorm. \n    Dropout is also defined as a module.\n    \"\"\" def__init__(self,d_model,num_heads,d_ff,dropout):         super(EncoderLayer,self).__init__() self.self_attn=MultiHeadAttention(d_model,num_heads) self.feed_forward=PositionWiseFeedForward(d_model,d_ff) self.norm1=nn.LayerNorm(d_model) self.norm2=nn.LayerNorm(d_model) self.dropout=nn.Dropout(dropout)  \"\"\"\n    The forward function takes an input tensor x and a mask. \n    It applies the self-attention mechanism (self.self_attn), adds the residual connection \n    with layer normalization, applies the position-wise feedforward network (self.feed_forward),\n    and again adds the residual connection with layer normalization. \n    Dropout is applied at both the self-attention and feedforward stages.\n    The mask parameter is used to mask certain positions during the self-attention step, \n    typically to prevent attending to future positions in a sequence.\n    \"\"\" defforward(self,x,mask):         attn_output=self.self_attn(x,x,x,mask) x=self.norm1(x+self.dropout(attn_output)) ff_output=self.feed_forward(x) x=self.norm2(x+self.dropout(ff_output)) returnx\n\n\n",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 1
+    }
+  },
+  {
+    "type": "Class declaration",
+    "body": "classDecoderLayer(nn.Module):     \"\"\"\n    The constructor (__init__) initializes the DecoderLayer module. \n    It takes hyperparameters such as d_model (model dimension), num_heads (number of attention heads), \n    d_ff (dimension of the feedforward network), and dropout (dropout rate). \n    It creates instances of MultiHeadAttention for both self-attention (self.self_attn) and cross-attention\n    (self.cross_attn), PositionWiseFeedForward, and nn.LayerNorm. Dropout is also defined as a module.\n    \"\"\" def__init__(self,d_model,num_heads,d_ff,dropout):         super(DecoderLayer,self).__init__() self.self_attn=MultiHeadAttention(d_model,num_heads) self.cross_attn=MultiHeadAttention(d_model,num_heads) self.feed_forward=PositionWiseFeedForward(d_model,d_ff) self.norm1=nn.LayerNorm(d_model) self.norm2=nn.LayerNorm(d_model) self.norm3=nn.LayerNorm(d_model) self.dropout=nn.Dropout(dropout)  \"\"\"\n    The forward function takes an input tensor x, the output from the encoder (enc_output), \n    and masks for the source (src_mask) and target (tgt_mask). It applies the self-attention mechanism, \n    adds the residual connection with layer normalization, applies the cross-attention mechanism with the \n    encoder's output, adds another residual connection with layer normalization, applies the position-wise \n    feedforward network, and adds a final residual connection with layer normalization. \n    Dropout is applied at each stage.\n    \"\"\" defforward(self,x,enc_output,src_mask,tgt_mask):         attn_output=self.self_attn(x,x,x,tgt_mask) x=self.norm1(x+self.dropout(attn_output)) attn_output=self.cross_attn(x,enc_output,enc_output,src_mask) x=self.norm2(x+self.dropout(attn_output)) ff_output=self.feed_forward(x) x=self.norm3(x+self.dropout(ff_output)) returnx\n\n\n",
+    "start": {
+      "line": 189,
+      "column": 0
+    },
+    "end": {
+      "line": 228,
+      "column": 1
+    }
+  },
+  {
+    "type": "Class declaration",
+    "body": "classTransformer(nn.Module):     \"\"\"\n    The constructor (__init__) initializes the Transformer module. \n    It takes several hyperparameters, including vocabulary sizes for the source and target languages \n    (src_vocab_size and tgt_vocab_size), model dimension (d_model), number of attention heads (num_heads), \n    number of layers (num_layers), dimension of the feedforward network (d_ff), maximum sequence length \n    (max_seq_length), and dropout rate (dropout).\n    It sets up embeddings for both the encoder and decoder (encoder_embedding and decoder_embedding), \n    a positional encoding module (positional_encoding), encoder layers (encoder_layers), \n    decoder layers (decoder_layers), a linear layer (fc), and dropout.\n    \"\"\" def__init__(self,src_vocab_size,tgt_vocab_size,d_model,num_heads,num_layers,d_ff,max_seq_length,dropout):         super(Transformer,self).__init__() self.encoder_embedding=nn.Embedding(src_vocab_size,d_model) self.decoder_embedding=nn.Embedding(tgt_vocab_size,d_model) self.positional_encoding=PositionalEncoding(d_model,max_seq_length) self.encoder_layers=nn.ModuleList([EncoderLayer(d_model,num_heads,d_ff,dropout)for_inrange(num_layers)]) self.decoder_layers=nn.ModuleList([DecoderLayer(d_model,num_heads,d_ff,dropout)for_inrange(num_layers)]) self.fc=nn.Linear(d_model,tgt_vocab_size) self.dropout=nn.Dropout(dropout)  \"\"\"\n     The generate_mask function creates masks for the source and target sequences. \n     It generates a source mask by checking if the source sequence elements are not equal to 0. \n     For the target sequence, it creates a mask by checking if the target sequence elements are not equal \n     to 0 and applies a no-peek mask to prevent attending to future positions.\n    \"\"\" defgenerate_mask(self,src,tgt):         src_mask=(src!=0).unsqueeze(1).unsqueeze(2) tgt_mask=(tgt!=0).unsqueeze(1).unsqueeze(3) seq_length=tgt.size(1) nopeak_mask=(1-torch.triu(torch.ones(1,seq_length,seq_length),diagonal=1)).bool() tgt_mask=tgt_mask&nopeak_mask returnsrc_mask,tgt_mask  \"\"\"\n    The forward function takes source (src) and target (tgt) sequences as input. \n    It generates source and target masks using the generate_mask function. \n    The source and target embeddings are obtained by applying dropout to the positional embeddings of the \n    encoder and decoder embeddings, respectively. \n    The encoder layers are then applied to the source embeddings to get the encoder output (enc_output). \n    The decoder layers are applied to the target embeddings along with the encoder output, source mask, \n    and target mask to get the final decoder output (dec_output). The output is obtained by applying a linear layer to the decoder output.\n    \"\"\" defforward(self,src,tgt):         src_mask,tgt_mask=self.generate_mask(src,tgt) src_embedded=self.dropout(self.positional_encoding(self.encoder_embedding(src))) tgt_embedded=self.dropout(self.positional_encoding(self.decoder_embedding(tgt))) enc_output=src_embedded forenc_layerinself.encoder_layers:             enc_output=enc_layer(enc_output,src_mask)  dec_output=tgt_embedded fordec_layerinself.decoder_layers:             dec_output=dec_layer(dec_output,enc_output,src_mask,tgt_mask)  output=self.fc(dec_output) returnoutput\n\n\n",
+    "start": {
+      "line": 228,
+      "column": 0
+    },
+    "end": {
+      "line": 297,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "src_vocab_size=5000",
+    "start": {
+      "line": 297,
+      "column": 0
+    },
+    "end": {
+      "line": 297,
+      "column": 21
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tgt_vocab_size=5000",
+    "start": {
+      "line": 298,
+      "column": 0
+    },
+    "end": {
+      "line": 298,
+      "column": 21
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "d_model=512",
+    "start": {
+      "line": 299,
+      "column": 0
+    },
+    "end": {
+      "line": 299,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_heads=8",
+    "start": {
+      "line": 300,
+      "column": 0
+    },
+    "end": {
+      "line": 300,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_layers=6",
+    "start": {
+      "line": 301,
+      "column": 0
+    },
+    "end": {
+      "line": 301,
+      "column": 14
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "d_ff=2048",
+    "start": {
+      "line": 302,
+      "column": 0
+    },
+    "end": {
+      "line": 302,
+      "column": 11
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "max_seq_length=100",
+    "start": {
+      "line": 303,
+      "column": 0
+    },
+    "end": {
+      "line": 303,
+      "column": 20
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "dropout=0.1",
+    "start": {
+      "line": 304,
+      "column": 0
+    },
+    "end": {
+      "line": 304,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "transformer=Transformer(src_vocab_size,tgt_vocab_size,d_model,num_heads,num_layers,d_ff,max_seq_length,dropout)",
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 120
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "src_data=torch.randint(1,src_vocab_size,(64,max_seq_length))",
+    "start": {
+      "line": 309,
+      "column": 0
+    },
+    "end": {
+      "line": 309,
+      "column": 65
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tgt_data=torch.randint(1,tgt_vocab_size,(64,max_seq_length))",
+    "start": {
+      "line": 310,
+      "column": 0
+    },
+    "end": {
+      "line": 310,
+      "column": 65
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "criterion=nn.CrossEntropyLoss(ignore_index=0)",
+    "start": {
+      "line": 318,
+      "column": 0
+    },
+    "end": {
+      "line": 318,
+      "column": 47
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "optimizer=optim.Adam(transformer.parameters(),lr=0.0001,betas=(0.9,0.98),eps=1e-9)",
+    "start": {
+      "line": 319,
+      "column": 0
+    },
+    "end": {
+      "line": 319,
+      "column": 88
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "transformer.train",
+    "arguments": "()",
+    "start": {
+      "line": 321,
+      "column": 0
+    },
+    "end": {
+      "line": 321,
+      "column": 19
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forepochinrange(100):     optimizer.zero_grad() output=transformer(src_data,tgt_data[:,:-1]) loss=criterion(output.contiguous().view(-1,tgt_vocab_size),tgt_data[:,1:].contiguous().view(-1)) loss.backward() optimizer.step() print(f\"Epoch: {epoch+1}, Loss: {loss.item()}\")\n\n",
+    "start": {
+      "line": 323,
+      "column": 0
+    },
+    "end": {
+      "line": 336,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 11,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 12,
+      "column": 9
+    },
+    "name": "re",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 13,
+      "column": 0
+    },
+    "end": {
+      "line": 13,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 11
+    },
+    "name": "nltk",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "stopwords",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 33
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb_df=pd.read_csv(r\"C:\\Users\\liuru\\Desktop\\EE6405\\Data\\IMDB\\IMDB Dataset.csv\")",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_positive=imdb_df[imdb_df['sentiment']=='positive'][:5000]",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "df_negative=imdb_df[imdb_df['sentiment']=='negative'][:5000]",
+    "start": {
+      "line": 29,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb=pd.concat([df_positive,df_negative])",
+    "start": {
+      "line": 30,
+      "column": 0
+    },
+    "end": {
+      "line": 30,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('(<.*?>)',' ',x))",
+    "start": {
+      "line": 38,
+      "column": 0
+    },
+    "end": {
+      "line": 38,
+      "column": 74
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[,\\.!?:()\"]','',x))",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 77
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.strip())",
+    "start": {
+      "line": 42,
+      "column": 0
+    },
+    "end": {
+      "line": 42,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:re.sub('[^a-zA-Z\"]',' ',x))",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 75
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(lambdax:x.lower())",
+    "start": {
+      "line": 46,
+      "column": 0
+    },
+    "end": {
+      "line": 46,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('wordnet')",
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 24
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.stem",
+    "import": {
+      "name": "WordNetLemmatizer",
+      "alias": null
+    },
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 39
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.tokenize",
+    "import": {
+      "name": "word_tokenize",
+      "alias": null
+    },
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 39
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "nltk.download",
+    "arguments": "('averaged_perceptron_tagger')",
+    "start": {
+      "line": 55,
+      "column": 0
+    },
+    "end": {
+      "line": 55,
+      "column": 43
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lemmatizer=WordNetLemmatizer()",
+    "start": {
+      "line": 56,
+      "column": 0
+    },
+    "end": {
+      "line": 56,
+      "column": 31
+    }
+  },
+  {
+    "type": "Import",
+    "from": "nltk.corpus",
+    "import": {
+      "name": "wordnet",
+      "alias": null
+    },
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 31
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpos_tagger(nltk_tag):     ifnltk_tag.startswith('J'):         returnwordnet.ADJ  elifnltk_tag.startswith('V'):         returnwordnet.VERB  elifnltk_tag.startswith('N'):         returnwordnet.NOUN  elifnltk_tag.startswith('R'):         returnwordnet.ADV  else:         returnNone\n\n\n",
+    "start": {
+      "line": 63,
+      "column": 0
+    },
+    "end": {
+      "line": 74,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftagged_lemma(string):     pos_tagged=nltk.pos_tag(nltk.word_tokenize(string)) wordnet_tagged=list(map(lambdax:(x[0],pos_tagger(x[1])),pos_tagged)) lemmatized_sentence=[] forword,taginwordnet_tagged:         iftagisNone:             lemmatized_sentence.append(word)  else:             lemmatized_sentence.append(lemmatizer.lemmatize(word,tag))   lemmatized_sentence=\" \".join(lemmatized_sentence) returnlemmatized_sentence\n\n",
+    "start": {
+      "line": 74,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb['review']=imdb['review'].apply(tagged_lemma)",
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 49
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "imdb.sentiment=imdb.sentiment.apply(lambdax:1ifx=='positive'else0)",
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 74
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "train_test_split",
+      "alias": null
+    },
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_set,test_set=train_test_split(imdb,test_size=0.25,random_state=42)",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 79
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "start": {
+      "line": 124,
+      "column": 0
+    },
+    "end": {
+      "line": 124,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 125,
+      "column": 0
+    },
+    "end": {
+      "line": 125,
+      "column": 23
+    },
+    "name": "tensorflow",
+    "alias": "tf"
+  },
+  {
+    "type": "Assignment",
+    "body": "reviews=training_set['review'].tolist()",
+    "start": {
+      "line": 134,
+      "column": 0
+    },
+    "end": {
+      "line": 134,
+      "column": 41
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "VOCAB_SIZE=1000",
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 140,
+      "column": 17
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "encoder=tf.keras.layers.experimental.preprocessing.TextVectorization(max_tokens=VOCAB_SIZE,output_mode='int',pad_to_max_tokens=True)",
+    "start": {
+      "line": 141,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "encoder.adapt",
+    "arguments": "(reviews)",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 22
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "vocab=np.array(encoder.get_vocabulary())",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 42
+    }
+  },
+  null,
+  null,
+  {
+    "type": "Assignment",
+    "body": "encoded_example=encoder(training_set.review.iloc[3]).numpy()",
+    "start": {
+      "line": 166,
+      "column": 0
+    },
+    "end": {
+      "line": 166,
+      "column": 62
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "lstm=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.LSTM(64),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 176,
+      "column": 0
+    },
+    "end": {
+      "line": 185,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "lstm2=tf.keras.Sequential([encoder,tf.keras.layers.Embedding(input_dim=len(encoder.get_vocabulary()),output_dim=64,mask_zero=True),tf.keras.layers.LSTM(64),tf.keras.layers.Dense(64,activation='relu'),tf.keras.layers.Dense(1)])",
+    "start": {
+      "line": 187,
+      "column": 0
+    },
+    "end": {
+      "line": 197,
+      "column": 2
+    }
+  },
+  {
+    "type": "Import",
+    "from": "keras",
+    "import": {
+      "name": "callbacks",
+      "alias": null
+    },
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 27
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "earlystopping=callbacks.EarlyStopping(monitor=\"accuracy\",mode=\"max\",patience=5,restore_best_weights=True)",
+    "start": {
+      "line": 205,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 68
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "lstm.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(clipvalue=0.5),metrics=['accuracy'])",
+    "start": {
+      "line": 214,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 35
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "lstm2.compile",
+    "arguments": "(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4,clipvalue=0.5),metrics=['accuracy'])",
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 220,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyLSTM=lstm.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),learning_rate=0.001,batch_size=32,validation_steps=30",
+    "start": {
+      "line": 226,
+      "column": 0
+    },
+    "end": {
+      "line": 230,
+      "column": 39
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "callbacks=[earlystopping]",
+    "start": {
+      "line": 231,
+      "column": 20
+    },
+    "end": {
+      "line": 231,
+      "column": 45
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "historyLSTM2=lstm2.fit(training_set['review'],training_set['sentiment'],epochs=10,validation_data=(test_set['review'],test_set['sentiment']),batch_size=64,validation_steps=30)",
+    "start": {
+      "line": 237,
+      "column": 0
+    },
+    "end": {
+      "line": 240,
+      "column": 40
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.model_selection",
+    "import": {
+      "name": "StratifiedKFold",
+      "alias": null
+    },
+    "start": {
+      "line": 246,
+      "column": 0
+    },
+    "end": {
+      "line": 246,
+      "column": 51
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": {
+      "name": "accuracy_score",
+      "alias": null
+    },
+    "start": {
+      "line": 247,
+      "column": 0
+    },
+    "end": {
+      "line": 247,
+      "column": 42
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_folds=5",
+    "start": {
+      "line": 254,
+      "column": 0
+    },
+    "end": {
+      "line": 254,
+      "column": 13
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "seed=42",
+    "start": {
+      "line": 255,
+      "column": 0
+    },
+    "end": {
+      "line": 255,
+      "column": 9
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "kf=StratifiedKFold(n_splits=num_folds,shuffle=True,random_state=seed)",
+    "start": {
+      "line": 258,
+      "column": 0
+    },
+    "end": {
+      "line": 258,
+      "column": 73
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "cv_scores=[]",
+    "start": {
+      "line": 261,
+      "column": 0
+    },
+    "end": {
+      "line": 261,
+      "column": 14
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "X=training_set['review'].values",
+    "start": {
+      "line": 267,
+      "column": 0
+    },
+    "end": {
+      "line": 267,
+      "column": 31
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "y=training_set['sentiment'].values",
+    "start": {
+      "line": 268,
+      "column": 0
+    },
+    "end": {
+      "line": 268,
+      "column": 34
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "fortrain_index,test_indexinkf.split(X,y):     X_train,X_val=X[train_index],X[test_index] y_train,y_val=y[train_index],y[test_index] lstm.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy']) lstm.fit(X_train,y_train,epochs=10,validation_data=(X_val,y_val),batch_size=32,verbose=0) y_pred=(lstm.predict(X_val)>0.5).astype(\"int32\") acc=accuracy_score(y_val,y_pred) cv_scores.append(acc)\n\n",
+    "start": {
+      "line": 269,
+      "column": 0
+    },
+    "end": {
+      "line": 290,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 290,
+      "column": 0
+    },
+    "end": {
+      "line": 290,
+      "column": 17
+    },
+    "name": "statistics",
+    "alias": null
+  },
+  {
+    "type": "Function call",
+    "name": "statistics.mean",
+    "arguments": "(cv_scores)",
+    "start": {
+      "line": 291,
+      "column": 0
+    },
+    "end": {
+      "line": 291,
+      "column": 26
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 297,
+      "column": 0
+    },
+    "end": {
+      "line": 297,
+      "column": 31
+    },
+    "name": "matplotlib.pyplot",
+    "alias": "plt"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defplot_graphs(history,metric):   plt.plot(history.history[metric]) plt.plot(history.history['val_'+metric],'') plt.xlabel(\"Epochs\") plt.ylabel(metric) plt.legend([metric,'val_'+metric])\n\n",
+    "start": {
+      "line": 300,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyLSTM,\"accuracy\")",
+    "start": {
+      "line": 311,
+      "column": 0
+    },
+    "end": {
+      "line": 311,
+      "column": 36
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "plot_graphs",
+    "arguments": "(historyLSTM2,\"accuracy\")",
+    "start": {
+      "line": 317,
+      "column": 0
+    },
+    "end": {
+      "line": 317,
+      "column": 37
+    }
+  },
+  {
+    "type": "Import",
+    "from": "datasets",
+    "import": {
+      "name": "load_dataset",
+      "alias": null
+    },
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "dataset=load_dataset(\"yelp_review_full\")",
+    "start": {
+      "line": 17,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 42
+    }
+  },
+  null,
+  {
+    "type": "Import",
+    "from": "transformers",
+    "import": {
+      "name": "AutoTokenizer",
+      "alias": null
+    },
+    "start": {
+      "line": 26,
+      "column": 0
+    },
+    "end": {
+      "line": 26,
+      "column": 38
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenizer=AutoTokenizer.from_pretrained(\"bert-base-cased\")",
+    "start": {
+      "line": 28,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 60
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftokenize_function(examples):     returntokenizer(examples[\"text\"],padding=\"max_length\",truncation=True)\n\n",
+    "start": {
+      "line": 31,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenized_datasets=dataset.map(tokenize_function,batched=True)",
+    "start": {
+      "line": 35,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 65
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "small_train_dataset=tokenized_datasets[\"train\"].shuffle(seed=42).select(range(1000))",
+    "start": {
+      "line": 43,
+      "column": 0
+    },
+    "end": {
+      "line": 43,
+      "column": 86
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "small_eval_dataset=tokenized_datasets[\"test\"].shuffle(seed=42).select(range(1000))",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 84
+    }
+  },
+  {
+    "type": "Import",
+    "from": "transformers",
+    "import": {
+      "name": "AutoModelForSequenceClassification",
+      "alias": null
+    },
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model=AutoModelForSequenceClassification.from_pretrained(\"bert-base-cased\",num_labels=5)",
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 91
+    }
+  },
+  {
+    "type": "Import",
+    "from": "transformers",
+    "import": {
+      "name": "TrainingArguments",
+      "alias": null
+    },
+    "start": {
+      "line": 62,
+      "column": 0
+    },
+    "end": {
+      "line": 62,
+      "column": 42
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_args=TrainingArguments(output_dir=\"test_trainer\")",
+    "start": {
+      "line": 64,
+      "column": 0
+    },
+    "end": {
+      "line": 64,
+      "column": 60
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 72,
+      "column": 0
+    },
+    "end": {
+      "line": 72,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 73,
+      "column": 0
+    },
+    "end": {
+      "line": 73,
+      "column": 15
+    },
+    "name": "evaluate",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "metric=evaluate.load(\"accuracy\")",
+    "start": {
+      "line": 75,
+      "column": 0
+    },
+    "end": {
+      "line": 75,
+      "column": 34
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcompute_metrics(eval_pred):     logits,labels=eval_pred predictions=np.argmax(logits,axis=-1) returnmetric.compute(predictions=predictions,references=labels)\n\n",
+    "start": {
+      "line": 83,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "transformers",
+    "import": [
+      {
+        "name": "TrainingArguments",
+        "alias": null
+      },
+      {
+        "name": "Trainer",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 94,
+      "column": 0
+    },
+    "end": {
+      "line": 94,
+      "column": 51
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_args=TrainingArguments(output_dir=\"test_trainer\",evaluation_strategy=\"epoch\")",
+    "start": {
+      "line": 96,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 62
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "trainer=Trainer(model=model,args=training_args,train_dataset=small_train_dataset,eval_dataset=small_eval_dataset,compute_metrics=compute_metrics,)",
+    "start": {
+      "line": 99,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "trainer.train",
+    "arguments": "()",
+    "start": {
+      "line": 111,
+      "column": 0
+    },
+    "end": {
+      "line": 111,
+      "column": 15
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 119,
+      "column": 0
+    },
+    "end": {
+      "line": 119,
+      "column": 12
+    },
+    "name": "torch",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "from": "transformers",
+    "import": [
+      {
+        "name": "RobertaTokenizerFast",
+        "alias": null
+      },
+      {
+        "name": "RobertaForSequenceClassification",
+        "alias": null
+      },
+      {
+        "name": "TrainingArguments",
+        "alias": null
+      },
+      {
+        "name": "Trainer",
+        "alias": null
+      },
+      {
+        "name": "AutoConfig",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 120,
+      "column": 0
+    },
+    "end": {
+      "line": 126,
+      "column": 1
+    }
+  },
+  {
+    "type": "Import",
+    "from": "huggingface_hub",
+    "import": [
+      {
+        "name": "HfFolder",
+        "alias": null
+      },
+      {
+        "name": "notebook_login",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 127,
+      "column": 0
+    },
+    "end": {
+      "line": 127,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model_id=\"roberta-base\"",
+    "start": {
+      "line": 133,
+      "column": 0
+    },
+    "end": {
+      "line": 133,
+      "column": 25
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "dataset_id=\"ag_news\"",
+    "start": {
+      "line": 134,
+      "column": 0
+    },
+    "end": {
+      "line": 134,
+      "column": 22
+    }
+  },
+  {
+    "type": "Import",
+    "from": "datasets",
+    "import": {
+      "name": "load_dataset",
+      "alias": null
+    },
+    "start": {
+      "line": 140,
+      "column": 0
+    },
+    "end": {
+      "line": 140,
+      "column": 33
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "dataset=load_dataset(dataset_id)",
+    "start": {
+      "line": 142,
+      "column": 0
+    },
+    "end": {
+      "line": 142,
+      "column": 34
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_dataset=dataset['train']",
+    "start": {
+      "line": 145,
+      "column": 0
+    },
+    "end": {
+      "line": 145,
+      "column": 32
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "test_dataset=dataset[\"test\"].shard(num_shards=2,index=0)",
+    "start": {
+      "line": 146,
+      "column": 0
+    },
+    "end": {
+      "line": 146,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "val_dataset=dataset['test'].shard(num_shards=2,index=1)",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 149,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "tokenizer=RobertaTokenizerFast.from_pretrained(model_id)",
+    "start": {
+      "line": 152,
+      "column": 0
+    },
+    "end": {
+      "line": 152,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deftokenize(batch):     returntokenizer(batch[\"text\"],padding=True,truncation=True,max_length=256)\n\n",
+    "start": {
+      "line": 156,
+      "column": 0
+    },
+    "end": {
+      "line": 159,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "train_dataset=train_dataset.map(tokenize,batched=True,batch_size=len(train_dataset))",
+    "start": {
+      "line": 159,
+      "column": 0
+    },
+    "end": {
+      "line": 159,
+      "column": 88
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "val_dataset=val_dataset.map(tokenize,batched=True,batch_size=len(val_dataset))",
+    "start": {
+      "line": 160,
+      "column": 0
+    },
+    "end": {
+      "line": 160,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "test_dataset=test_dataset.map(tokenize,batched=True,batch_size=len(test_dataset))",
+    "start": {
+      "line": 161,
+      "column": 0
+    },
+    "end": {
+      "line": 161,
+      "column": 85
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "train_dataset.set_format",
+    "arguments": "(\"torch\",columns=[\"input_ids\",\"attention_mask\",\"label\"])",
+    "start": {
+      "line": 168,
+      "column": 0
+    },
+    "end": {
+      "line": 168,
+      "column": 83
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "val_dataset.set_format",
+    "arguments": "(\"torch\",columns=[\"input_ids\",\"attention_mask\",\"label\"])",
+    "start": {
+      "line": 169,
+      "column": 0
+    },
+    "end": {
+      "line": 169,
+      "column": 81
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "test_dataset.set_format",
+    "arguments": "(\"torch\",columns=[\"input_ids\",\"attention_mask\",\"label\"])",
+    "start": {
+      "line": 170,
+      "column": 0
+    },
+    "end": {
+      "line": 170,
+      "column": 82
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "num_labels=dataset['train'].features['label'].num_classes",
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 59
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "class_names=dataset[\"train\"].features[\"label\"].names",
+    "start": {
+      "line": 179,
+      "column": 0
+    },
+    "end": {
+      "line": 179,
+      "column": 54
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"number of labels: {num_labels}\")",
+    "start": {
+      "line": 180,
+      "column": 0
+    },
+    "end": {
+      "line": 180,
+      "column": 40
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"the labels: {class_names}\")",
+    "start": {
+      "line": 181,
+      "column": 0
+    },
+    "end": {
+      "line": 181,
+      "column": 35
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "id2label={i:labelfori,labelinenumerate(class_names)}",
+    "start": {
+      "line": 184,
+      "column": 0
+    },
+    "end": {
+      "line": 184,
+      "column": 60
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "config=AutoConfig.from_pretrained(model_id)",
+    "start": {
+      "line": 187,
+      "column": 0
+    },
+    "end": {
+      "line": 187,
+      "column": 45
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "config.update",
+    "arguments": "({\"id2label\":id2label})",
+    "start": {
+      "line": 188,
+      "column": 0
+    },
+    "end": {
+      "line": 188,
+      "column": 37
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "training_args=TrainingArguments(output_dir=\"test_trainer\",num_train_epochs=5,per_device_train_batch_size=8,per_device_eval_batch_size=8,evaluation_strategy=\"epoch\",learning_rate=5e-5,weight_decay=0.01,warmup_steps=500,)",
+    "start": {
+      "line": 195,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "model=RobertaForSequenceClassification.from_pretrained(model_id,config=config)",
+    "start": {
+      "line": 207,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 81
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "trainer=Trainer(model=model,args=training_args,train_dataset=train_dataset,eval_dataset=val_dataset,)",
+    "start": {
+      "line": 210,
+      "column": 0
+    },
+    "end": {
+      "line": 215,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "trainer.train",
+    "arguments": "()",
+    "start": {
+      "line": 224,
+      "column": 0
+    },
+    "end": {
+      "line": 224,
+      "column": 15
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "trainer.evaluate",
+    "arguments": "()",
+    "start": {
+      "line": 231,
+      "column": 0
+    },
+    "end": {
+      "line": 231,
+      "column": 18
+    }
+  },
+  {
+    "type": "Import",
+    "from": "torchtext.datasets",
+    "import": {
+      "name": "IMDB",
+      "alias": null
+    },
+    "start": {
+      "line": 21,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 35
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 22,
+      "column": 0
+    },
+    "end": {
+      "line": 22,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Function declaration",
+    "body": "defload_imdb_data(n_samples=10):     positive_reviews,negative_reviews=[],[] train_iter=IMDB(split='train') forlabel,textintrain_iter:         iflabel==2andlen(positive_reviews)<n_samples:             positive_reviews.append(text)  eliflabel==1andlen(negative_reviews)<n_samples:             negative_reviews.append(text)  iflen(positive_reviews)>=n_samplesandlen(negative_reviews)>=n_samples:             break   returnpositive_reviews,negative_reviews\n\n",
+    "start": {
+      "line": 25,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_reviews,negative_reviews=load_imdb_data()",
+    "start": {
+      "line": 40,
+      "column": 0
+    },
+    "end": {
+      "line": 40,
+      "column": 53
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Loaded {len(positive_reviews)} positive reviews.\")",
+    "start": {
+      "line": 43,
+      "column": 0
+    },
+    "end": {
+      "line": 43,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Loaded {len(negative_reviews)} negative reviews.\")",
+    "start": {
+      "line": 44,
+      "column": 0
+    },
+    "end": {
+      "line": 44,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "from": "openai",
+    "import": {
+      "name": "OpenAI",
+      "alias": null
+    },
+    "start": {
+      "line": 52,
+      "column": 0
+    },
+    "end": {
+      "line": 52,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 53,
+      "column": 0
+    },
+    "end": {
+      "line": 53,
+      "column": 9
+    },
+    "name": "os",
+    "alias": null
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 54,
+      "column": 0
+    },
+    "end": {
+      "line": 54,
+      "column": 13
+    },
+    "name": "random",
+    "alias": null
+  },
+  {
+    "type": "Assignment",
+    "body": "client=OpenAI(api_key=\"\")",
+    "start": {
+      "line": 57,
+      "column": 0
+    },
+    "end": {
+      "line": 57,
+      "column": 78
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defpredict_sentiment(reviews):     sentiments=[] forreviewinreviews:         try:             chat_completion=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"You are a helpful assistant trained to classify sentiment as positive or negative. Provide response with one word either 'postive' or 'negative'\"},{\"role\":\"user\",\"content\":review}],) sentiment=chat_completion.choices[0].message.content.strip().lower() print(sentiment) ifsentimentnotin['positive','negative']:                 sentiment=random.choice(['positive','negative'])  sentiments.append(sentiment)  exceptExceptionase:             print(f\"Error processing review: {e}\") sentiments.append(random.choice(['positive','negative']))   returnsentiments\n\n",
+    "start": {
+      "line": 59,
+      "column": 0
+    },
+    "end": {
+      "line": 86,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_sentiments=predict_sentiment(positive_reviews)",
+    "start": {
+      "line": 86,
+      "column": 0
+    },
+    "end": {
+      "line": 86,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_sentiments=predict_sentiment(negative_reviews)",
+    "start": {
+      "line": 87,
+      "column": 0
+    },
+    "end": {
+      "line": 87,
+      "column": 57
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics",
+    "import": [
+      {
+        "name": "precision_score",
+        "alias": null
+      },
+      {
+        "name": "recall_score",
+        "alias": null
+      },
+      {
+        "name": "f1_score",
+        "alias": null
+      }
+    ],
+    "start": {
+      "line": 97,
+      "column": 0
+    },
+    "end": {
+      "line": 97,
+      "column": 67
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "true_labels=[1]*len(positive_reviews)+[0]*len(negative_reviews)",
+    "start": {
+      "line": 100,
+      "column": 0
+    },
+    "end": {
+      "line": 100,
+      "column": 71
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "predicted_labels=[1ifsentiment=='positive'else0forsentimentinpositive_sentiments+negative_sentiments]",
+    "start": {
+      "line": 102,
+      "column": 0
+    },
+    "end": {
+      "line": 102,
+      "column": 115
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "precision=precision_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 105,
+      "column": 0
+    },
+    "end": {
+      "line": 105,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "recall=recall_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 106,
+      "column": 0
+    },
+    "end": {
+      "line": 106,
+      "column": 52
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "f1=f1_score(true_labels,predicted_labels)",
+    "start": {
+      "line": 107,
+      "column": 0
+    },
+    "end": {
+      "line": 107,
+      "column": 44
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Precision: {precision}\")",
+    "start": {
+      "line": 109,
+      "column": 0
+    },
+    "end": {
+      "line": 109,
+      "column": 32
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"Recall: {recall}\")",
+    "start": {
+      "line": 110,
+      "column": 0
+    },
+    "end": {
+      "line": 110,
+      "column": 26
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(f\"F1 Score: {f1}\")",
+    "start": {
+      "line": 111,
+      "column": 0
+    },
+    "end": {
+      "line": 111,
+      "column": 24
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcompute_embeddings(reviews):     embeddings=[] forreviewinreviews:         try:             response=client.embeddings.create(input=review,model=\"text-embedding-ada-002\") embeddings.append(response.data[0].embedding)  exceptExceptionase:             print(f\"Error computing embedding for review: {e}\") embeddings.append([0]*2048)   returnembeddings\n\n",
+    "start": {
+      "line": 120,
+      "column": 0
+    },
+    "end": {
+      "line": 136,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_embeddings=compute_embeddings(positive_reviews)",
+    "start": {
+      "line": 136,
+      "column": 0
+    },
+    "end": {
+      "line": 136,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_embeddings=compute_embeddings(negative_reviews)",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 137,
+      "column": 58
+    }
+  },
+  {
+    "type": "Import",
+    "from": "sklearn.metrics.pairwise",
+    "import": {
+      "name": "cosine_similarity",
+      "alias": null
+    },
+    "start": {
+      "line": 147,
+      "column": 0
+    },
+    "end": {
+      "line": 147,
+      "column": 54
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 148,
+      "column": 0
+    },
+    "end": {
+      "line": 148,
+      "column": 18
+    },
+    "name": "numpy",
+    "alias": "np"
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 149,
+      "column": 0
+    },
+    "end": {
+      "line": 149,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcompute_cosine_similarities(embeddings):     cos_sim_matrix=cosine_similarity(embeddings) returncos_sim_matrix\n\n",
+    "start": {
+      "line": 151,
+      "column": 0
+    },
+    "end": {
+      "line": 156,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "deffind_typical_review_with_dataframe(reviews,embeddings):     \"\"\"\n    Computes pairwise cosine similarity, finds the mean similarity for each review,\n    stores results in a DataFrame, and identifies the 'typical' review.\n    \n    Parameters:\n    - reviews: List of review texts.\n    - embeddings: Corresponding embeddings for each review.\n    \n    Returns:\n    - DataFrame containing reviews and their average cosine similarity.\n    - The 'typical' review based on the highest average cosine similarity.\n    \"\"\" cos_sim_matrix=compute_cosine_similarities(embeddings) mean_cos_sim=np.mean(cos_sim_matrix-np.eye(cos_sim_matrix.shape[0]),axis=1) df=pd.DataFrame({'Review':reviews,'AvgCosSim':mean_cos_sim}) df_sorted=df.sort_values(by='AvgCosSim',ascending=False) typical_review=df_sorted.iloc[0]['Review'] returndf_sorted,typical_review\n\n",
+    "start": {
+      "line": 156,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_df,typical_positive_review=find_typical_review_with_dataframe(positive_reviews,positive_embeddings)",
+    "start": {
+      "line": 189,
+      "column": 0
+    },
+    "end": {
+      "line": 189,
+      "column": 112
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "negative_df,typical_negative_review=find_typical_review_with_dataframe(negative_reviews,negative_embeddings)",
+    "start": {
+      "line": 192,
+      "column": 0
+    },
+    "end": {
+      "line": 192,
+      "column": 112
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Typical Positive Review:\",typical_positive_review)",
+    "start": {
+      "line": 198,
+      "column": 0
+    },
+    "end": {
+      "line": 198,
+      "column": 58
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Typical Negative Review:\",typical_negative_review)",
+    "start": {
+      "line": 204,
+      "column": 0
+    },
+    "end": {
+      "line": 204,
+      "column": 58
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "top_5_positive_reviews=positive_df.head(5)['Review'].tolist()",
+    "start": {
+      "line": 212,
+      "column": 0
+    },
+    "end": {
+      "line": 212,
+      "column": 63
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defextract_positive_sentences(reviews):     extracted_sentences=[] forreviewinreviews:         try:             response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Extract 3 sentences from the following review that best indicate a positive sentiment:'\"},{\"role\":\"user\",\"content\":review}],) sentences=response.choices[0].message.content.strip() extracted_sentences.extend(sentences.split('\\n')[:3])  exceptExceptionase:             print(f\"Error extracting sentences: {e}\")   returnextracted_sentences\n\n",
+    "start": {
+      "line": 218,
+      "column": 0
+    },
+    "end": {
+      "line": 235,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "positive_sentences=extract_positive_sentences(top_5_positive_reviews)",
+    "start": {
+      "line": 235,
+      "column": 0
+    },
+    "end": {
+      "line": 235,
+      "column": 71
+    }
+  },
+  null,
+  {
+    "type": "Function declaration",
+    "body": "defsummarize_commonalities(sentences):     aggregated_sentences=\" \".join(sentences) try:         response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Summarize what the following sentences from movie reviews have in common, indicating good qualities of a movie:\"},{\"role\":\"user\",\"content\":aggregated_sentences}],) returnresponse.choices[0].message.content.strip()  exceptExceptionase:         print(f\"Error summarizing commonalities: {e}\") return\"\"\n\n\n",
+    "start": {
+      "line": 247,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "commonalities_summary=summarize_commonalities(positive_sentences)",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 67
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Commonalities Summary:\",commonalities_summary)",
+    "start": {
+      "line": 268,
+      "column": 0
+    },
+    "end": {
+      "line": 268,
+      "column": 54
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defsuggest_movie_plot(summary):     try:         response=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=[{\"role\":\"system\",\"content\":\"Based on the following commonalities in good movie reviews, suggest a movie plot that is likely to result in a good review.\"},{\"role\":\"user\",\"content\":summary}],) returnresponse.choices[0].message.content.strip()  exceptExceptionase:         print(f\"Error suggesting movie plot: {e}\") return\"\"\n\n\n",
+    "start": {
+      "line": 274,
+      "column": 0
+    },
+    "end": {
+      "line": 288,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "movie_plot_suggestion=suggest_movie_plot(commonalities_summary)",
+    "start": {
+      "line": 288,
+      "column": 0
+    },
+    "end": {
+      "line": 288,
+      "column": 65
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(\"Movie Plot Suggestion:\",movie_plot_suggestion)",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 54
+    }
+  },
+  {
+    "type": "Import",
+    "from": "openai",
+    "import": {
+      "name": "OpenAI",
+      "alias": null
+    },
+    "start": {
+      "line": 14,
+      "column": 0
+    },
+    "end": {
+      "line": 14,
+      "column": 25
+    }
+  },
+  {
+    "type": "Import",
+    "start": {
+      "line": 15,
+      "column": 0
+    },
+    "end": {
+      "line": 15,
+      "column": 19
+    },
+    "name": "pandas",
+    "alias": "pd"
+  },
+  {
+    "type": "Import",
+    "from": "scipy.spatial.distance",
+    "import": {
+      "name": "cosine",
+      "alias": null
+    },
+    "start": {
+      "line": 16,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 41
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "api_key=\"\"",
+    "start": {
+      "line": 26,
+      "column": 0
+    },
+    "end": {
+      "line": 26,
+      "column": 11
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "client=OpenAI(api_key=api_key)",
+    "start": {
+      "line": 27,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 34
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defget_embedding(text,model=\"text-embedding-ada-002\"):    text=text.replace(\"\\n\",\" \") returnclient.embeddings.create(input=[text],model=model).data[0].embedding\n\n",
+    "start": {
+      "line": 32,
+      "column": 0
+    },
+    "end": {
+      "line": 39,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function declaration",
+    "body": "defcosine_similarity(x,y):     return1-cosine(x,y)\n\n",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 49,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data=[{\"prod_id\":1,\"prod\":\"moisturizer\",\"brand\":\"Aveeno\",\"description\":\"for dry skin\"},{\"prod_id\":2,\"prod\":\"foundation\",\"brand\":\"Maybelline\",\"description\":\"medium coverage\"},{\"prod_id\":3,\"prod\":\"moisturizer\",\"brand\":\"CeraVe\",\"description\":\"for dry skin\"},{\"prod_id\":4,\"prod\":\"nail polish\",\"brand\":\"OPI\",\"description\":\"raspberry red\"},{\"prod_id\":5,\"prod\":\"concealer\",\"brand\":\"chanel\",\"description\":\"medium coverage\"},{\"prod_id\":6,\"prod\":\"moisturizer\",\"brand\":\"Ole Henkrisen\",\"description\":\"for oily skin\"},{\"prod_id\":7,\"prod\":\"moisturizer\",\"brand\":\"CeraVe\",\"description\":\"for normal to dry skin\"},{\"prod_id\":8,\"prod\":\"moisturizer\",\"brand\":\"First Aid Beauty\",\"description\":\"for dry skin\"},{\"prod_id\":9,\"prod\":\"makeup sponge\",\"brand\":\"Sephora\",\"description\":\"super-soft, exclusive, latex-free foam\"}]",
+    "start": {
+      "line": 49,
+      "column": 0
+    },
+    "end": {
+      "line": 101,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data_df=pd.DataFrame(product_data)",
+    "start": {
+      "line": 108,
+      "column": 0
+    },
+    "end": {
+      "line": 108,
+      "column": 44
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['combined']=product_data_df.apply(lambdarow:f\"{row['brand']}, {row['prod']}, {row['description']}\",axis=1)",
+    "start": {
+      "line": 118,
+      "column": 0
+    },
+    "end": {
+      "line": 118,
+      "column": 127
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['text_embedding']=product_data_df.combined.apply(lambdax:get_embedding(x))",
+    "start": {
+      "line": 126,
+      "column": 0
+    },
+    "end": {
+      "line": 126,
+      "column": 94
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_data=[{\"prod_id\":1,\"prod\":\"moisturizer\",\"brand\":\"Aveeno\",\"description\":\"for dry skin\"},{\"prod_id\":2,\"prod\":\"foundation\",\"brand\":\"Maybelline\",\"description\":\"medium coverage\"},{\"prod_id\":4,\"prod\":\"nail polish\",\"brand\":\"OPI\",\"description\":\"raspberry red\"},{\"prod_id\":5,\"prod\":\"concealer\",\"brand\":\"chanel\",\"description\":\"medium coverage\"},{\"prod_id\":9,\"prod\":\"makeup sponge\",\"brand\":\"Sephora\",\"description\":\"super-soft, exclusive, latex-free foam\"}]",
+    "start": {
+      "line": 137,
+      "column": 0
+    },
+    "end": {
+      "line": 163,
+      "column": 2
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df=pd.DataFrame(customer_order_data)",
+    "start": {
+      "line": 170,
+      "column": 0
+    },
+    "end": {
+      "line": 170,
+      "column": 53
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['combined']=customer_order_df.apply(lambdarow:f\"{row['brand']}, {row['prod']}, {row['description']}\",axis=1)",
+    "start": {
+      "line": 178,
+      "column": 0
+    },
+    "end": {
+      "line": 178,
+      "column": 131
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['text_embedding']=customer_order_df.combined.apply(lambdax:get_embedding(x))",
+    "start": {
+      "line": 186,
+      "column": 0
+    },
+    "end": {
+      "line": 186,
+      "column": 98
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "customer_input=\"Hi! Can you recommend a good moisturizer for me?\"",
+    "start": {
+      "line": 196,
+      "column": 0
+    },
+    "end": {
+      "line": 196,
+      "column": 67
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "response=client.embeddings.create(input=customer_input,model=\"text-embedding-ada-002\")",
+    "start": {
+      "line": 203,
+      "column": 0
+    },
+    "end": {
+      "line": 206,
+      "column": 1
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "embeddings_customer_question=response.data[0].embedding",
+    "start": {
+      "line": 207,
+      "column": 0
+    },
+    "end": {
+      "line": 207,
+      "column": 57
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df['search_purchase_history']=customer_order_df.text_embedding.apply(lambdax:cosine_similarity(x,embeddings_customer_question))",
+    "start": {
+      "line": 216,
+      "column": 0
+    },
+    "end": {
+      "line": 216,
+      "column": 147
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "customer_order_df=customer_order_df.sort_values('search_purchase_history',ascending=False)",
+    "start": {
+      "line": 217,
+      "column": 0
+    },
+    "end": {
+      "line": 217,
+      "column": 93
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "top_3_purchases_df=customer_order_df.head(3)",
+    "start": {
+      "line": 225,
+      "column": 0
+    },
+    "end": {
+      "line": 225,
+      "column": 46
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "product_data_df['search_products']=product_data_df.text_embedding.apply(lambdax:cosine_similarity(x,embeddings_customer_question))",
+    "start": {
+      "line": 233,
+      "column": 0
+    },
+    "end": {
+      "line": 233,
+      "column": 135
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "product_data_df=product_data_df.sort_values('search_products',ascending=False)",
+    "start": {
+      "line": 234,
+      "column": 0
+    },
+    "end": {
+      "line": 234,
+      "column": 81
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "top_3_products_df=product_data_df.head(3)",
+    "start": {
+      "line": 242,
+      "column": 0
+    },
+    "end": {
+      "line": 242,
+      "column": 43
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "message_objects=[]",
+    "start": {
+      "line": 262,
+      "column": 0
+    },
+    "end": {
+      "line": 262,
+      "column": 20
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"system\",\"content\":\"You're a chatbot helping customers with beauty-related questions and helping them with product recommendations\"})",
+    "start": {
+      "line": 263,
+      "column": 0
+    },
+    "end": {
+      "line": 263,
+      "column": 165
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":customer_input})",
+    "start": {
+      "line": 270,
+      "column": 0
+    },
+    "end": {
+      "line": 270,
+      "column": 66
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "prev_purchases=\". \".join([f\"{row['combined']}\"forindex,rowintop_3_purchases_df.iterrows()])",
+    "start": {
+      "line": 277,
+      "column": 0
+    },
+    "end": {
+      "line": 277,
+      "column": 98
+    }
+  },
+  null,
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":f\"Here're my latest product orders: {prev_purchases}\"})",
+    "start": {
+      "line": 285,
+      "column": 0
+    },
+    "end": {
+      "line": 285,
+      "column": 105
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":f\"Please give me a detailed explanation of your recommendations\"})",
+    "start": {
+      "line": 286,
+      "column": 0
+    },
+    "end": {
+      "line": 286,
+      "column": 116
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"user\",\"content\":\"Please be friendly and talk to me like a person, don't just give me a list of recommendations\"})",
+    "start": {
+      "line": 287,
+      "column": 0
+    },
+    "end": {
+      "line": 287,
+      "column": 147
+    }
+  },
+  {
+    "type": "Assignment",
+    "body": "products_list=[]",
+    "start": {
+      "line": 294,
+      "column": 0
+    },
+    "end": {
+      "line": 294,
+      "column": 18
+    }
+  },
+  {
+    "type": "For Loop Statement",
+    "body": "forindex,rowintop_3_products_df.iterrows():     brand_dict={'role':\"assistant\",\"content\":f\"{row['combined']}\"} products_list.append(brand_dict)\n\n",
+    "start": {
+      "line": 296,
+      "column": 0
+    },
+    "end": {
+      "line": 299,
+      "column": 1
+    }
+  },
+  null,
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"assistant\",\"content\":f\"I found these 3 products I would recommend\"})",
+    "start": {
+      "line": 306,
+      "column": 0
+    },
+    "end": {
+      "line": 306,
+      "column": 103
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.extend",
+    "arguments": "(products_list)",
+    "start": {
+      "line": 307,
+      "column": 0
+    },
+    "end": {
+      "line": 307,
+      "column": 37
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "message_objects.append",
+    "arguments": "({\"role\":\"assistant\",\"content\":\"Here's my summarized recommendation of products, and why it would suit you:\"})",
+    "start": {
+      "line": 308,
+      "column": 0
+    },
+    "end": {
+      "line": 308,
+      "column": 134
+    }
+  },
+  null,
+  {
+    "type": "Assignment",
+    "body": "completion=client.chat.completions.create(model=\"gpt-3.5-turbo\",messages=message_objects)",
+    "start": {
+      "line": 318,
+      "column": 0
+    },
+    "end": {
+      "line": 321,
+      "column": 1
+    }
+  },
+  {
+    "type": "Function call",
+    "name": "print",
+    "arguments": "(completion.choices[0].message.content)",
+    "start": {
+      "line": 322,
+      "column": 0
+    },
+    "end": {
+      "line": 322,
+      "column": 44
+    }
+  }
+]
