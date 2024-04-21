@@ -50,7 +50,7 @@ def query_gpt_with_course_info(query, course_info_summary):
     except Exception as e:
         return f"Error querying GPT with course info: {e}"
 
-file_path = "./data/json/gpt.json"
+file_path = "/Users/kexueyi/PassGPT/data/json/gpt.json"
 course_info = load_course_info(file_path)
 course_info_summary = format_course_info_for_gpt(course_info)
 

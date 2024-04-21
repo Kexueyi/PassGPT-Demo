@@ -19,17 +19,18 @@ The goal of this project is to build a course-specific chat model powered by GPT
   - `code/`: code material from EE6405
   - `json/`: extracted structed course `.json` file from GPT-4 also traditional NLP methods.
 - `database/`:
-  - `json_to_sql`: convert `.json` to insert samples into SQL database.
-  - `pass_gpt`: You can construct same database by running this script.
+  - `json_to_sql.py`: convert `.json` to insert samples into SQL database.
+  - `pass_gpt.sql`: You can construct same database by running this script.
 - `example_results/`: Example results of PassGPT, where some of them are good and some are not so satisfying due to not clear prompt from user.
 - `models/`: Models for PassGPT.
-  - `demo_json`: A demo just using json file as course information.
-  - `demo_sql`: A demo using SQL database as course information.
-  - `pass_gpt`: The main model for PassGPT.
+  - `demo_json.py`: A demo just using json file as course information.
+  - `demo_sql.py`: A demo using SQL database as course information.
+  - `pass_gpt.py`: The main model for PassGPT.
 - `web/`: Web interface for PassGPT. (under construction)
 - `traditional_nlp/`: Traditional NLP methods for course information retrieval.
 - `main.py`: Main script for running PassGPT.
 - `requirements.txt`: List of packages required to run the code.
+- `log/`: Log files for the project.
 
 
 ## Setup
