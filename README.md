@@ -26,8 +26,9 @@ The goal of this project is to build a course-specific chat model powered by GPT
 - `main.py`: Main script for running PassGPT.
 - `example_results/`: Example results of PassGPT, where some of them are good/bad examples(indicating the requirements of well-structrued user input)
 - `preprocess/`:
-  - `ANTLR/`: ANLTR for data(code) preprocessing. Source code from [ANTLR](https://www.antlr.org/)
-  - `traditional_nlp/`: Traditional NLP methods for data(slides) preprocessing.
+  - `ANTLR/`: ANLTR for data (code) preprocessing. Part of code source from [ANTLR](https://www.antlr.org/)
+    - `main.py`: Main script for process data (code) files.
+  - `traditional_nlp/`: Traditional NLP methods for data (slides) preprocessing.
 - `web/`: Web interface for PassGPT. (unfinished)
 - `requirements.txt`: List of packages required to run the code.
 
@@ -63,4 +64,7 @@ You can run the code in your terminal by:
 python main.py
 ```
 
-Then you can input your questions or commands to PassGPT. Enjoy!
+Then you can input your questions or commands to PassGPT in the terminal as show in the figure below:
+![](figure/run.png)
+
+Enjoy your learning journey with PassGPT!

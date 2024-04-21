@@ -5,3 +5,4 @@ pymysql
 pdfminer
 nltk
 gensim
+antlr4
