@@ -12,25 +12,25 @@ The goal of this project is to build a course-specific chat model powered by GPT
 2. Generate course-specific content. e.g. examples, sample practices, quiz
 3. Study & review assistance. e.g. summarize, tips 
 
-
 ## Repository Overview
-- `data/`: note that we are not able to release the original course matrials due to the policy.
+- `data/`: Note that we are not able to release the original course matrials due to the policy.
   - `slides`: slides from EE6405
   - `code/`: code material from EE6405
   - `json/`: extracted structed course `.json` file from GPT-4 also traditional NLP methods.
+    - `gpt.json`: GPT-4 extracted course information.(which is used for build database)
 - `database/`:
-  - `json_to_sql.py`: convert `.json` to insert samples into SQL database.
-  - `pass_gpt.sql`: You can construct same database by running this script.
-- `example_results/`: Example results of PassGPT, where some of them are good and some are not so satisfying due to not clear prompt from user.
+  - `json_to_sql.py`: convert `.json` to insert entries into SQL database.
+  - `pgpt_db.sql`: You can construct same database by running this script.
 - `models/`: Models for PassGPT.
-  - `demo_json.py`: A demo just using json file as course information.
-  - `demo_sql.py`: A demo using SQL database as course information.
   - `pass_gpt.py`: The main model for PassGPT.
-- `web/`: Web interface for PassGPT. (under construction)
-- `traditional_nlp/`: Traditional NLP methods for course information retrieval.
 - `main.py`: Main script for running PassGPT.
+- `example_results/`: Example results of PassGPT, where some of them are good/bad examples(indicating the requirements of well-structrued user input)
+- `preprocess/`:
+  - `ANTLR/`: ANLTR for data(code) preprocessing. Source code from [ANTLR](https://www.antlr.org/)
+  - `traditional_nlp/`: Traditional NLP methods for data(slides) preprocessing.
+- `web/`: Web interface for PassGPT. (unfinished)
 - `requirements.txt`: List of packages required to run the code.
-- `log/`: Log files for the project.
+
 
 
 ## Setup
@@ -62,4 +62,5 @@ You can run the code in your terminal by:
 ```bash
 python main.py
 ```
+
 Then you can input your questions or commands to PassGPT. Enjoy!

@@ -1,5 +1,2 @@
-data/code/*
-data/slides/*
-pre/.DS_Store
 .vscode
 __pycache__
