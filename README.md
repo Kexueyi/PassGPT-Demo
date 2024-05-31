@@ -3,7 +3,9 @@ A course-specific chat model powered by GPT.
 
 Make you learn efficiently and **Pass** the course! Let's meet **PassGPT**!
 
-![Working Flow of PassGPT](figure/intro.png)
+<div style="text-align: center;">
+  <img src="figure/intro.png" alt="Working Flow of PassGPT" width="700">
+</div>
 
 ## Project Status
 
@@ -40,7 +42,9 @@ The database is constructed using **MySQL**, by the following schema:
 <!-- ![MySQL Database of PassGPT](figure/database.png) -->
 
 <!-- Using HTML adjust size -->
-<img src="figure/database.png" alt="MySQL Database of PassGPT" width="500">
+<div style="text-align: center;">
+  <img src="figure/database.png" alt="MySQL Database of PassGPT" width="600">
+</div>
 
 Structure: `Courses` -> `Files` -> `Concepts` -> `Subconcepts` -> `Examples`
 
@@ -102,7 +106,9 @@ python main.py
 ```
 
 Then you can input your questions or commands to PassGPT in the terminal as show in the figure below:
-![](figure/run.png)
+<div style="text-align: center;">
+  <img src="figure/run.png" alt="Run cmd" width="550">
+</div>
 
 Enjoy your learning journey with PassGPT!
 
